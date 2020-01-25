@@ -5,4 +5,5 @@ L’obiettivo del software Pr. D. è quello di mettere a disposizione un sistem
 Su tale sistema è stata effettuata attività di manutenzione, estendendo il sistema con nuovi requisiti riguardanti la gestione del carico didattico dei docenti.
 
 # Sviluppatori
-Edoardo Carpentiero - Attilio Della Greca
+Edoardo Carpentiero - Attilio Della Greca - Antonio Prisco
+
