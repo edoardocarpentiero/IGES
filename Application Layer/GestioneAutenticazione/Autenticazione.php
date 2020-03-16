@@ -9,7 +9,8 @@
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
 //echo realpath(dirname(__FILE__));
-require('/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php');
+require(dirname(__DIR__).'\..\Storage Layer\Database.php');
+
 class Autenticazione{
 private $database; //variabile per il DB
 

@@ -8,10 +8,10 @@
 *Version : 1.0
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
-define("DB_SERVER", "127.0.0.1");
+define("DB_SERVER", "localhost");
 define("DB_USER", "root");
-define("DB_PASSWORD", "edoardo93@");
-define("DB_DATABASE", "my_prd");
+define("DB_PASSWORD", "root");
+define("DB_DATABASE", "myprd");
 class Database{
 	private $connessione, $risultato;
 	public function connettiDB(){
