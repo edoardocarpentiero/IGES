@@ -7,7 +7,7 @@
  */
 
 use PHPUnit\Framework\TestCase;
-require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneCaricoDidattico/GestioneCaricoDidattico.php");
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneCaricoDidattico\GestioneCaricoDidattico.php');
 
 class Test extends TestCase
 {
