@@ -19,7 +19,8 @@
 
                         $database = new Database();
                         $database->connettiDB();
-                 $query= "SELECT Ordinamento.Attivita_formativa, Suddivisione.Ambiti_disciplinari,
+                 $query= " use myprd;
+                        SELECT Ordinamento.Attivita_formativa, Suddivisione.Ambiti_disciplinari,
                         Settore.SSD, Settore.Descrizione, Suddivisione.CFU_min, Suddivisione.CFU_max FROM Ordinamento, Suddivisione,
                         Settore, Composto, Possiede WHERE Ordinamento.Anno_accademico = '".$anno."' AND Ordinamento.Corso ='".$corso."'
                         AND Possiede.ID_Ordinamento = Ordinamento.ID AND Possiede.ID_Suddivisione = Suddivisione.ID AND
