@@ -79,7 +79,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 <!-- MENU LATERALE SX -->
@@ -279,7 +279,7 @@ echo '
 				<?php
 					if(isset($_GET["matricola"])){
 						
-						require("/membri/prd/Application Layer/GestioneDocenti/GestioneDocente.php");
+						require_once("/membri/prd/Application Layer/GestioneDocenti/GestioneDocente.php");
 						$ges=new GestioneDocente();
 						$doc=$ges->ricercaDocente(0, $_GET["matricola"]);
 						$doc=$doc[0];

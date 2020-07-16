@@ -347,7 +347,7 @@ echo '
                     </thead>
                     <tbody>
                     <?php
-						require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneDocenti/GestioneDocente.php");
+						require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\GestioneDocente.php');
 							$ges=new GestioneDocente();
 							$docs=$ges->ricercaDocente(1, "");
 							for($i=0;$i<count($docs);$i++){

@@ -378,8 +378,8 @@ echo '
                     
                     	$curriculum=explode(".",$_GET["curriculum"]);
                         $_SESSION['curriculumProgDid']=$curriculum[1];
-						require('/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php');
-                        require_once('/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php');
+                        require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
+                        require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 						
 						session_start();
                         $gestProg=new GestioneProgrammazioneDidattica();

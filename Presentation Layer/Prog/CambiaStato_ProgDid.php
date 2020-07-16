@@ -361,15 +361,15 @@ echo '
                       	<th>Corso</th>
                       	<th>Anno di Corso</th>
                       	<th>Semestre</th>
-                      	<!-- PASSA IN ARCHIVIATA QUANDO CREO UNA PROGRAMMAZIONE DIDATTICA 2015/2016 DI DIVERSA VERSIONE PERCHè DEVO APPORTARE DELLE MODIFICHE -->
+                      	<!-- PASSA IN ARCHIVIATA QUANDO CREO UNA PROGRAMMAZIONE DIDATTICA 2015/2016 DI DIVERSA VERSIONE PERCHï¿½ DEVO APPORTARE DELLE MODIFICHE -->
                       	<th>Versione</th>
                         <th>Stato Attuale</th>
 						<th>Nuovo Stato</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <?php 
-						require('/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php');
+                    <?php
+                        require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
 						$gestProg=new GestioneProgrammazioneDidattica();
 						$progDid=$gestProg->getProgrammazioniDidattiche();
                     	for($i=0;$i<count($progDid);$i++){
@@ -410,7 +410,7 @@ echo '
                       	<th>Corso</th>
                       	<th>Anno di Corso</th>
                       	<th>Semestre</th>
-                      	<!-- PASSA IN ARCHIVIATA QUANDO CREO UNA PROGRAMMAZIONE DIDATTICA 2015/2016 DI DIVERSA VERSIONE PERCHè DEVO APPORTARE DELLE MODIFICHE -->
+                      	<!-- PASSA IN ARCHIVIATA QUANDO CREO UNA PROGRAMMAZIONE DIDATTICA 2015/2016 DI DIVERSA VERSIONE PERCHï¿½ DEVO APPORTARE DELLE MODIFICHE -->
                       	<th>Versione</th>
                         <th>Stato Attuale</th>
                         <th>Nuovo Stato</th>

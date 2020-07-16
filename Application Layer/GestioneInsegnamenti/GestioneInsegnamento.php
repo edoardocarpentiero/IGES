@@ -1,6 +1,7 @@
 <?php
 include_once 'Insegnamento.php';
-require('/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php');
+require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
+
 /**
  * GestioneInsegnamenti
  *

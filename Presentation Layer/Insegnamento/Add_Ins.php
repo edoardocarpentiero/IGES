@@ -81,7 +81,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 
@@ -314,7 +314,7 @@ echo '
 		                      <select id="SSD" name="SSD" class="form-control">
                               <option selected value=0>Seleziona SSD</option>
                                   <?php
-                                      require('/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneInsegnamenti/GestioneInsegnamento.php');
+                                        require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\GestioneInsegnamento.php');
                                       $gestione=new GestioneInsegnamenti();
                                       $ssd=$gestione->getSSD();
                                       while($row=$ssd->fetch_row())

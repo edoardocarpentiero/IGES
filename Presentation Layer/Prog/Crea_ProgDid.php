@@ -319,7 +319,7 @@ echo '
       <?php
 					session_start();
                     $_SESSION['primaCreazionePrD'] = 1;
-					require_once('/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php');
+                    require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 					$databaseE=new Database();
 					$databaseE->connettiDB();
 					

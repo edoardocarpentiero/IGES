@@ -3,16 +3,16 @@ session_start();
 	/**
 *GestioneRegolamento
 *
-*Questa classe implementa le funzionalità che riguardano la gestione dei regolamenti
+*Questa classe implementa le funzionalitï¿½ che riguardano la gestione dei regolamenti
 *
 *Author: Edoardo Carpentiero, Gianmarco Mucciariello
 *Version : 1.0
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
 
-require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php");
-include("Regolamento.php");
-require("//Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneInsegnamenti/Insegnamento.php");
+require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
+include_once("Regolamento.php");
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\Insegnamento.php');
 
 class GestioneRegolamento{
 	private $database;
@@ -24,7 +24,7 @@ class GestioneRegolamento{
 	}
 	
 	//funzione che restituisce un array che rappresenta l'elenco di tutti gli anni accademici presenti nel database
-	//il valore di ritorno è 'arrayRisultato' che contiene l'elenco di tutti gli anni accademici presenti nel database
+	//il valore di ritorno ï¿½ 'arrayRisultato' che contiene l'elenco di tutti gli anni accademici presenti nel database
 	public function getAnniAccademici(){
 		$query="SELECT DISTINCT Anno_accademico FROM Regolamento";
 		$risultatoQuery=$this->database->eseguiQuery($query);
@@ -39,7 +39,7 @@ class GestioneRegolamento{
 	//il parametro 'corso' si rifersce al tipo di corso: Laurea o laurea magistrale.
 	//il parametro 'annoAccademico' si riferisce all'anno accademico del regolamento che si vuole modificare, nel formato: 'yyyy-yyyy'
 	//il parametro 'stato' si riferisce allo stato che deve avere il curriculum per la ricerca nel database
-	//il valore di ritorno è 'arrayRisultato' che è un arrai contenente i curricula ricercati nel database. Questo 'arrayRisultato' è codificato in json tramite la funzione 'json_encode'
+	//il valore di ritorno ï¿½ 'arrayRisultato' che ï¿½ un arrai contenente i curricula ricercati nel database. Questo 'arrayRisultato' ï¿½ codificato in json tramite la funzione 'json_encode'
 	
 	public function getCurriculum($corso, $annoAccademico, $stato="Pubblicato"){
 		$query="SELECT DISTINCT Nome_Curriculum FROM Regolamento WHERE Anno_accademico='".$annoAccademico."' AND Corso='".$corso."' AND Stato='".$stato."'";
@@ -53,10 +53,10 @@ class GestioneRegolamento{
 		}
 	}
 	
-	//funzione che restituisce un array convertito in stringa tramite l'utilizzo della funzione 'json_encode' che rappresenta l'elenco di tutti i curricula presenti nel database per cui può essere eseguita una modifica
+	//funzione che restituisce un array convertito in stringa tramite l'utilizzo della funzione 'json_encode' che rappresenta l'elenco di tutti i curricula presenti nel database per cui puï¿½ essere eseguita una modifica
 	//il parametro 'corso' si rifersce al tipo di corso: Laurea o laurea magistrale.
 	//il parametro 'annoAccademico' si riferisce all'anno accademico del regolamento che si vuole modificare, nel formato: 'yyyy-yyyy'
-	//il valore di ritorno è 'arrayRisultato' che è un arrai contenente i curricula ricercati nel database. Questo 'arrayRisultato' è codificato in json tramite la funzione 'json_encode'
+	//il valore di ritorno ï¿½ 'arrayRisultato' che ï¿½ un arrai contenente i curricula ricercati nel database. Questo 'arrayRisultato' ï¿½ codificato in json tramite la funzione 'json_encode'
 	public function getCurriculumDaModificare($corso, $annoAccademico){
 		$query="SELECT DISTINCT Nome_Curriculum FROM Regolamento WHERE Anno_accademico='".$annoAccademico."' AND Corso='".$corso."' AND Stato='Draft' OR Stato='Completo'";
 		$risultatoQuery=$this->database->eseguiQuery($query);
@@ -136,11 +136,11 @@ class GestioneRegolamento{
 		}
 	}
 	
-	//questa funzione restituisce il range di cfu corrispondenti alle attività formative presenti all'interno del database
+	//questa funzione restituisce il range di cfu corrispondenti alle attivitï¿½ formative presenti all'interno del database
 	//il parametro 'corso' si rifersce al tipo di corso: Laurea o laurea magistrale.
 	//il parametro 'annoAccademico' si riferisce all'anno accademico del regolamento che si vuole modificare, nel formato: 'yyyy-yyyy'
-	//il parametro 'attivita_formativa' si riferisce all'attività formativa per cui si vuole conoscere il range di cfu(minimo e massimo)
-	//il valore di ritorno è 'cfu' che è un array contenente il range dei cfu (minimo-massimo) presenti nel database, rappresentati come stringa
+	//il parametro 'attivita_formativa' si riferisce all'attivitï¿½ formativa per cui si vuole conoscere il range di cfu(minimo e massimo)
+	//il valore di ritorno ï¿½ 'cfu' che ï¿½ un array contenente il range dei cfu (minimo-massimo) presenti nel database, rappresentati come stringa
     public function getRangeCfuAttivita($annoAccademico,$attivita_formativa,$corso='Laurea'){
     	$cfu=array();
         $query="SELECT CFU_min, CFU_max FROM Ordinamento join Possiede on Ordinamento.ID=ID_Ordinamento Join Suddivisione on ID_Suddivisione=Suddivisione.ID WHERE Anno_accademico='$annoAccademico' AND Corso='$corso' AND Attivita_formativa='$attivita_formativa'";
@@ -186,7 +186,7 @@ class GestioneRegolamento{
 	//questa funzione rende lo stato di un regolamento "Pubblicato", un regolamento per poter essere pubblicato deve aver passato una serie di controlli che sono presenti all'interno di un'altra funzione
 	//il parametro 'corso' si rifersce al tipo di corso: Laurea o laurea magistrale.
 	//il parametro 'curr' si riferisce al nome del curriculum che si vuole pubblicare
-	//il valore di ritorno è '0' che indica che l'operazione è andata a buon fine
+	//il valore di ritorno ï¿½ '0' che indica che l'operazione ï¿½ andata a buon fine
     public function pubblicaRegolamento($curr,$corso){
     	$query='UPDATE Regolamento SET Stato="Pubblicato" WHERE Nome_Curriculum="'.$curr.'" AND Stato="Completo" AND Corso="'.$corso.'"';
         $this->database->eseguiQuery($query);
@@ -200,7 +200,7 @@ class GestioneRegolamento{
 	//il parametro 'corso' si rifersce al tipo di corso: Laurea o laurea magistrale.
 	//il parametro 'annoAccademico' si riferisce all'anno accademico del regolamento che si vuole cercare
 	//il parametro 'curriculum' si riferisce al nome del curriculum che si vuole cercare 
-	//il valore di ritorno è '-1' se non esiste il curriculum cercato all'interno del database oppure '0' se il curriculum esiste
+	//il valore di ritorno ï¿½ '-1' se non esiste il curriculum cercato all'interno del database oppure '0' se il curriculum esiste
     public function isExist($annoAccademico,$curriculum,$corso){
     	$query="Select * FROM Regolamento WHERE Anno_accademico='".$annoAccademico."' AND Corso='".$corso."' AND Nome_Curriculum='".$curriculum."'";
         $risultatoQuery=$this->database->eseguiQuery($query);
@@ -214,7 +214,7 @@ class GestioneRegolamento{
 	//il parametro 'corso' si rifersce al tipo di corso: Laurea o laurea magistrale.
 	//il parametro 'annoAccademico' si riferisce all'anno accademico del regolamento che si vuole cercare
 	//il parametro 'curriculum' si riferisce al nome del curriculum che si vuole cercare 
-	//il valore di ritorno è 'arrayRisultato' che è un arrai contenente gli insegnamenti che formano il regolamento ricercato nel database.
+	//il valore di ritorno ï¿½ 'arrayRisultato' che ï¿½ un arrai contenente gli insegnamenti che formano il regolamento ricercato nel database.
 	public function getRegolamento($corso, $curriculum, $annoAccademico, $annoCorso,$stato="Pubblicato"){
 		$query="SELECT i.Denominazione, i.SSD, i.Tipologia_Lezione, i.CFU_Frontali, i.CFU_Laboratorio, i.Tot_Ore, i.Modulo, i.Tipologia_Attivita, f.Obbligatorio_Opzionale FROM Regolamento AS r, Formato AS f, Insegnamento AS i WHERE r.ID=f.ID_Regolamento AND i.Matricola_Insegnamento=f.Matricola_Insegnamento AND Anno_accademico='".$annoAccademico."' AND i.Corso='".$corso."' AND r.Nome_Curriculum='".$curriculum."' AND r.Anno_Corso='".$annoCorso."' AND Stato='".$stato."'";
 		$risultatoQuery=$this->database->eseguiQuery($query);
@@ -226,7 +226,7 @@ class GestioneRegolamento{
 	
 	//elimina un insegnamento dall'array degli insegnamenti che devono essere associato ad un dato curriculum
 	//il parametro 'id' si riferisce all'id dell'insegnamneto da eliminare
-	//il parametro 'nomeSessione" si riferisce al nome della sessione in cui è memorizzato l'array contenente gli insegnamenti
+	//il parametro 'nomeSessione" si riferisce al nome della sessione in cui ï¿½ memorizzato l'array contenente gli insegnamenti
 	//il parametro 'curr' si riferisce al nome del curriculum da cui si vuole eliminare un insegnamento
 	public function eliminaInsegnamento($id, $nomeSessione, $curr){
 		$idInsegnamenti=json_decode($_SESSION["idInsegnamenti".$curr], true);
@@ -370,10 +370,10 @@ class GestioneRegolamento{
        return $controllo;
 	}
 	
-	//questa funzione restituisce un array associativo che contiene il numero di cfu facoltativi per un dato anno di corso e il totale di cfu che si può ottenere sommando i cfu degli insegnamenti facoltativi assegnati a quell'anno
+	//questa funzione restituisce un array associativo che contiene il numero di cfu facoltativi per un dato anno di corso e il totale di cfu che si puï¿½ ottenere sommando i cfu degli insegnamenti facoltativi assegnati a quell'anno
 	//il parametro 'curr' si riferisce al nome del curriculum per cui devono essere calcolati i cfu
 	//il parametro 'anno' si riferisce all'anno di corso per cui devono essere calcolati i cfu
-	//il valore di ritorno è 'result' che corrisponde ad un array che contiene il numero di cfu facoltativi per un dato anno di corso e il totale di cfu che si può ottenere sommando i cfu degli insegnamenti facoltativi assegnati a quell'anno
+	//il valore di ritorno ï¿½ 'result' che corrisponde ad un array che contiene il numero di cfu facoltativi per un dato anno di corso e il totale di cfu che si puï¿½ ottenere sommando i cfu degli insegnamenti facoltativi assegnati a quell'anno
 	public function getCFUOpzionaliPerAnno($curr, $anno){
 		if(isset($_SESSION['CFUOpzionale'.strtoupper($curr).'Anno'.$anno]))
 			$maxCFU=intval($_SESSION['CFUOpzionale'.strtoupper($curr).'Anno'.$anno]);
@@ -400,9 +400,9 @@ class GestioneRegolamento{
 	//questa funzione restituisce la sommatoria del numero di cfu opzionali per un dato curriculum
 	//il parametro 'n' indica gli anni di corso (3 per la laurea e 2 per la laurea magistrale)
 	//il parametro 'curr' indica il curriculum per cui si vuole calcolare la sommatoria dei cfu facoltativi
-	//il valore di ritorno è 'cfuTot' che restituisce la sommatoria del numero di cfu opzionali per un dato curriculum
+	//il valore di ritorno ï¿½ 'cfuTot' che restituisce la sommatoria del numero di cfu opzionali per un dato curriculum
     public function getCFUOpzionali($n,$curr){
-        $i;
+        $i=0;
         $cfuTot=0;
         for($i=1;$i<=$n;$i++){
 			$cfuTot+=intval($_SESSION['CFUOpzionale'.strtoupper($curr).'Anno'.$i]);

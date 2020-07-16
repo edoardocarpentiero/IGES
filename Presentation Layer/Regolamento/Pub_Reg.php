@@ -81,7 +81,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?> 
 

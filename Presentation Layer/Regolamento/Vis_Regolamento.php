@@ -73,7 +73,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 <!-- MENU LATERALE SX -->
@@ -273,7 +273,7 @@ echo '
 								</td>	
 								<td>
 								<?php
-									require("/membri/prd/Application Layer/GestioneRegolamento/GestioneRegolamento.php");
+									require_once(dirname(__DIR__,2).'\Application Layer\GestioneRegolamento\GestioneRegolamento.php');
 									$gestioneRegolamento=new GestioneRegolamento();
 									$anniAccademici=$gestioneRegolamento->getAnniAccademici();
 								echo '<select class="form-control" name="annoAccademico" style="width: 130px;" id="selectAnnoAccademico" onChange="cercaCurriculum()">';
@@ -298,7 +298,7 @@ echo '
                 <div class="box-body">
 				<?php
 					if(isset($_POST["corso"]) && isset($_POST["annoAccademico"]) && isset($_POST["curriculum"])){
-						//RIPETERE 3 VOLTE SE è TRIENNALE, 2 SE è MAGISTRALE
+						//RIPETERE 3 VOLTE SE ï¿½ TRIENNALE, 2 SE ï¿½ MAGISTRALE
 						//I DATI DELLE TABELLE VENGONO PRESI IN AUTOMATICO ALLA SELEZIONE
 						$corso=$_POST["corso"];
 						$annoAccademico=$_POST["annoAccademico"];

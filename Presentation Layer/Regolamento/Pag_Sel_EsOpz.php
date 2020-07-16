@@ -88,7 +88,7 @@ session_start();
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 
@@ -304,8 +304,8 @@ echo '
                     </thead>
                     <tbody>
                    
-                          <?php 
-                              require "/membri/prd/Application Layer/GestioneInsegnamenti/GestioneInsegnamento.php";
+                          <?php
+                          require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\GestioneInsegnamento.php');
                               $db=new GestioneInsegnamenti();
                               $result=$db->visualizzaInsegnamenti("","");
                               $n=count($result);

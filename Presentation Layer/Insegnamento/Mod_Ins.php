@@ -82,7 +82,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 <!-- MENU LATERALE SX -->
@@ -271,7 +271,7 @@ echo '
 
 <!-- LA TABELLA NEI MOCKUP MOSTRA SOLO 4 CAMPI. NELL'IMPLEMENTAZIONE SONO STATI AGGIUNTI TUTTI -->
 <!-- ALLA SELEZIONE DELL'ESAME E AL CLICK DEL TASTO MODIFICA BISOGNA COLLEGARSI ALLA PAGINA MODIFICA (Pag_Mod_Ins.php)
-	(CHE è UGUALE ALLA PAGINA DI AGGIUNTA TRANNE PER I TITOLI SOPRA)
+	(CHE ï¿½ UGUALE ALLA PAGINA DI AGGIUNTA TRANNE PER I TITOLI SOPRA)
 -->
             <div class="box">
                 <div class="box-header">
@@ -297,7 +297,7 @@ echo '
                     </thead>
                     <tbody>
                     <?php 
-                    	require "/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneInsegnamenti/GestioneInsegnamento.php";
+                    	require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\GestioneInsegnamento.php');
                         $db=new GestioneInsegnamenti();
                         $result=$db->visualizzaInsegnamenti("","");
                         $n=count($result);
@@ -384,7 +384,7 @@ echo '
                                     <select id="SSD" name="SSD" class="form-control">
                                     <option selected value=0>Seleziona SSD</option>
                                         <?php
-                                            require_once "/membri/prd/Application Layer/GestioneInsegnamenti/GestioneInsegnamento.php";
+                                            require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\GestioneInsegnamento.php');
                                             $gestione=new GestioneInsegnamenti();
                                             $ssd=$gestione->getSSD();
                                             while($row=$ssd->fetch_row())

@@ -1,5 +1,5 @@
 <?php
-	require("GestioneProgrammazioneDidattica.php");
+	include_once("GestioneProgrammazioneDidattica.php");
 	$gestione=new GestioneProgrammazioneDidattica();
     if($_POST['id'] == "caricoDidattico"){
     	if($gestione->existProg_DidCorrente())

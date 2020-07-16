@@ -77,7 +77,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 <!-- MENU LATERALE SX -->
@@ -312,7 +312,7 @@ echo '
 							<select id="SSD" name="ssd" class="form-control">
                               <option selected value=0>Seleziona SSD</option>
 								<?php
-									require('/membri/prd/Application Layer/GestioneDocenti/GestioneDocente.php');
+									require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\GestioneDocente.php');
 									$gestione=new GestioneDocente();
 									$ssd=$gestione->getSSD();
 									while($row=$ssd->fetch_row())

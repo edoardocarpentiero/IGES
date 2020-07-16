@@ -17,9 +17,10 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	 *2015 - Copyright by Pr.D Project - University of Salerno
 	 
 	 */
-require_once("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php");
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
 include("InsegnamentoProgDidattica.php");
 include("DocentePrD.php");
+
 class GestioneCaricoDidattico{
 	private $database;
 	private $matricolaDocenteFittizio;

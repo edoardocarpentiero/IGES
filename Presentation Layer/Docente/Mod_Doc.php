@@ -79,7 +79,7 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?>
 <!-- MENU LATERALE SX -->
@@ -290,7 +290,7 @@ echo '
                     </thead>
                     <tbody>
                     <?php 
-							require("/membri/prd/Application Layer/GestioneDocenti/GestioneDocente.php");
+							require(dirname(__DIR__,2).'\Application Layer\GestioneDocenti/GestioneDocente.php');
 							$ges=new GestioneDocente();
 							$docs=$ges->ricercaDocente(1, "");
 							

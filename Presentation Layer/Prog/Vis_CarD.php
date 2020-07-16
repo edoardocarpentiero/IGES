@@ -362,7 +362,7 @@ echo '
                   </thead>
                   <tbody>
                       <?php
-                              require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneCaricoDidattico/GestioneCaricoDidattico.php");
+                      require_once(dirname(__DIR__,2).'\Application Layer\GestioneCaricoDidattico\GestioneCaricoDidattico.php');
                               $ges=new GestioneCaricoDidattico();
                               $gestionePrD=new GestioneProgrammazioneDidattica();
                               $insegnamentiAssociati=$ges->getInsegnamentiAssociatiAlDocente($_SESSION['matricola']);

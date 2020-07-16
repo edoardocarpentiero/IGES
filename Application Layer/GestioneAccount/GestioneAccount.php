@@ -10,7 +10,7 @@ session_start();
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
 
-require("/membri/prd/Storage Layer/Database.php");
+require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 include("Account.php");
 
 class GestioneAccount{

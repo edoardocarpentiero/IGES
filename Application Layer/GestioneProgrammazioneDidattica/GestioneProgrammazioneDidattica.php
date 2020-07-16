@@ -13,9 +13,9 @@
 	 *2015 - Copyright by Pr.D Project - University of Salerno
 	 
 	 */
-require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php");
-require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneInsegnamenti/Insegnamento.php");
-require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneDocenti/Docente.php");
+require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\Insegnamento.php');
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\Docente.php');
 include("Associa.php");
 include("ProgrammazioneDidattica.php");
 class GestioneProgrammazioneDidattica{

@@ -369,7 +369,7 @@ echo '
                     </thead>
                     <tbody>
                     <?php
-                        require("/membri/prd/Application Layer/GestioneAccount/GestioneAccount.php");
+                        require_once(dirname(__DIR__,2).'\Application Layer\GestioneAccount\GestioneAccount.php');
 						$gestione=new GestioneAccount();
                         
                         $ris=$gestione->getAccount(0,$_SESSION['username']);

@@ -353,7 +353,7 @@ echo '
                 </thead>
                 <tbody style="cursor: pointer;">
                 <?php
-                	require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Application Layer/GestioneCaricoDidattico/GestioneCaricoDidattico.php");
+                	require_once(dirname(__DIR__,2).'\Application Layer\GestioneCaricoDidattico\GestioneCaricoDidattico.php');
                     $ges=new GestioneCaricoDidattico();
 					$docentiPrD=$ges->getDocentiPrD();
                     $n=count($docentiPrD);

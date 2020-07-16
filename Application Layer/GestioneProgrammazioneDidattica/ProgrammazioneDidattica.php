@@ -1,6 +1,6 @@
 <?php
 	/**
-	 *Insegnamento
+	 *Programmazione didattica
 	 *
 	 *Questa classe rappresenta l'entità insegnamento
 	 *

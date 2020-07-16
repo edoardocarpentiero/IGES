@@ -9,7 +9,7 @@
 	 *2015 - Copyright by Pr.D Project - University of Salerno
 	 
 	 */
-                        require("/Applications/XAMPP/xamppfiles/htdocs/IGES/Storage Layer/Database.php");
+                        require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
                         
                         $anno = $_POST['anno'];
                         $corso = $_POST['corso'];

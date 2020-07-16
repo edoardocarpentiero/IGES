@@ -1,5 +1,5 @@
 <?php
-	require("GestioneProgrammazioneDidattica.php");
+	include_once("GestioneProgrammazioneDidattica.php");
 	$gestione=new GestioneProgrammazioneDidattica();
   	if($_GET['id'] == "all"){
 		$rit=$gestione->getProgDidVis($_GET['laurea'],$_GET['accademico'],$_GET['corso'],$_GET['utente']);

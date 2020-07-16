@@ -9,7 +9,7 @@
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
 //echo realpath(dirname(__FILE__));
-require(dirname(__DIR__).'\..\Storage Layer\Database.php');
+require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 
 class Autenticazione{
 private $database; //variabile per il DB

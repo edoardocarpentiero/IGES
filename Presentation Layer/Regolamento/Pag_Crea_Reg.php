@@ -80,7 +80,7 @@ session_start();
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
-          require('../menu.php');
+          require_once('../menu.php');
           creaMenu();
           ?> 
 
@@ -279,7 +279,7 @@ echo '
                   		$annoIniziale=substr(date("Y"),0,2);
                     	$annoFinale=intval(substr(date("Y"),2,4));
 						
-                  		require "/membri/prd/Application Layer/GestioneRegolamento/GestioneRegolamento.php";
+                  		require_once(dirname(__DIR__,2).'\Application Layer\GestioneRegolamento\GestioneRegolamento.php');
                   ?>
                   
                   <div class="box-tools pull-right">
