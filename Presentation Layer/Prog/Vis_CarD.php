@@ -368,7 +368,7 @@ echo '
                               $insegnamentiAssociati=$ges->getInsegnamentiAssociatiAlDocente($_SESSION['matricola']);
                               $prdApprovate=$gestionePrD->getStatusPrd();
                               for($i=0;$i<count($prdApprovate);$i++){
-                              	$ris=split("&",$prdApprovate[$i]);
+                              	$ris=explode("&",$prdApprovate[$i]);
                               	echo "<tr class='bg-info'><td colspan='11'><h4>La Programmazione didattica <b>".$ris[2]."</b> del corso di <b>".$ris[0]."</b> del <b>".$ris[1]."</b> anno <b>".$ris[3]."</b>° semestre, è nello stato ".$ris[4]."!</h4></td></tr>";
                               }
                               for($i=0;$i<count($insegnamentiAssociati);$i++){

@@ -18,6 +18,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	 
 	 */
 require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
+require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 include("InsegnamentoProgDidattica.php");
 include("DocentePrD.php");
 
@@ -50,7 +51,8 @@ class GestioneCaricoDidattico{
     //restutuisce la variabile $data che contiene il monte ore del docente ricercato
     public function getMonteOre($matricolaDocente){
     	$query="SELECT i.Denominazione, a.Ore_Teoria, a.Ore_Lab from Associa a join Insegnamento i on (i.matricola_insegnamento = a.matricola_insegnamento) join Docente d on (d.matricola = a.matricola_professore) join Programmazione_Didattica p on (a.ID_ProgDid = p.ID)  where d.Matricola = ".$matricolaDocente." AND Versione =(Select max(Versione) from Programmazione_Didattica)";
-        $risultatoQuery=$this->database->eseguiQuery($query);
+        echo $query;
+    	$risultatoQuery=$this->database->eseguiQuery($query);
         $data="";
         while($risultato=$risultatoQuery->fetch_row()){
             $data .= (intval($risultato[1])+intval($risultato[2])).",".$risultato[0].",";
@@ -142,6 +144,7 @@ class GestioneCaricoDidattico{
             $query = "SELECT i.Matricola_Insegnamento,Denominazione,Tipologia_Lezione,i.Corso,SSD,CFU_Laboratorio,CFU_Frontali,Classe,Semestre,ID_ProgDid,Ore_Teoria,Ore_Lab,Anno_corso,Anno_Accademico,status,i.Tot_Ore FROM Insegnamento i left join Associa a on (i.Matricola_Insegnamento=a.Matricola_Insegnamento) join Programmazione_Didattica p on (ID=ID_ProgDid) WHERE Matricola_Professore='" . $matricolaDocente . "' AND Stato='Da Approvare' AND Anno_Accademico='" . $this->annoAccademicoCorrente . "' AND Versione =(Select max(Versione) from Programmazione_Didattica)";
         else
             $query = "SELECT i.Matricola_Insegnamento,Denominazione,Tipologia_Lezione,i.Corso,SSD,CFU_Laboratorio,CFU_Frontali,Classe,Semestre,ID_ProgDid,Ore_Teoria,Ore_Lab,Anno_corso,Anno_Accademico,status,i.Tot_Ore FROM Insegnamento i left join Associa a on (i.Matricola_Insegnamento=a.Matricola_Insegnamento) join Programmazione_Didattica p on (ID=ID_ProgDid) WHERE Matricola_Professore='" . $matricolaDocente . "' AND (Stato='Da Approvare' OR Stato='Approvato' OR Stato='Draft') AND Anno_Accademico='" . $this->annoAccademicoCorrente . "' AND Versione =(Select max(Versione) from Programmazione_Didattica)";
+        //echo $query;
         $risultatoQuery = $this->database->eseguiQuery($query);
         $arrayRisultato = array();
         while ($risultato = $risultatoQuery->fetch_row()) {
@@ -419,7 +422,7 @@ if(isset($_POST["funzione"])){
                 if(strcmp($res,'')==0)
                     echo 0;
                 else{
-                    $carico=split(',', $res);
+                    $carico=explode(",", $res);
                     $somma=0;
                     for($i=0;$i<count($carico);$i++){
                         if(($carico[$i] % 2) == 0)
@@ -452,7 +455,7 @@ if(isset($_POST["funzione"])){
             echo count($res);
         break;
         
-        case "insegnamentiAssociati": 
+        case "insegnamentiAssociati":
         	$insegnamentiAssociati=$gestioneCaricoDid->getInsegnamentiAssociatiAlDocente($_POST['matricolaDocente']);
         	echo insegnamentiAssociati($insegnamentiAssociati,$_POST['matricolaDocente']);
         break;
@@ -526,6 +529,7 @@ function insegnamentiAssociati($insegnamentiAssociati,$matricolaDocente){
                     $oreTot=$insegnamento->getDurataCorso();   
                     
                     $datiAssociazione=$matricolaDocente."&".$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".str_replace(" ","_",$denominazione)."&".$oreTeoria."&".$oreLab."&".$cfu."&".$anno."&".$annoAccademico."&".$semestre;
+                    $risultato ="";
                     $risultato.="<tr id=".$i."><td title='Clicca per info' style='font-weight: 600;'>".$denominazione."</td>";
 					$risultato.="<td>$cfu</td>";
                     $risultato.="<td>$tipologiaAttivita</td>";

@@ -649,6 +649,7 @@ echo '
             httpRequest.onreadystatechange = function(){
              	if(httpRequest.readyState == 4 && httpRequest.status == 200){
                          var table=httpRequest.responseText;
+                         alert(table);
                          document.getElementById("tableInsegnamentiAssociati").innerHTML=table;
                          if(matricolaDocente!="201515200"){
                          	tela=0;
