@@ -386,6 +386,10 @@ class GestioneCaricoDidattico{
 
     }
 
+    public function getDatabase(){
+        return $database;
+    }
+
 }
 
 

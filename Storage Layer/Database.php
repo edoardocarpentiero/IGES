@@ -8,12 +8,22 @@
 *Version : 1.0
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
+///*
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "root");
-define("DB_DATABASE", "myprd");
+define("DB_DATABASE", "myprd");//*/
+
+//databaseTesting
+/*
+define("DB_SERVER", "den1.mysql3.gear.host");
+define("DB_USER", "myprd");
+define("DB_PASSWORD", "Py7E_v7uq12_");
+define("DB_DATABASE", "myprd");*/
+
 class Database{
 	private $connessione, $risultato;
+
 	public function connettiDB(){
 		// Crea la connessione
 		$this->connessione = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
