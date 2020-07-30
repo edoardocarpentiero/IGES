@@ -18,7 +18,7 @@ define("DB_DATABASE", "myprd");//*/
 /*
 define("DB_SERVER", "den1.mysql3.gear.host");
 define("DB_USER", "myprd");
-define("DB_PASSWORD", "Py7E_v7uq12_");
+define("DB_PASSWORD", "myprd_1");
 define("DB_DATABASE", "myprd");*/
 
 class Database{
