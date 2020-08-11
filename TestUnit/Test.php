@@ -115,8 +115,8 @@ class Test extends TestCase
         $this->assertEquals(0,$value,"Stato aggiornato in ASSEGNATO");
         $value=$ges->liberaAssociazioneInsegnamento(new Associa(9,1,7,201515172,40,0,"IN ATTESA"));
         $this->assertEquals(0,$value,"Stato IN ATTESA");
-        $value=$ges->inviaEmail(201515165,201515172,"fferrucci@unisa.it","rzizza@unisa.it","Annullamento proposta Insegnamento","L’insegnamento da lei proposto è stato rifiutato");
-        $this->assertEquals(0,$value,"Email inoltrata");
+//        $value=$ges->inviaEmail(201515165,201515172,"fferrucci@unisa.it","rzizza@unisa.it","Annullamento proposta Insegnamento","L’insegnamento da lei proposto è stato rifiutato");
+  //      $this->assertEquals(0,$value,"Email inoltrata");
     }
 
     public function testInoltraEmailErrato()
