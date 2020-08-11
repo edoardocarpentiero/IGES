@@ -1,0 +1,1 @@
+update myprd_testing.Associa set Matricola_Professore=201515200, status="IN ATTESA" where Matricola_Insegnamento=9 AND classe=2 AND ID_ProgDid=7 AND Matricola_Professore=201515166 AND Ore_Teoria=48 AND Ore_Lab=0
