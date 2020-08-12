@@ -27,6 +27,24 @@ class Test extends TestCase
         $this->assertEmpty($docentiPrD,"Insegnamenti proposti");
     }
 
+    public function testVisualizzaDocentiProgrammazioneDidattica(){
+        $ges=new GestioneCaricoDidattico();
+        $docenti=$ges->getDocentiPrD();
+        $this->assertNotEmpty($docenti,"Lista docenti vuota");
+    }
+
+    public function testVisualizzaInsegnamentiDisponibili(){
+        $ges=new GestioneCaricoDidattico();
+        $insegnamentiDisp=$ges->getInsegnamentiDisponibili();
+        $this->assertNotEmpty($insegnamentiDisp,"Lista insegnamenti disponibili vuota");
+    }
+
+    public function testGetCaricoDidattico(){
+        $ges=new GestioneCaricoDidattico();
+        $caricoDidattico=$ges->getCaricoDidattico(201515172);
+        $this->assertNotEquals(0,strlen($caricoDidattico),"Carico didattico non disponibile");
+    }
+
     public function testProponiInsegnamentoDisponibileCorretto()
     {
         $ges=new GestioneCaricoDidattico();
@@ -237,4 +255,6 @@ class Test extends TestCase
         $value=$ges->getInfoDocentiInsegnamento(30,"a2",7);
         $this->assertFalse($value,"Classe con valore alfanumerico");
     }
+
+    
 }

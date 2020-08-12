@@ -95,6 +95,7 @@ class GestioneCaricoDidattico{
     	$query="SELECT Matricola_Professore,  Nome,Cognome, Email, Ruolo, SSD , sum(Ore_Teoria+Ore_Lab) FROM Associa join Docente on (Matricola_Professore=Matricola) join Programmazione_Didattica on ID_ProgDid=ID WHERE Anno_Accademico='".$this->annoAccademicoCorrente."' AND Versione =(Select max(Versione) from Programmazione_Didattica) group by(Matricola_Professore)";
         $risultatoQuery=$this->database->eseguiQuery($query);
     	$arrayDocentiPrD=array();
+
         while($risultato=$risultatoQuery->fetch_row()){
         	$docentePrd=new DocentePrD($risultato[0],$risultato[1],$risultato[2],$risultato[3],$risultato[4],$risultato[5]);
             $arrayInsegnamentiAssociati=$this->getInsegnamentiAssociatiAlDocente($risultato[0]);
