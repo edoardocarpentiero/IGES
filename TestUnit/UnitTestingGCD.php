@@ -12,7 +12,6 @@ require_once(dirname(__DIR__,2).'\IGES\Application Layer\GestioneCaricoDidattico
 class Test extends TestCase
 {
 
-
     public function testVisualizzaInsegnamentiPropostiCorretto()
     {
         $ges=new GestioneCaricoDidattico();
