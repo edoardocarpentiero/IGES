@@ -19,11 +19,27 @@ class Test extends TestCase
         $this->assertEquals(-1,$ges->getInsegnamentiAssociatiAlDocente("151523456789"),"STRINGA Numerica non Maggiore di 11");
         $this->assertEquals(-1,$ges->getInsegnamentiAssociatiAlDocente("15152345678888"),"Docente Esitente");
         $this->assertEquals(-1,$ges->getInsegnamentiAssociatiAlDocente("-"),"Matricola Specificata");
+    }
 
-        $docentiPrD=$ges->getInsegnamentiAssociatiAlDocente("201515166");
-        $this->assertNotEmpty($docentiPrD,"Insegnamenti non proposti");
-        $docentiPrD=$ges->getInsegnamentiAssociatiAlDocente("201515168");
-        $this->assertEmpty($docentiPrD,"Insegnamenti proposti");
+    public function testInsegnamentiAssociati(){
+        $ges=new GestioneCaricoDidattico();
+        $insegnamenti=$ges->getInsegnamentiAssociatiAlDocente("201515166");
+        $this->assertNotEmpty($insegnamenti,"Insegnamenti non associati");
+        $insegnamenti=$ges->getInsegnamentiAssociatiAlDocente("201515168");
+        $this->assertEmpty($insegnamenti,"Insegnamenti associati");
+    }
+
+    public function testGetRuoloDocente(){
+        $ges=new GestioneCaricoDidattico();
+        $ruolo=$ges->getRuoloDocente("201515166");
+        $this->assertNotEmpty($ruolo,"Nessun ruolo");
+    }
+
+    public function testGetMonteOre(){
+        $ges=new GestioneCaricoDidattico();
+        $monteOre=$ges->getMonteOre("201515166");
+        $this->assertNotEquals("",$monteOre);
+
     }
 
     public function testVisualizzaDocentiProgrammazioneDidattica(){
