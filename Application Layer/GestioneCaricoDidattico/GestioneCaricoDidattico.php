@@ -51,7 +51,6 @@ class GestioneCaricoDidattico{
     //restutuisce la variabile $data che contiene il monte ore del docente ricercato
     public function getMonteOre($matricolaDocente){
     	$query="SELECT i.Denominazione, a.Ore_Teoria, a.Ore_Lab from Associa a join Insegnamento i on (i.matricola_insegnamento = a.matricola_insegnamento) join Docente d on (d.matricola = a.matricola_professore) join Programmazione_Didattica p on (a.ID_ProgDid = p.ID)  where d.Matricola = ".$matricolaDocente." AND Versione =(Select max(Versione) from Programmazione_Didattica)";
-        echo $query;
     	$risultatoQuery=$this->database->eseguiQuery($query);
         $data="";
         while($risultato=$risultatoQuery->fetch_row()){
