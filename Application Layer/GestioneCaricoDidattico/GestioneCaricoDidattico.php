@@ -18,9 +18,9 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	 
 	 */
 require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\Docente.php');
 require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 include("InsegnamentoProgDidattica.php");
-include("DocentePrD.php");
 
 class GestioneCaricoDidattico{
 	private $database;
@@ -96,7 +96,7 @@ class GestioneCaricoDidattico{
     	$arrayDocentiPrD=array();
 
         while($risultato=$risultatoQuery->fetch_row()){
-        	$docentePrd=new DocentePrD($risultato[0],$risultato[1],$risultato[2],$risultato[3],$risultato[4],$risultato[5]);
+        	$docentePrd=new Docente($risultato[0],$risultato[1],$risultato[2],$risultato[3],$risultato[4],$risultato[5]);
             $arrayInsegnamentiAssociati=$this->getInsegnamentiAssociatiAlDocente($risultato[0]);
             $n=count($arrayInsegnamentiAssociati);
             $insegnamentiInSospeso=0;

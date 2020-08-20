@@ -11,30 +11,55 @@
 
 	class Docente{
 		private $matricola, $nome, $cognome, $email, $telefono, $ricevimento, $ruolo, $settoreScientificoDisciplinare, $stato, $studio;
+		private $numeroInsegnamentiSospesi,$statusCarico;
 		
         //costruttore che imposta tutte le variabili con i valori passati tramite parametro
-		public function __construct($matricola, $nome, $cognome, $email, $telefono, $ricevimento, $ruolo, $settoreScientificoDisciplinare, $stato, $studio){
-			
-			$this->matricola=$matricola;
-			$this->nome=$nome;
-			$this->cognome=$cognome;
-			$this->email=$email;
-			$this->telefono=$telefono;
-			$this->ricevimento=$ricevimento;
-			$this->ruolo=$ruolo;
-			$this->settoreScientificoDisciplinare=$settoreScientificoDisciplinare;
-			$this->stato=$stato;
-			$this->studio=$studio;
-		}
-        
-        
+		//Metodo per effettuare l'overload del costruttore
+        function __construct()
+        {
+            $a = func_get_args();
+            $i = func_num_args();
+            if (method_exists($this,$f='__construct'.$i)) {
+                call_user_func_array(array($this,$f),$a);
+            }
+        }
+
+        function __construct1($matricola, $nome, $cognome, $email, $telefono, $ricevimento, $ruolo, $settoreScientificoDisciplinare, $stato, $studio){
+            $this->matricola=$matricola;
+            $this->nome=$nome;
+            $this->cognome=$cognome;
+            $this->email=$email;
+            $this->telefono=$telefono;
+            $this->ricevimento=$ricevimento;
+            $this->ruolo=$ruolo;
+            $this->settoreScientificoDisciplinare=$settoreScientificoDisciplinare;
+            $this->stato=$stato;
+            $this->studio=$studio;
+        }
+
+        function __construct2($matricola, $nome, $cognome, $email, $ruolo, $settoreScientificoDisciplinare){
+            $this->matricola=$matricola;
+            $this->nome=$nome;
+            $this->cognome=$cognome;
+            $this->email=$email;
+            $this->ruolo=$ruolo;
+            $this->settoreScientificoDisciplinare=$settoreScientificoDisciplinare;
+        }
 		
 		//metodi getter che restituiscono il contenuto delle variabili
 		public function getMatricola(){
 			return $this->matricola;
 		}
-		
-		public function getNome(){
+
+        public function getNumeroInsegnamentiSospesi(){
+            return $this->numeroInsegnamentiSospesi;
+        }
+
+        public function getStatusCarico(){
+            return $this->statusCarico;
+        }
+
+        public function getNome(){
 			return $this->nome;
 		}
 		
@@ -61,7 +86,9 @@
 		public function getStato(){
 			return $this->stato;
 		}
-		
+
+
+
 		public function getStudio(){
 			return $this->studio;
 		}
@@ -75,6 +102,14 @@
 		public function setMatricola($matricola){
 			return $this->matricola=$matricola;
 		}
+
+        public function setNumeroInsegnamentiSospesi($numeroInsegnamentiSospesi){
+            return $this->numeroInsegnamentiSospesi=$numeroInsegnamentiSospesi;
+        }
+
+        public function setStatusCarico($statusCarico){
+            return $this->statusCarico=$statusCarico;
+        }
 		
 		public function setNome($nome){
 			return $this->nome=$nome;
