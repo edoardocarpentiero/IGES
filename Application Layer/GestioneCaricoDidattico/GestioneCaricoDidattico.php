@@ -140,6 +140,8 @@ class GestioneCaricoDidattico{
     public function getInsegnamentiAssociatiAlDocente($matricolaDocente){
         if($this->verificaFormatoMatricolaDocente($matricolaDocente)==-1)
             return -1;
+        if(!$this->isExistDocente($matricolaDocente))
+            return -1;
         if (!$_SESSION['presidente'])
             $query = "SELECT i.Matricola_Insegnamento,Denominazione,Tipologia_Lezione,i.Corso,SSD,CFU_Laboratorio,CFU_Frontali,Classe,Semestre,ID_ProgDid,Ore_Teoria,Ore_Lab,Anno_corso,Anno_Accademico,status,i.Tot_Ore FROM Insegnamento i left join Associa a on (i.Matricola_Insegnamento=a.Matricola_Insegnamento) join Programmazione_Didattica p on (ID=ID_ProgDid) WHERE Matricola_Professore='" . $matricolaDocente . "' AND Stato='Da Approvare' AND Anno_Accademico='" . $this->annoAccademicoCorrente . "' AND Versione =(Select max(Versione) from Programmazione_Didattica)";
         else
@@ -374,7 +376,7 @@ class GestioneCaricoDidattico{
             $matricola=$risultato[0];
         if($matricolaDocente!=$matricola)
             return false;
-        if(strcmp($emailMittente,"-")==0 || strcmp($emailDestinatario,"-")==0 || strcmp($oggetto,"-")==0 || strcmp($messaggio,"-")==0  || strlen($oggetto)<8 || strlen($messaggio)<16)
+        if(strlen($emailMittente)==0 || strlen($emailDestinatario)==0 || strlen($messaggio)==0  || strlen($oggetto)<8 || strlen($messaggio)<16)
             return false;
         $query="SELECT Matricola FROM Docente WHERE Email='".$emailMittente."'";
         $risultatoQuery=$this->database->eseguiQuery($query);
@@ -386,9 +388,102 @@ class GestioneCaricoDidattico{
 
     }
 
-    public function getDatabase(){
-        return $database;
+    function insegnamentiAssociati($insegnamentiAssociati,$matricolaDocente){
+        $n=count($insegnamentiAssociati);
+
+        for($i=0;$i<$n;$i++){
+            $insegnamento=$insegnamentiAssociati[$i]->getInsegnamento();
+            $associazione=$insegnamentiAssociati[$i]->getAssociazione();
+            $progDidattica=$insegnamentiAssociati[$i]->getProgrammazioneDidattica();
+
+            $matricolaInsegnamento=$insegnamento->getID();
+            $denominazione=$insegnamento->getDenominazione();
+            $cfu=$insegnamento->getCfuLaboratorio()+$insegnamento->getCfuFrontale();
+            $tipologiaAttivita=$insegnamento->getTipologiaLezione();
+            $oreTeoria=$associazione->getOreTeoria();
+            $oreLab=$associazione->getOreLab();
+            $corso=$insegnamento->getCorso();
+            $anno=$progDidattica->getAnnoCorso();
+            $semestre=$progDidattica->getSemestre();
+            $SSD=$insegnamento->getSSD();
+            $status=$associazione->getStatus();
+
+            $cfuLab=$insegnamento->getCfuLaboratorio();
+            $cfuTeoria=$insegnamento->getCfuFrontale();
+            $annoAccademico=$progDidattica->getAnnoAccademico();
+            $classe=$associazione->getClasse();
+            $oreTot=$insegnamento->getDurataCorso();
+
+            $datiAssociazione=$matricolaDocente."&".$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".str_replace(" ","_",$denominazione)."&".$oreTeoria."&".$oreLab."&".$cfu."&".$anno."&".$annoAccademico."&".$semestre;
+            $risultato ="";
+            $risultato.="<tr id=".$i."><td title='Clicca per info' style='font-weight: 600;'>".$denominazione."</td>";
+            $risultato.="<td>$cfu</td>";
+            $risultato.="<td>$tipologiaAttivita</td>";
+            if($oreTeoria==0)
+                $risultato.="<td>-</td>";
+            else
+                $risultato.="<td>$oreTeoria</td>";
+            if($oreLab==0)
+                $risultato.="<td>-</td>";
+            else
+                $risultato.="<td>$oreLab</td>";
+            $risultato.="<td>$corso</td>";
+            $risultato.="<td>$anno</td>";
+            $risultato.="<td>$semestre</td>";
+            $risultato.="<td>$classe</td>";
+            $risultato.="<td>$SSD</td>";
+            $risultato.="<td>";
+
+            if(strcmp($matricolaDocente,"201515200")!=0){
+                if(strcmp($status,"PROPOSTO")==0){
+                    $risultato.="<span >
+                                        		<div class=btn-group>
+                                                  <button type=button title=Insegnamento proposto class='btn btn-warning btn-flat'>PROPOSTO</button>
+                                                  <button type=button class='btn btn-warning btn-flat dropdown-toggle' data-toggle=dropdown>
+                                                    <span class=caret></span>
+                                                    <span class=sr-only>Toggle Dropdown</span>
+                                                  </button>
+                                                  <ul class=dropdown-menu role=menu>
+                                                    <li><a onclick=accettaProposta('".$datiAssociazione."')>Assegna</a></li>
+                                                    <li><a data-toggle=modal data-target=#modal-emailRifiuto onclick=rifiutaProposta('".$datiAssociazione."')>Rifiuta</a></li>
+                                                  </ul>
+                                                </div>
+                                               </span>";
+
+                }else if(strcmp($status,"ACCETTATO")==0){
+                    $risultato.="<button title='Insegnamento proposto accettato.' type='button' class='btn btn-success' disabled >ACCETTATO</button>";
+                }else if(strcmp($status,"RIFIUTATO")==0){
+                    $risultato.='<button title="Insegnamento proposto rifiutato." type="button" onclick=presaVisione("'.$datiAssociazione.'") class="btn btn-danger">RIFIUTATO</button>';
+                }else if(strcmp($status,"ASSEGNATO")==0){
+                    $risultato.="<button title='Insegnamento proposto dal docente è stato accettato.' type='button' class='btn btn-dark' disabled >ASSEGNATO</button>";
+                }else if(strcmp($status,"IN ATTESA")==0){
+                    if(strcmp($matricolaDocente,$_SESSION['matricola'])==0){
+                        $datiAssociazione=$matricolaDocente."&".$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".$oreTeoria."&".$oreLab;
+                        $risultato.='<span >
+                                        		<div class=btn-group>
+                                                  <button type=button title=Insegnamento proposto in attesa class="btn btn-warning btn-flat">IN ATTESA</button>
+                                                  <button type=button class="btn btn-warning btn-flat dropdown-toggle" data-toggle=dropdown>
+                                                    <span class=caret></span>
+                                                    <span class=sr-only>Toggle Dropdown</span>
+                                                  </button>
+                                                  <ul class=dropdown-menu role=menu>
+                                                    <li><a onclick=aggiornaStatus(1,"'.$datiAssociazione.'")>Accetta</a></li>
+                                                    <li><a onclick=aggiornaStatus(2,"'.$datiAssociazione.'")>Rifiuta</a></li>
+                                                  </ul>
+                                                </div>
+                                               </span>';
+                    }else
+                        $risultato.="<button title='Insegnamento proposto in attesa.' type='button' class='btn btn-warning' disabled >IN ATTESA</button>";
+                }
+            }
+            else
+                $risultato.='-';
+            $risultato.="</td>";
+            $risultato.="</tr>";
+        }
+        return $risultato;
     }
+
 
 }
 
@@ -461,7 +556,7 @@ if(isset($_POST["funzione"])){
         
         case "insegnamentiAssociati":
         	$insegnamentiAssociati=$gestioneCaricoDid->getInsegnamentiAssociatiAlDocente($_POST['matricolaDocente']);
-        	echo insegnamentiAssociati($insegnamentiAssociati,$_POST['matricolaDocente']);
+        	echo $gestioneCaricoDid->insegnamentiAssociati($insegnamentiAssociati,$_POST['matricolaDocente']);
         break;
         
         case "liberaInsegnamento":
@@ -506,101 +601,7 @@ if(isset($_POST["funzione"])){
 	}
 }
 
-function insegnamentiAssociati($insegnamentiAssociati,$matricolaDocente){
-		$n=count($insegnamentiAssociati);
-        
-		for($i=0;$i<$n;$i++){
-                    $insegnamento=$insegnamentiAssociati[$i]->getInsegnamento();
-                    $associazione=$insegnamentiAssociati[$i]->getAssociazione();
-                    $progDidattica=$insegnamentiAssociati[$i]->getProgrammazioneDidattica();
-            
-					$matricolaInsegnamento=$insegnamento->getID();
-                    $denominazione=$insegnamento->getDenominazione();
-                    $cfu=$insegnamento->getCfuLaboratorio()+$insegnamento->getCfuFrontale();
-                    $tipologiaAttivita=$insegnamento->getTipologiaLezione();
-                    $oreTeoria=$associazione->getOreTeoria();
-                    $oreLab=$associazione->getOreLab();
-                    $corso=$insegnamento->getCorso();
-                    $anno=$progDidattica->getAnnoCorso();
-                    $semestre=$progDidattica->getSemestre();
-                    $SSD=$insegnamento->getSSD();
-                    $status=$associazione->getStatus();
-                                	                               		
-                    $cfuLab=$insegnamento->getCfuLaboratorio();
-                    $cfuTeoria=$insegnamento->getCfuFrontale();
-                    $annoAccademico=$progDidattica->getAnnoAccademico();
-                    $classe=$associazione->getClasse();
-                    $oreTot=$insegnamento->getDurataCorso();   
-                    
-                    $datiAssociazione=$matricolaDocente."&".$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".str_replace(" ","_",$denominazione)."&".$oreTeoria."&".$oreLab."&".$cfu."&".$anno."&".$annoAccademico."&".$semestre;
-                    $risultato ="";
-                    $risultato.="<tr id=".$i."><td title='Clicca per info' style='font-weight: 600;'>".$denominazione."</td>";
-					$risultato.="<td>$cfu</td>";
-                    $risultato.="<td>$tipologiaAttivita</td>";
-                    if($oreTeoria==0)
-                          $risultato.="<td>-</td>";
-                    else
-                          $risultato.="<td>$oreTeoria</td>";
-                    if($oreLab==0)
-                          $risultato.="<td>-</td>";
-                    else
-                          $risultato.="<td>$oreLab</td>";
-                    $risultato.="<td>$corso</td>";
-                    $risultato.="<td>$anno</td>";
-                    $risultato.="<td>$semestre</td>";
-                    $risultato.="<td>$classe</td>";
-                    $risultato.="<td>$SSD</td>";
-                    $risultato.="<td>";
-                    
-                    if(strcmp($matricolaDocente,"201515200")!=0){
-                      if(strcmp($status,"PROPOSTO")==0){
-                           $risultato.="<span >
-                                        		<div class=btn-group>
-                                                  <button type=button title=Insegnamento proposto class='btn btn-warning btn-flat'>PROPOSTO</button>
-                                                  <button type=button class='btn btn-warning btn-flat dropdown-toggle' data-toggle=dropdown>
-                                                    <span class=caret></span>
-                                                    <span class=sr-only>Toggle Dropdown</span>
-                                                  </button>
-                                                  <ul class=dropdown-menu role=menu>
-                                                    <li><a onclick=accettaProposta('".$datiAssociazione."')>Assegna</a></li>
-                                                    <li><a data-toggle=modal data-target=#modal-emailRifiuto onclick=rifiutaProposta('".$datiAssociazione."')>Rifiuta</a></li>
-                                                  </ul>
-                                                </div>
-                                               </span>";
-                          
-                      }else if(strcmp($status,"ACCETTATO")==0){
-                          $risultato.="<button title='Insegnamento proposto accettato.' type='button' class='btn btn-success' disabled >ACCETTATO</button>";
-                      }else if(strcmp($status,"RIFIUTATO")==0){
-                          $risultato.='<button title="Insegnamento proposto rifiutato." type="button" onclick=presaVisione("'.$datiAssociazione.'") class="btn btn-danger">RIFIUTATO</button>';
-                      }else if(strcmp($status,"ASSEGNATO")==0){
-                          $risultato.="<button title='Insegnamento proposto dal docente è stato accettato.' type='button' class='btn btn-dark' disabled >ASSEGNATO</button>";
-                      }else if(strcmp($status,"IN ATTESA")==0){
-                      		if(strcmp($matricolaDocente,$_SESSION['matricola'])==0){
-                                $datiAssociazione=$matricolaDocente."&".$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".$oreTeoria."&".$oreLab;
-                            	$risultato.='<span >
-                                        		<div class=btn-group>
-                                                  <button type=button title=Insegnamento proposto in attesa class="btn btn-warning btn-flat">IN ATTESA</button>
-                                                  <button type=button class="btn btn-warning btn-flat dropdown-toggle" data-toggle=dropdown>
-                                                    <span class=caret></span>
-                                                    <span class=sr-only>Toggle Dropdown</span>
-                                                  </button>
-                                                  <ul class=dropdown-menu role=menu>
-                                                    <li><a onclick=aggiornaStatus(1,"'.$datiAssociazione.'")>Accetta</a></li>
-                                                    <li><a onclick=aggiornaStatus(2,"'.$datiAssociazione.'")>Rifiuta</a></li>
-                                                  </ul>
-                                                </div>
-                                               </span>';
-                      		}else
-                            	$risultato.="<button title='Insegnamento proposto in attesa.' type='button' class='btn btn-warning' disabled >IN ATTESA</button>";
-                      }
-                    }
-                    else
-                    	$risultato.='-';
-                    $risultato.="</td>";
-                    $risultato.="</tr>";
-            }
-            return $risultato;
-}
+
 ?> 
                                 
                                         
