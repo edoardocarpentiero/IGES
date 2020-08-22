@@ -30,7 +30,7 @@ $query= "SELECT Username, Password, a.Matricola, Foto, Ruolo FROM Account as a j
 $risultatoQuery=$this->database->eseguiQuery($query);
 $number = mysqli_num_rows($risultatoQuery);
 $row = mysqli_fetch_array($risultatoQuery, MYSQLI_ASSOC);
-    
+
 if($number > 0)
 {
 	$_SESSION['username'] = $username;

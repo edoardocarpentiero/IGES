@@ -227,7 +227,7 @@ echo '
               </a>
               <ul class="treeview-menu">
                 <li><a href="Crea_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Crea Prog. Did.</a></li>
-                <li><a href="Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
+                <li><a href="../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
                 <li><a href="VisMonteOre_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Monte Ore</a></li>
 				<li><a href="Vis_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Prog. Did.</a></li>
                 <li><a href="CambiaStato_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i>Cambia Stato</a></li>
@@ -393,7 +393,7 @@ echo '
 								}
 								else if($progDid[$i]->getStato()=="Approvato"){
 									echo '<option value="Draft">Draft</option>';
-									echo '<option value="Approvato">Da Approvare</option>';
+									echo '<option value="Da Approvare">Da Approvare</option>';
 								}
                                 
 								echo '</select>';
