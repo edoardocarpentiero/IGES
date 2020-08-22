@@ -11,9 +11,12 @@
 <html>
   <head>
   	<?php
-  	session_start();
-	if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
-		header("location:http://prd.altervista.org/Presentation%20Layer/index.php"); 
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+    if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
+		header("location:http://localhost/IGES/Presentation%20Layer/index.php");
 	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,7 +66,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
+        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -80,7 +83,6 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
-session_start();
 if($_SESSION['logged']==true)
 {
 echo '
@@ -105,9 +107,9 @@ echo '
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <form name="logout" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+                      <form name="logout" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 					  <input type="hidden" name="funzione" value="logout">
-					  <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
+					  <input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
 					  <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
                       border: 2px solid #FCA800 !important; color: #fff !important; font-weight: bold !important;
                       padding: 0 !important; margin: 10px 0 !important; height: 25px !important; width: 80px !important;" />
@@ -120,9 +122,9 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
-<input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
+<input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
 <input type="password" name="password" id="inputLogin" placeholder="password">
 <input type="submit"  name="Accedi" id="bottoneLogin" value="Accedi"  style="background-color: #FF8800 !important; border: 2px solid #FCA800 !important; 
@@ -440,7 +442,7 @@ echo '
                 var dati=new FormData();
                 dati.append("funzione","deleteAccount");
                 dati.append("username",username);
-                httpRequest.open("POST","http://prd.altervista.org/Application%20Layer/GestioneAccount/GestioneAccount.php",true);
+                httpRequest.open("POST","http://localhost/IGES/Application%20Layer/GestioneAccount/GestioneAccount.php",true);
                 httpRequest.send(dati);
              }
            }

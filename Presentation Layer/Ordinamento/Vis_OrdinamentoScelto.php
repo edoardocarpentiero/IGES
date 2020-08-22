@@ -75,7 +75,7 @@ border-top-color:black;
  
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
+        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -92,7 +92,11 @@ border-top-color:black;
           </a> 
           <div class="navbar-custom-menu">
 <?php
-session_start();
+
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if($_SESSION['logged']==true)
 {
 echo '
@@ -117,9 +121,9 @@ echo '
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <form name="logout" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+                      <form name="logout" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
                       <input type="hidden" name="funzione" value="logout">
-                      <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
+                      <input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
                       <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
                       border: 2px solid #FCA800 !important; color: #fff !important; font-weight: bold !important;
                       padding: 0 !important; margin: 10px 0 !important; height: 25px !important; width: 80px !important;" />
@@ -132,9 +136,9 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
-<input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
+<input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
 <input type="password" name="password" id="inputLogin" placeholder="password">
 <input type="submit"  name="Accedi" id="bottoneLogin" value="Accedi"  style="background-color: #FF8800 !important; border: 2px solid #FCA800 !important; 
@@ -180,6 +184,7 @@ echo '
           <li class="header"><!--MAIN NAVIGATION -->
  
 <?php
+
 if($_SESSION['logged']==true AND $_SESSION['presidente'] == true)
 {
 echo '
@@ -365,7 +370,9 @@ echo '
 						
                     
 						<?php
+
                             echo "".$_SESSION['ordinamento'];
+
 						?>
 					
 					

@@ -57,7 +57,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
+        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -453,7 +453,7 @@ echo '
 							dati.append("funzione", "cercacurriculum");
 							dati.append("corso", corso);
 							dati.append("annoAccademico", annoAccademico);
-							req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+							req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
 							req.send(dati);
 			}
 		}

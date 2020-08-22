@@ -61,8 +61,10 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
+
           require_once('../menu.php');
           creaMenu();
+
           ?>
 
 <!-- MENU LATERALE SX -->
@@ -73,6 +75,7 @@
           <li class="header"><!--MAIN NAVIGATION -->
 
 <?php
+
 if($_SESSION['logged']==true AND $_SESSION['presidente'] == true)
 {
 echo '
@@ -209,6 +212,7 @@ echo '
              ';} echo ' </ul>
             </li>
 ';}
+
 ?>
             </li>
           </ul>

@@ -11,9 +11,13 @@
 <html>
   <head>
   <?php
-    session_start();
-    if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
-        header("location:http://prd.altervista.org/Presentation%20Layer/index.php") 
+
+  if(!isset($_SESSION))
+  {
+      session_start();
+  }
+  if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
+        header("location:http://localhost/IGES/Presentation%20Layer/index.php")
     ?>
      
     <meta charset="utf-8">
@@ -119,7 +123,7 @@
  
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
+        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -369,7 +373,6 @@ echo '
                                 <div class="input-group">
                                     <span class="input-group-addon">@</span>
                                     <?php
-                                    session_start();
                                     if ($_SESSION['aggiuntaAccount'] == "3")
                                     echo '<input name="username" type="text" value="'.$_SESSION['accountEsistente'].'"  pattern="[A-Za-z0-9]{5,40}"
        								autofocus required style="color: red;" class="form-control" placeholder="Username" pattern="[A-Za-z0-9]{5,40}"

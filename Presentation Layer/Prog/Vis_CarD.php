@@ -2,9 +2,12 @@
 <html>
   <head>
     <?php
-  	session_start();
-    ini_set('display_errors', 0);
-    error_reporting(E_ERROR | E_WARNING | E_PARSE); 
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+    //ini_set('display_errors', 0);
+    //error_reporting(E_ERROR | E_WARNING | E_PARSE);
     if($_SESSION['logged']==false)
         header("location:http://localhost/IGES/Presentation%20Layer/index.php")
   ?>
@@ -100,7 +103,7 @@ echo '
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <form name="logout" method="post" action="http://localhost/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+                      <form name="logout" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 					  <input type="hidden" name="funzione" value="logout">
 					  <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 					  <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
@@ -115,7 +118,7 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="http://localhost/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
 <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
