@@ -1,4 +1,5 @@
 <?php
+
         include_once "Insegnamento.php";
         include_once "GestioneInsegnamento.php";
         
@@ -114,4 +115,5 @@
                   </table>';
             echo $tabella;
     }
+
 ?>

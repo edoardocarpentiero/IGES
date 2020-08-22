@@ -41,7 +41,7 @@ CREATE TABLE `Account` (
 
 LOCK TABLES `Account` WRITE;
 /*!40000 ALTER TABLE `Account` DISABLE KEYS */;
-INSERT INTO `Account` VALUES ('Presidente','password','http://prd.altervista.org/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515165'),('DeSantis','password','http://prd.altervista.org/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515101'),('DePrisco','password','http://prd.altervista.org/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515166'),('RZizza','password','http://prd.altervista.org/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515172'),('latorre','torre12','http://prd.altervista.org/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515176'),('Negro','password','http://prd.altervista.org/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515167');
+INSERT INTO `Account` VALUES ('Presidente','password','http://localhost/IGES/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515165'),('DeSantis','password','http://localhost/IGES/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515101'),('DePrisco','password','http://localhost/IGES/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515166'),('RZizza','password','http://localhost/IGES/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515172'),('latorre','torre12','http://localhost/IGES/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515176'),('Negro','password','http://localhost/IGES/Presentation%20Layer/dist/img/ImmaginiProfilo/avatar.jpg','201515167');
 /*!40000 ALTER TABLE `Account` ENABLE KEYS */;
 UNLOCK TABLES;
 
