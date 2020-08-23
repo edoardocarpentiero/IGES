@@ -398,7 +398,7 @@ echo '
 								}
 								else if($progDid[$i]->getStato()=="Approvato"){
 									echo '<option value="Draft">Draft</option>';
-									echo '<option value="Approvato">Da Approvare</option>';
+                                    echo '<option value="Da Approvare">Da Approvare</option>';
 								}
                                 
 								echo '</select>';
