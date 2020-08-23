@@ -161,7 +161,6 @@ class GestioneCaricoDidattico{
         return $arrayRisultato;
     }
 
-
     /**
     Restituisce true se la proposta è stata memorizzata con successo, altrimenti false se l'insegnamento gia è stato proposto
      */
@@ -378,6 +377,7 @@ class GestioneCaricoDidattico{
     private function verificaCampiEmail($matricolaPresidente,$matricolaDocente,$emailMittente,$emailDestinatario, $oggetto,$messaggio){
         $query="SELECT Matricola FROM Docente WHERE Email='".$emailDestinatario."'";
         $risultatoQuery=$this->database->eseguiQuery($query);
+        $matricola="";
         while ($risultato = $risultatoQuery->fetch_row())
             $matricola=$risultato[0];
         if($matricolaDocente!=$matricola)
