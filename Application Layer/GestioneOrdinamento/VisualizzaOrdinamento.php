@@ -16,7 +16,6 @@ if (!isset($_SESSION))
                         require(dirname(__DIR__,2).'\Storage Layer\Database.php');
                         
                         $anno = $_POST['anno'];
-                        echo "dsdsds";
                         $corso = $_POST['corso'];
                         if($corso=="Magistrale")
                         	$anno = "2015-2016";
@@ -461,5 +460,6 @@ if (!isset($_SESSION))
                       		$tabella .=" <th>TotCFU</th>";
 					$tabella .= "</tr></tfoot>";
 						$_SESSION['ordinamento'] = "".$tabella;
+
 						header("location:http://localhost/IGES/Presentation%20Layer/Ordinamento/Vis_OrdinamentoScelto.php");
 ?>

@@ -36,10 +36,10 @@ if (!isset($_SESSION))
         if(corso.value=="Magistrale")
         {
             anno.selectedIndex = 0;
-            anno.disabled = true;
+            anno.readonly = true;
         }
         else{
-        	anno.disabled = false;
+        	anno.readonly = false;
             }
  }
     </script>
