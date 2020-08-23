@@ -1,8 +1,8 @@
 <?php
 function creaMenu(){
 echo '<div class="navbar-custom-menu">';
-ini_set('display_errors', 0);
-error_reporting(E_ERROR | E_WARNING | E_PARSE); 
+//ini_set('display_errors', 0);
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 if($_SESSION['logged']==true)
 {
@@ -43,13 +43,14 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="http://localhost/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
-<input type="hidden" name="nomepagina" value="http://localhost/IGES/Presentation%20Layer/index.php">
+<input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
 <input type="password" name="password" id="inputLogin" placeholder="password">
 <input type="submit"  name="Accedi" id="bottoneLogin" value="Accedi"  style="background-color: #FF8800 !important; border: 2px solid #FCA800 !important; 
 color: #fff !important; font-weight: bold !important; padding: 0 !important; margin: 10px 0 !important; height: 25px !important; width: 80px !important;" />
+<br><a href="/Autenticazione/RecuperaPassword.php" style="color: white !important;">Hai dimenticato la Password?</a>
 </form>';}
 
 

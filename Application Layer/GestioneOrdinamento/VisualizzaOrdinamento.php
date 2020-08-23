@@ -456,5 +456,5 @@
 					$tabella .= "</tr></tfoot>";
 						session_start();
 						$_SESSION['ordinamento'] = "".$tabella;
-						header("location:http://prd.altervista.org/Presentation%20Layer/Ordinamento/Vis_OrdinamentoScelto.php");
+						header("location:http://localhost/IGES/Presentation%20Layer/Ordinamento/Vis_OrdinamentoScelto.php");
 ?>

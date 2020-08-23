@@ -13,7 +13,7 @@
     <?php
     session_start();
 	if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
-		header("location:http://prd.altervista.org/Presentation%20Layer/index.php") 
+		header("location:http://localhost/IGES/Presentation%20Layer/index.php")
 	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,7 +62,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
+        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -430,7 +430,7 @@ echo '
 				dati.append("funzione", "cercaCurriculumDaModificare");
 				dati.append("corso", corso);
                 dati.append("annoAccademico", anno);
-				req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+				req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
 				req.send(dati);
 		}
 		
@@ -450,7 +450,7 @@ echo '
 				dati.append("corso", corso);
                 dati.append("annoAccademico", anno);
 				dati.append("curriculum", cur);
-				req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+				req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
 				req.send(dati);
 		}
 	</script>
