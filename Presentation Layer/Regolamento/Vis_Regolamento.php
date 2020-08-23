@@ -343,19 +343,21 @@ echo '
 											  </tr>
 											</thead>
 											<tbody>';
-                                            $regolamentoOpzionale="";
+                                            $regolamentoOpzionale=array();
 											foreach($regolamento as $value){
-
+                                                //echo print_r($value);
+                                                $ins=$value["insegnamento"];
 												if($value["Obbligatorio_Opzionale"]==0){
-													$ins=$value["insegnamento"];
+
 													//echo '<tr><td>'.$value["Denominazione"].'</td><td>'.$value["SSD"].'</td><td>'.$value["Tipologia_Lezione"].'</td><td>'.$value["CFU"].'</td><td>'.$value["Tot_Ore"].'</td><td>'.$value["Modulo"].'</td><td>'.$value["Tipologia_Attivita"].'</td><td>Obbligatorio</td></tr>';
 													echo '<tr><td>'.$ins->getDenominazione().'</td><td>'.$ins->getSSD().'</td><td>'.$ins->getTipologiaLezione().'</td><td>'.($ins->getCfuFrontale()+$ins->getCFULaboratorio()).'</td><td>'.$ins->getDurataCorso().'</td><td>'.$ins->getModulo().'</td><td>'.$ins->getTipologiaAttivitaFormativa().'</td><td>Obbligatorio</td></tr>';
 												}
+
 												else{
-													//$regolamentoOpzionale["cfu".$value["CFU"]][]=$value;
-													//if(!in_array($value["CFU"], $cfuRegolamento)){
-													//	$cfuRegolamento[]=$value["CFU"];
-													//}
+													$regolamentoOpzionale["cfu".($ins->getCfuFrontale()+$ins->getCFULaboratorio())][]=$value;
+													if(!in_array(($ins->getCfuFrontale()+$ins->getCFULaboratorio()), $cfuRegolamento)){
+														$cfuRegolamento[]=($ins->getCfuFrontale()+$ins->getCFULaboratorio());
+													}
 												}	
 											}
 											echo '</tbody>
