@@ -55,14 +55,14 @@ class GestioneCaricoDidattico{
         $i=1;
         $n=mysqli_num_rows($risultatoQuery);
         while($risultato=$risultatoQuery->fetch_row()){
-            $data .= (intval($risultato[1])+intval($risultato[2])).",".$risultato[0];
+            $data.=(intval($risultato[1])+intval($risultato[2])).",".$risultato[0];
             if($i<$n) {
                 $data .= ",";
                 $i++;
             }
         }
 
-        return  $data;
+        return $data;
     }
 
 
@@ -529,15 +529,14 @@ if(isset($_POST["funzione"])){
                 echo 0;
             else{
                 $caricoDidattico=explode(',', $res);
-                $n=$caricoDidattico[0];
-                print_r(intval($caricoDidattico[0]));
-                /*$somma=0;
 
-                for($i=0;$i<$n;$i++){
-                    if((intval($caricoDidattico[$i]) % 2) == 0)
+                $somma=0;
+
+                for($i=0;$i<count($caricoDidattico);$i++){
+                    if(($i % 2) == 0)
                         $somma+=intval($caricoDidattico[$i]);
-                }*/
-
+                }
+                echo $somma;
             }
             break;
 
