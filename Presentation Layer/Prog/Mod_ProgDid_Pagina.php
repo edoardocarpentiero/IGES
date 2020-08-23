@@ -2,7 +2,10 @@
 
 if (!isset($_SESSION))
     session_start();
+ini_set('display_errors', 0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
+
 <!--
     Crea_ProgDid_pagina
 

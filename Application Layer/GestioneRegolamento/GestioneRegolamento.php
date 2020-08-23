@@ -61,15 +61,14 @@ class GestioneRegolamento{
 	//il valore di ritorno � 'arrayRisultato' che � un arrai contenente i curricula ricercati nel database. Questo 'arrayRisultato' � codificato in json tramite la funzione 'json_encode'
 	public function getCurriculumDaModificare($corso, $annoAccademico){
 		$query="SELECT DISTINCT Nome_Curriculum FROM Regolamento WHERE Anno_accademico='".$annoAccademico."' AND Corso='".$corso."' AND Stato='Draft' OR Stato='Completo'";
-		echo $query;
-		/*$risultatoQuery=$this->database->eseguiQuery($query);
+		$risultatoQuery=$this->database->eseguiQuery($query);
 		$arrayRisultato=array();
 		if($risultatoQuery->num_rows!=0){
 			while($risultato=$risultatoQuery->fetch_row()){
 				$arrayRisultato[]=$risultato[0];
 			}
 		return json_encode($arrayRisultato);
-		}*/
+		}
 	}
     
 	//funzione che memorizza tutti gli insegnamenti di un regolamento che si vuole modificare all'interno di variabili di sessione, in modo da poter successivamente modificare il regolamento desiderato
