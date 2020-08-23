@@ -8,7 +8,10 @@
  	2015 - Copyright by Pr.D Project - University of Salerno
 -->
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html>

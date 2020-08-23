@@ -62,6 +62,8 @@
             <span class="sr-only">Toggle navigation</span>
           </a> 
           <?php
+
+            session_start();
           	include "menu.php";
             creaMenu();
           ?>

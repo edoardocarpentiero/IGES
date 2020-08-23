@@ -11,8 +11,13 @@
 <html>
   <head>
   <?php
-    session_start();
-    if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
+
+  if(!isset($_SESSION))
+  {
+      session_start();
+  }
+
+  if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
         header("location: http://localhost/IGES/Presentation%20Layer/index.php")
     ?>
      
@@ -368,7 +373,6 @@ echo '
                                 <div class="input-group">
                                     <span class="input-group-addon">@</span>
                                     <?php
-                                    session_start();
                                     if ($_SESSION['aggiuntaAccount'] == "3")
                                     echo '<input name="username" type="text" value="'.$_SESSION['accountEsistente'].'"  pattern="[A-Za-z0-9]{5,40}"
        								autofocus required style="color: red;" class="form-control" placeholder="Username" pattern="[A-Za-z0-9]{5,40}"

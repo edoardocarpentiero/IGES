@@ -76,7 +76,10 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 if($_SESSION['logged']==true)
 {
 echo '
@@ -381,7 +384,7 @@ echo '
                         require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
                         require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 						
-						session_start();
+
                         $gestProg=new GestioneProgrammazioneDidattica();
 						$databaseS=new Database();
 						$databaseS->connettiDB();

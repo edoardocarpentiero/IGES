@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Application Layer" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/Presentation Layer" charset="US-ASCII" />
+    <file url="file://$PROJECT_DIR$/Storage Layer" charset="US-ASCII" />
+  </component>
+</project>

@@ -72,6 +72,7 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
+
 session_start();
 if($_SESSION['logged']==true)
 {
@@ -160,6 +161,7 @@ echo '
           <li class="header"><!--MAIN NAVIGATION -->
 
 <?php
+session_start();
 if($_SESSION['logged']==true AND $_SESSION['presidente'] == true)
 {
 echo '
@@ -317,7 +319,6 @@ echo '
       <div class="content-wrapper">
       
       <?php
-					session_start();
                     $_SESSION['primaCreazionePrD'] = 1;
                     require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 					$databaseE=new Database();
@@ -350,7 +351,7 @@ echo '
        	  <div class="row">
  			<div class="col-xs-12">
               <?php
-              session_start();
+
               $_SESSION['rigaPrD']=0;
 			  $_SESSION['primaCreazionePrD']=1;
               ?>

@@ -288,7 +288,7 @@ if(isset($_POST["funzione"])){
             
         
         case "confermaProgD": //Gestisce la conferma o l'annullamento dell'operazione Crea Prog.Did
-	session_start();
+
 	$databaseE=new Database();
 	$databaseE->connettiDB();
 	if(isset($_POST['submitAnnulla']))
@@ -315,7 +315,7 @@ if(isset($_POST["funzione"])){
         
         case "creaProgD":
         	//Verifica quanti, e quali, record(righe nel Database) mandare al metodo CreaProgd(), che li inserirà nel DB
-                session_start();
+
                 $_SESSION['rigaPrD'] +=1;
                 $i=0;
                 $databaseE=new Database();

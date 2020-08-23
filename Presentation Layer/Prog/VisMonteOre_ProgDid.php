@@ -2,9 +2,12 @@
 <html>
   <head>
      <?php
-	session_start();
-  ini_set('display_errors', 0);
-error_reporting(E_ERROR | E_WARNING | E_PARSE); 
+     if(!isset($_SESSION))
+     {
+         session_start();
+     }
+     ini_set('display_errors', 0);
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
 		header("location:http://localhost/IGES/Presentation%20Layer/index.php") 
 	?>

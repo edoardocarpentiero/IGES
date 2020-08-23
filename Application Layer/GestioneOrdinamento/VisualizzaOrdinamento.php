@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+session_start();
 	/**
 	 *VisualizzaOrdinamento
 	 *
@@ -454,7 +456,6 @@
                         if($_POST['corso']!="Magistrale")
                       		$tabella .=" <th>TotCFU</th>";
 					$tabella .= "</tr></tfoot>";
-						session_start();
 						$_SESSION['ordinamento'] = "".$tabella;
 						header("location:http://localhost/IGES/Presentation%20Layer/Ordinamento/Vis_OrdinamentoScelto.php");
 ?>
