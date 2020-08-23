@@ -13,7 +13,7 @@ if (!isset($_SESSION))
 	 *2015 - Copyright by Pr.D Project - University of Salerno
 	 
 	 */
-                        require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
+                        require(dirname(__DIR__,2).'\Storage Layer\Database.php');
                         
                         $anno = $_POST['anno'];
                         $corso = $_POST['corso'];
@@ -23,11 +23,11 @@ if (!isset($_SESSION))
 
                         $database = new Database();
                         $database->connettiDB();
-                 $query= "SELECT Ordinamento.Attivita_formativa, Suddivisione.Ambiti_disciplinari,
-                        Settore.SSD, Settore.Descrizione, Suddivisione.CFU_min, Suddivisione.CFU_max FROM Ordinamento, Suddivisione,
-                        Settore, Composto, Possiede WHERE Ordinamento.Anno_accademico = '".$anno."' AND Ordinamento.Corso ='".$corso."'
-                        AND Possiede.ID_Ordinamento = Ordinamento.ID AND Possiede.ID_Suddivisione = Suddivisione.ID AND
-                        Composto.ID_Suddivisione = Suddivisione.ID AND Composto.SSD = Settore.SSD ORDER BY Settore.SSD";
+                         $query= "SELECT Ordinamento.Attivita_formativa, Suddivisione.Ambiti_disciplinari,
+                                Settore.SSD, Settore.Descrizione, Suddivisione.CFU_min, Suddivisione.CFU_max FROM Ordinamento, Suddivisione,
+                                Settore, Composto, Possiede WHERE Ordinamento.Anno_accademico = '".$anno."' AND Ordinamento.Corso ='".$corso."'
+                                AND Possiede.ID_Ordinamento = Ordinamento.ID AND Possiede.ID_Suddivisione = Suddivisione.ID AND
+                                Composto.ID_Suddivisione = Suddivisione.ID AND Composto.SSD = Settore.SSD ORDER BY Settore.SSD";
 						$risultatoQuery=$database->eseguiQuery($query);
                         if($_POST['corso']!="Magistrale")
                         	$tabella .= "<th>TotCFU</th>";
@@ -65,14 +65,14 @@ if (!isset($_SESSION))
                             if($rowD['Ambiti_disciplinari'] == "Matematico-Fisico")
                             {
                             	$countMate +=1;
-                                $minMat = $rowD['CFU_min'];
-                                $maxMat = $rowD['CFU_max'];
+                                $minMat = intval($rowD['CFU_min']);
+                                $maxMat = intval($rowD['CFU_max']);
                             }
                             if($rowD['Ambiti_disciplinari'] == "Informatica" && $rowD['Attivita_formativa'] == "di base")
                             {
                             	$countInfo +=1;
-                                $minInfo = $rowD['CFU_min'];
-                                $maxInfo = $rowD['CFU_max'];
+                                $minInfo = intval($rowD['CFU_min']);
+                                $maxInfo = intval($rowD['CFU_max']);
                             }
                             
                         }   //Questi calcoli servono per scrivere DI BASE solo al centro

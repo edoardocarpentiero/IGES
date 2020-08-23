@@ -280,7 +280,7 @@ echo '
                   </div>
 	<!-- FORM SCELTA ORDINAMENTO -->
 	<!--  DA DECIDERE SE COMPLETARE I CAMPI AUTOMATICAMENTE CON AJAX O SE AGGIUNGERE UN PULSANTE 'VISUALIZZA ORDINAMENTO'	 -->
-						<form name="form" action="../../Application%20Layer/GestioneOrdinamento/VisualizzaOrdinamento.php" method="post">
+						<form name="form" action="/IGES/Application%20Layer/GestioneOrdinamento/VisualizzaOrdinamento.php" method="post">
 							<table align="center" class="table table-bordered table-striped"><tr>
 								<td style="text-align: right;">
 									<label>Corso</label>
