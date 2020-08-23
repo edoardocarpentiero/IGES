@@ -296,7 +296,7 @@ echo '
 								<label>Anno</label>
 								</td>
 								<td>	
-								<select class="form-control" name="anno" id="anno"  style="width: 100px;">
+								<select class="form-control" name="anno" id="anno" style="width: 100px;">
 									<option value="2015-2016">2015</option>
                                     <option value="2007-2008">2008</option>
 								</select>

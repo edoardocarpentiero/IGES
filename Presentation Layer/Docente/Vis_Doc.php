@@ -104,7 +104,7 @@ echo '
                     <div class="pull-right">
                       <form name="logout" method="post" action="http://localhost/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 					  <input type="hidden" name="funzione" value="logout">
-					  <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
+					  <input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
 					  <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
                       border: 2px solid #FCA800 !important; color: #fff !important; font-weight: bold !important;
                       padding: 0 !important; margin: 10px 0 !important; height: 25px !important; width: 80px !important;" />

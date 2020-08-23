@@ -16,6 +16,7 @@ if (!isset($_SESSION))
                         require(dirname(__DIR__,2).'\Storage Layer\Database.php');
                         
                         $anno = $_POST['anno'];
+                        echo "dsdsds";
                         $corso = $_POST['corso'];
                         if($corso=="Magistrale")
                         	$anno = "2015-2016";
@@ -28,7 +29,8 @@ if (!isset($_SESSION))
                                 Settore, Composto, Possiede WHERE Ordinamento.Anno_accademico = '".$anno."' AND Ordinamento.Corso ='".$corso."'
                                 AND Possiede.ID_Ordinamento = Ordinamento.ID AND Possiede.ID_Suddivisione = Suddivisione.ID AND
                                 Composto.ID_Suddivisione = Suddivisione.ID AND Composto.SSD = Settore.SSD ORDER BY Settore.SSD";
-						$risultatoQuery=$database->eseguiQuery($query);
+
+                         $risultatoQuery=$database->eseguiQuery($query);
                         if($_POST['corso']!="Magistrale")
                         	$tabella .= "<th>TotCFU</th>";
                         $tabella .= "</tr></thead><tbody>";
