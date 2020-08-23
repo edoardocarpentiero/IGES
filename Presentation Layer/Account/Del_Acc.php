@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Del_Acc
 
@@ -7,14 +12,12 @@
  	Version : 1.0
  	2015 - Copyright by Pr.D Project - University of Salerno
 -->
+
 <!DOCTYPE html>
 <html>
   <head>
   	<?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
+
     if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
 		header("location: http://localhost/IGES/Presentation%20Layer/index.php");
 	?>

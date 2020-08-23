@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Vis_OrdinamentoScelto
 
@@ -92,10 +97,6 @@ border-top-color:black;
           </a> 
           <div class="navbar-custom-menu">
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
 if($_SESSION['logged']==true)
 {
 echo '
@@ -135,9 +136,9 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
-<input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
+<input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
 <input type="password" name="password" id="inputLogin" placeholder="password">
 <input type="submit"  name="Accedi" id="bottoneLogin" value="Accedi"  style="background-color: #FF8800 !important; border: 2px solid #FCA800 !important; 

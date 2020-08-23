@@ -1,11 +1,12 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
      <?php
-     if(!isset($_SESSION))
-     {
-         session_start();
-     }
      ini_set('display_errors', 0);
     error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
@@ -588,6 +589,7 @@ echo '
     
     	var tela=0;
         function infoDocenteSelezionato(dati){
+
 			datiDocente=dati.split("&");
             document.getElementById("nominativioDoc").innerHTML=datiDocente[1]+" "+datiDocente[2];
             document.getElementById("matricolaDoc").value=datiDocente[0];
@@ -600,6 +602,7 @@ echo '
             	document.getElementById("messaggioDocente").style.display = "inline";
             else
             	document.getElementById("messaggioDocente").style.display = "none";*/
+
             oreRicoperte(datiDocente[0]);
             
         }
@@ -631,10 +634,13 @@ echo '
              dati.append("funzione","oreRicoperte");
              httpRequest = new XMLHttpRequest();
              httpRequest.onreadystatechange = function(){
+
              	if(httpRequest.readyState == 4 && httpRequest.status == 200){
                          var ore=httpRequest.responseText;//-1 se la prog nn esiste
+                        alert(ore);
                          if(ore>=0){
-                              document.getElementById("monteOreRaggiunto").innerHTML=ore; 
+                              document.getElementById("monteOreRaggiunto").innerHTML=ore;
+                              //alert(document.getElementById("monteOreRaggiunto").innerHTML);
                               insegnamentiAssociati(matricolaDocente);
                          }
              	}
@@ -650,6 +656,7 @@ echo '
             document.getElementById("tableInsegnamentiAssociati").innerHTML="";
             httpRequest = new XMLHttpRequest();
             httpRequest.onreadystatechange = function(){
+                alert(httpRequest.readyState+" "+httpRequest.status);
              	if(httpRequest.readyState == 4 && httpRequest.status == 200){
                          var table=httpRequest.responseText;
                          alert(table);

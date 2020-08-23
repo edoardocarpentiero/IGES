@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Mod_Reg
 
@@ -11,10 +16,7 @@
 <html>
   <head>
     <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
+
     if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
 		header("location:http://localhost/IGES/Presentation%20Layer/index.php")
 	?>

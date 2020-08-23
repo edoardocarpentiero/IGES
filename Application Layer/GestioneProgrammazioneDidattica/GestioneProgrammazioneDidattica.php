@@ -1,8 +1,9 @@
 <?php
- if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+
+if (!isset($_SESSION))
+    session_start();
+
+
 	/**
 	 *GestioneProgrammazioneDidattica
 	 *
@@ -18,6 +19,7 @@ require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\Insegna
 require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\Docente.php');
 include("Associa.php");
 include("ProgrammazioneDidattica.php");
+
 class GestioneProgrammazioneDidattica{
 	private $database;
 	private $matricolaDocenteFittizio;
@@ -232,6 +234,7 @@ where p.Semestre="'.$semestre.'" and p.Stato="Draft" and p.Corso = "'.$corso.'" 
     public function getStatusPrd(){
     	$a=time();
         $b=date('Y', $a);
+        $arrayRisultato=array();
         $annoAccademico=$b."-".(intval($b)+1);
         $query="SELECT * FROM Programmazione_Didattica WHERE Anno_Accademico='".$annoAccademico."' AND (Stato='Approvato' OR Stato='Draft')";
         $risultatoQuery=$this->database->eseguiQuery($query);

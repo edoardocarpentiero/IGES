@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Pag_Sel_EsOpz
 
@@ -7,12 +12,6 @@
  	Version : 1.0
  	2015 - Copyright by Pr.D Project - University of Salerno
 -->
-<?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
-?>
 <!DOCTYPE html>
 <html>
   <head>

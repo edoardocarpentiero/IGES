@@ -1,3 +1,13 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+
+include "menu.php";
+ini_set('display_errors', 0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -63,8 +73,6 @@
           </a> 
           <?php
 
-            session_start();
-          	include "menu.php";
             creaMenu();
           ?>
 

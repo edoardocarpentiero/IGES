@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Crea_ProgDid
 
@@ -73,7 +78,6 @@
           <div class="navbar-custom-menu">
 <?php
 
-session_start();
 if($_SESSION['logged']==true)
 {
 echo '
@@ -161,7 +165,6 @@ echo '
           <li class="header"><!--MAIN NAVIGATION -->
 
 <?php
-session_start();
 if($_SESSION['logged']==true AND $_SESSION['presidente'] == true)
 {
 echo '

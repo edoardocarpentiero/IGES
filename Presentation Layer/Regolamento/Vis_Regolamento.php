@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Vis_Regolamento
 
@@ -255,7 +260,7 @@ echo '
 					<div class="box-tools pull-right">
                   		<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
-						<form action="" method="post" name="formRegolamento" action="<?php echo $PHP_SELF;?>">
+						<form action="" method="post" name="formRegolamento" action="<?php echo $_SERVER ['PHP_SELF'];?>">
 							<table align="center" class="table table-bordered table-striped"><tr>
 								<td style="text-align: right;">
 									<label>Corso</label>
@@ -276,6 +281,7 @@ echo '
 									require_once(dirname(__DIR__,2).'\Application Layer\GestioneRegolamento\GestioneRegolamento.php');
 									$gestioneRegolamento=new GestioneRegolamento();
 									$anniAccademici=$gestioneRegolamento->getAnniAccademici();
+
 								echo '<select class="form-control" name="annoAccademico" style="width: 130px;" id="selectAnnoAccademico" onChange="cercaCurriculum()">';
 								echo '<option value="seleziona">Seleziona anno accademico</option>';
 									for($i=0;$i<count($anniAccademici);$i++)
@@ -338,16 +344,17 @@ echo '
 											</thead>
 											<tbody>';
 											foreach($regolamento as $value){
+
 												if($value["Obbligatorio_Opzionale"]==0){
 													$ins=$value["insegnamento"];
 													//echo '<tr><td>'.$value["Denominazione"].'</td><td>'.$value["SSD"].'</td><td>'.$value["Tipologia_Lezione"].'</td><td>'.$value["CFU"].'</td><td>'.$value["Tot_Ore"].'</td><td>'.$value["Modulo"].'</td><td>'.$value["Tipologia_Attivita"].'</td><td>Obbligatorio</td></tr>';
 													echo '<tr><td>'.$ins->getDenominazione().'</td><td>'.$ins->getSSD().'</td><td>'.$ins->getTipologiaLezione().'</td><td>'.($ins->getCfuFrontale()+$ins->getCFULaboratorio()).'</td><td>'.$ins->getDurataCorso().'</td><td>'.$ins->getModulo().'</td><td>'.$ins->getTipologiaAttivitaFormativa().'</td><td>Obbligatorio</td></tr>';
 												}
 												else{
-													$regolamentoOpzionale["cfu".$value["CFU"]][]=$value;
-													if(!in_array($value["CFU"], $cfuRegolamento)){
-														$cfuRegolamento[]=$value["CFU"];
-													}
+													//$regolamentoOpzionale["cfu".$value["CFU"]][]=$value;
+													//if(!in_array($value["CFU"], $cfuRegolamento)){
+													//	$cfuRegolamento[]=$value["CFU"];
+													//}
 												}	
 											}
 											echo '</tbody>
@@ -437,8 +444,10 @@ echo '
 		function cercaCurriculum(){
 				corso=document.formRegolamento.corso.value;
 				annoAccademico=document.formRegolamento.annoAccademico.value;
+
 				var sel=document.getElementById("selectCurriculum");
 				sel.innerHTML='<option value="seleziona">Seleziona curriculum</option>';
+
 			if(corso!="seleziona" && annoAccademico!="seleziona"){
 				var req=new XMLHttpRequest();
 						req.onreadystatechange=function(){

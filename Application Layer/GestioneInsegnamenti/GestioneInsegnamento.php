@@ -1,4 +1,8 @@
 <?php
+
+if (!isset($_SESSION))
+    session_start();
+
 include_once 'Insegnamento.php';
 require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 

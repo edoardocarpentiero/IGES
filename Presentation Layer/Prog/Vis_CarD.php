@@ -1,13 +1,18 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+
+ini_set('display_errors', 0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
-    ini_set('display_errors', 0);
-    error_reporting(E_ERROR | E_WARNING | E_PARSE); 
+
+    //ini_set('display_errors', 0);
+    //error_reporting(E_ERROR | E_WARNING | E_PARSE);
     if($_SESSION['logged']==false)
         header("location:http://localhost/IGES/Presentation%20Layer/index.php")
   ?>

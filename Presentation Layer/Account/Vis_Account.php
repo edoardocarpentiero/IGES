@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Vis_Account
 
@@ -12,7 +17,7 @@
 <html>
   <head>
   	<?php
-  	session_start();
+
 	if($_SESSION['logged']==false)
 		header("location:http://localhost/IGES/Presentation%20Layer/index.php");
 	?>
@@ -81,7 +86,6 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
-session_start();
 if($_SESSION['logged']==true)
 {
 echo '

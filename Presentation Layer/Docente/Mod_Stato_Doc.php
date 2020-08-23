@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Mod_Stato_Doc
 
@@ -11,7 +16,6 @@
 <html>
   <head>
 	<?php
-	session_start();
 		if($_SESSION['logged'] == false)
 			header("location:http://localhost/IGES/Presentation%20Layer/index.php");
 	?>

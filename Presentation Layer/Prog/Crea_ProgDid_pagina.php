@@ -1,3 +1,8 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+?>
 <!--
     Crea_ProgDid_pagina
 
@@ -76,10 +81,7 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
+
 if($_SESSION['logged']==true)
 {
 echo '

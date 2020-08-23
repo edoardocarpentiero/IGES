@@ -1,9 +1,8 @@
 <?php
 
-if(!isset($_SESSION))
-{
+if (!isset($_SESSION))
     session_start();
-}
+
 /**
 *GestioneRegolamento
 *
@@ -15,7 +14,6 @@ if(!isset($_SESSION))
 */
 
 require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
-include_once("Regolamento.php");
 require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\Insegnamento.php');
 
 class GestioneRegolamento{
@@ -47,6 +45,7 @@ class GestioneRegolamento{
 	
 	public function getCurriculum($corso, $annoAccademico, $stato="Pubblicato"){
 		$query="SELECT DISTINCT Nome_Curriculum FROM Regolamento WHERE Anno_accademico='".$annoAccademico."' AND Corso='".$corso."' AND Stato='".$stato."'";
+		syslog(LOG_INFO,$query);
 		$risultatoQuery=$this->database->eseguiQuery($query);
 		$arrayRisultato=array();
 		if($risultatoQuery->num_rows!=0){
@@ -223,7 +222,7 @@ class GestioneRegolamento{
 		$query="SELECT i.Denominazione, i.SSD, i.Tipologia_Lezione, i.CFU_Frontali, i.CFU_Laboratorio, i.Tot_Ore, i.Modulo, i.Tipologia_Attivita, f.Obbligatorio_Opzionale FROM Regolamento AS r, Formato AS f, Insegnamento AS i WHERE r.ID=f.ID_Regolamento AND i.Matricola_Insegnamento=f.Matricola_Insegnamento AND Anno_accademico='".$annoAccademico."' AND i.Corso='".$corso."' AND r.Nome_Curriculum='".$curriculum."' AND r.Anno_Corso='".$annoCorso."' AND Stato='".$stato."'";
 		$risultatoQuery=$this->database->eseguiQuery($query);
 			while($risultato=$risultatoQuery->fetch_row()){
-				$arrayRisultato[]=array("insegnamento"=>new Insegnamento($risultato[0], $risultato[1], $risultato[7], $risultato[6], $risultato[3], $risultato[4], $risultato[2], "", 0, 0), "Obbligatorio_Opzionale"=>$risultato[8]);
+				$arrayRisultato[]=array("insegnamento"=>new Insegnamento($risultato[0], $risultato[1], $risultato[7], $risultato[6], $risultato[3], $risultato[4], $risultato[2], "", $risultato[5], 0), "Obbligatorio_Opzionale"=>$risultato[8]);
 			}
 			return $arrayRisultato;
 	}

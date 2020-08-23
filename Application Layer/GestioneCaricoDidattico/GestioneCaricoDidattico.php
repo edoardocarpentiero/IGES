@@ -55,6 +55,7 @@ class GestioneCaricoDidattico{
         while($risultato=$risultatoQuery->fetch_row()){
             $data .= (intval($risultato[1])+intval($risultato[2])).",".$risultato[0].",";
         }
+
         return  $data;
     }
 
@@ -517,7 +518,8 @@ if(isset($_POST["funzione"])){
 
         case "oreRicoperte":
             $res=$gestioneCaricoDid->getMonteOre($_POST['matricolaDocente']);
-            if(strcmp($res,'')==0)
+            echo $res;
+            /*if(strcmp($res,'')==0)
                 echo 0;
             else{
                 $carico=explode(",", $res);
@@ -527,7 +529,7 @@ if(isset($_POST["funzione"])){
                         $somma+=intval($carico[$i]);
                 }
                 echo $somma;
-            }
+            }*/
             break;
 
         case "proponiInsegnamento":
@@ -555,6 +557,7 @@ if(isset($_POST["funzione"])){
 
         case "insegnamentiAssociati":
             $insegnamentiAssociati=$gestioneCaricoDid->getInsegnamentiAssociatiAlDocente($_POST['matricolaDocente']);
+            echo $insegnamentiAssociati;
             echo $gestioneCaricoDid->insegnamentiAssociati($insegnamentiAssociati,$_POST['matricolaDocente']);
             break;
 
