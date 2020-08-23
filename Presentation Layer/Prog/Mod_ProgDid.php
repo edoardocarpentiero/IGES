@@ -12,11 +12,8 @@
 <html>
   <head>
  <?php
- if(!isset($_SESSION))
- {
-     session_start();
- }
- if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
+	session_start();
+	if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
 		header("location:http://localhost/IGES/Presentation%20Layer/index.php") 
 	?>
 	<meta charset="utf-8">
@@ -88,7 +85,7 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
-
+session_start();
 if($_SESSION['logged']==true)
 {
 echo '
@@ -113,9 +110,9 @@ echo '
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <form name="logout" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+                      <form name="logout" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 					  <input type="hidden" name="funzione" value="logout">
-					  <input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
+					  <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 					  <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
                       border: 2px solid #FCA800 !important; color: #fff !important; font-weight: bold !important;
                       padding: 0 !important; margin: 10px 0 !important; height: 25px !important; width: 80px !important;" />
@@ -128,9 +125,9 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
-<input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
+<input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
 <input type="password" name="password" id="inputLogin" placeholder="password">
 <input type="submit"  name="Accedi" id="bottoneLogin" value="Accedi"  style="background-color: #FF8800 !important; border: 2px solid #FCA800 !important; 
@@ -234,7 +231,7 @@ echo '
               </a>
               <ul class="treeview-menu">
                 <li><a href="Crea_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Crea Prog. Did.</a></li>
-                <li><a href="../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
+                <li><a href="Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
                 <li><a href="VisMonteOre_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Monte Ore</a></li>
 				<li><a href="Vis_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Prog. Did.</a></li>
                 <li><a href="CambiaStato_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i>Cambia Stato</a></li>

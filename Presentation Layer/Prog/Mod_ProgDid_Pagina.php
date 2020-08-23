@@ -76,10 +76,7 @@
           </a> 
           <div class="navbar-custom-menu">
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
+session_start();
 if($_SESSION['logged']==true)
 {
 echo '
@@ -104,9 +101,9 @@ echo '
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <form name="logout" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+                      <form name="logout" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 					  <input type="hidden" name="funzione" value="logout">
-					  <input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
+					  <input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 					  <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
                       border: 2px solid #FCA800 !important; color: #fff !important; font-weight: bold !important;
                       padding: 0 !important; margin: 10px 0 !important; height: 25px !important; width: 80px !important;" />
@@ -119,9 +116,9 @@ echo '
 ';}else{
 echo ' 
 <ul class="nav nav-bar"><ul>
-<form name="login" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+<form name="login" method="post" action="/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 <input type="hidden" name="funzione" value="login" >
-<input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
+<input type="hidden" name="nomepagina" value="/Presentation%20Layer/index.php">
 <input type="text" id="inputLogin" name="username" placeholder="username">
 <input type="password" name="password" id="inputLogin" placeholder="password">
 <input type="submit"  name="Accedi" id="bottoneLogin" value="Accedi"  style="background-color: #FF8800 !important; border: 2px solid #FCA800 !important; 
@@ -226,7 +223,7 @@ echo '
               </a>
               <ul class="treeview-menu">
                 <li><a href="Crea_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Crea Prog. Did.</a></li>
-                <li><a href="../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
+                <li><a href="Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
                 <li><a href="VisMonteOre_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Monte Ore</a></li>
 				<li><a href="Vis_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Prog. Did.</a></li>
                 <li><a href="CambiaStato_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i>Cambia Stato</a></li>
@@ -357,7 +354,7 @@ echo '
 <!-- CORPO TABELLA -->
 				
                 <form name="confermaProgD" method="post" 
-				   action="/IGES/Application%20Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php" enctype="multipart/form-data" onsubmit="return confirm('Sicuro di voler confermare?');">
+				   action="../../Application%20Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php" enctype="multipart/form-data" onsubmit="return confirm('Sicuro di voler confermare?');">
 
 				<input type="hidden" name="funzione" value="confermaProgD">  
                   <table id="example1" class="table table-bordered table-hover">
@@ -383,7 +380,8 @@ echo '
                     	$curriculum=explode(".",$_POST["curriculum"]);
                         require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
                         require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
-
+						
+						session_start();
                         $gestProg=new GestioneProgrammazioneDidattica();
 						$databaseS=new Database();
 						$databaseS->connettiDB();
@@ -530,7 +528,7 @@ echo '
 						echo '
     						<h3 style="text-align: center"> Anno '.$_POST["anno"].' - '.$_POST["semestre"].'° semestre</h3>
     						<p>
-								<form name="creaProgD" method="post" action="/IGES/Application%20Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php">
+								<form name="creaProgD" method="post" action="../../Application%20Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php">
 									
                                     <table align="center" class="table table-bordered table-striped"><tr>
     									<td style="text-align: right;">

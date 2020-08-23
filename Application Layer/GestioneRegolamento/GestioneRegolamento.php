@@ -1,10 +1,6 @@
 <?php
-
-if(!isset($_SESSION))
-{
-    session_start();
-}
-/**
+session_start();
+	/**
 *GestioneRegolamento
 *
 *Questa classe implementa le funzionalit� che riguardano la gestione dei regolamenti

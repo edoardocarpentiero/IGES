@@ -8,7 +8,6 @@
 	 *Version : 1.0
 	 *2015 - Copyright by Pr.D Project - University of Salerno
 	 */
-
 class Insegnamento{
 		private $denominazioneInsegnamento, $ssd, $id, $durataCorso, $tipologiaAttivitaFormativa, $modulo;
 		private $cfuLaboratorio,$cfuFrontale, $corsoAppartenenza, $tipologiaLezione;

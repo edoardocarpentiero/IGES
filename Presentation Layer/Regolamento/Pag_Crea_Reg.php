@@ -8,10 +8,7 @@
  	2015 - Copyright by Pr.D Project - University of Salerno
 -->
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-}
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +64,7 @@ if(!isset($_SESSION))
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
+        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -154,7 +151,7 @@ echo '
               </a>
               <ul class="treeview-menu">
                 <li><a href="../Prog/Crea_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Crea Prog. Did.</a></li>
-                <li><a href="../Prog/../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
+                <li><a href="../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
                 <li><a href="../Prog/VisMonteOre_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Monte Ore</a></li>
 				<li><a href="../Prog/Vis_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Prog. Did.</a></li>
                 <li><a href="../Prog/CambiaStato_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i>Cambia Stato</a></li>
@@ -537,7 +534,7 @@ function add(id, opz){
 	corso=document.form1.corso.value;
 	nomeOpz='CFUOpzionale'+id.substr(id.length-5);
 	cfuOpzionali=document.getElementById(nomeOpz).value;
-	window.open("http://localhost/IGES/Presentation%20Layer/Regolamento/Pag_Sel_EsOpz.php?id="+id+"&curr="+curr+"&corso="+corso+"&cfuOpz="+cfuOpzionali+"&Opz="+opz, "_self");
+	window.open("http://prd.altervista.org/Presentation%20Layer/Regolamento/Pag_Sel_EsOpz.php?id="+id+"&curr="+curr+"&corso="+corso+"&cfuOpz="+cfuOpzionali+"&Opz="+opz, "_self");
 }
 
 function controllaCFU(num){
@@ -567,7 +564,7 @@ function elimina(id, nomeSessione, curr){
 	dati.append("id", id);
 	dati.append("nomeSessione", nomeSessione);
 	dati.append("curr", curr);
-	req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+	req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
 	req.send(dati);
 }
 
@@ -590,7 +587,7 @@ function controllaRegolamento(curr, annoBase, corso){
 	dati.append("curr", curr);
 	dati.append("annoBase", annoBase);
 	dati.append("corso", corso);
-	req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+	req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
 	req.send(dati);
 }
 
@@ -599,7 +596,7 @@ function salvaRegolamento(curr, annoBase, corso, stato){
 	req.onreadystatechange=function(){
 		if(req.status==200 && req.readyState==4){
            	alert("Salvataggio regolamento "+curr+" avvenuto con successo!");
-			window.open("http://localhost/IGES/Presentation%20Layer/Regolamento/Crea_Reg.php","_self");
+			window.open("http://prd.altervista.org/Presentation%20Layer/Regolamento/Crea_Reg.php","_self");
         }
     }
 	
@@ -609,7 +606,7 @@ function salvaRegolamento(curr, annoBase, corso, stato){
 	dati.append("annoBase", annoBase);
 	dati.append("corso", corso);
 	dati.append("stato", stato);
-	req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+	req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
 	req.send(dati);
 }
 controllaCFU(1);

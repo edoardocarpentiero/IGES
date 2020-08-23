@@ -12,12 +12,9 @@
 <html>
   <head>
     <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
-    if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
-		header("location:http://localhost/IGES/Presentation%20Layer/index.php")
+    session_start();
+	if($_SESSION['presidente'] == false OR $_SESSION['logged']==false)
+		header("location:http://prd.altervista.org/Presentation%20Layer/index.php") 
 	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +65,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="http://localhost/IGES/Presentation%20Layer/index.php" class="logo">
+        <a href="http://prd.altervista.org/Presentation%20Layer/index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>P</b>r.<b>D.</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -155,7 +152,7 @@ echo '
               </a>
               <ul class="treeview-menu">
                 <li><a href="../Prog/Crea_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Crea Prog. Did.</a></li>
-                <li><a href="../Prog/../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
+                <li><a href="../Prog/Mod_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Modifica Prog. Did.</a></li>
                 <li><a href="../Prog/VisMonteOre_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Monte Ore</a></li>
 				<li><a href="../Prog/Vis_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i> Visualizza Prog. Did.</a></li>
                 <li><a href="../Prog/CambiaStato_ProgDid.php" style="font-size: 13px;"><i class="fa fa-circle-o"></i>Cambia Stato</a></li>
@@ -413,7 +410,7 @@ echo '
         curr.disabled=true;
         dati.append("funzione","cercaCurriculum");
         dati.append("corso",document.formCurriculum.corso.value);
-        req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+        req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
         req.send(dati);
         req.onreadystatechange=function(){
                 if(req.status==200 && req.readyState==4){
@@ -437,7 +434,7 @@ echo '
             dati.append("funzione","cercaRegolamentoCompletato");
             dati.append("corso",document.formCurriculum.corso.value);
             dati.append("curriculum",valore);
-            req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+            req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
             req.send(dati);
             req.onreadystatechange=function(){
                     if(req.status==200 && req.readyState==4){
@@ -459,7 +456,7 @@ echo '
             dati.append("funzione","pubblicaRegolamento");
             dati.append("corso",document.formCurriculum.corso.value);
             dati.append("curr",document.getElementById("nome").innerHTML);
-            req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
+            req.open("POST", "http://prd.altervista.org/Application%20Layer/GestioneRegolamento/GestioneRegolamento.php", true);
             req.send(dati);
             req.onreadystatechange=function(){
                     if(req.status==200 && req.readyState==4){

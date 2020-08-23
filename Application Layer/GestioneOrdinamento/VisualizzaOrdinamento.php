@@ -10,10 +10,7 @@
 	 
 	 */
                         require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
-                        if(!isset($_SESSION))
-                        {
-                            session_start();
-                        }
+                        
                         $anno = $_POST['anno'];
                         $corso = $_POST['corso'];
                         if($corso=="Magistrale")
@@ -457,7 +454,7 @@
                         if($_POST['corso']!="Magistrale")
                       		$tabella .=" <th>TotCFU</th>";
 					$tabella .= "</tr></tfoot>";
-
+						session_start();
 						$_SESSION['ordinamento'] = "".$tabella;
-						header("location:http://localhost/IGES/Presentation%20Layer/Ordinamento/Vis_OrdinamentoScelto.php");
+						header("location:http://prd.altervista.org/Presentation%20Layer/Ordinamento/Vis_OrdinamentoScelto.php");
 ?>
