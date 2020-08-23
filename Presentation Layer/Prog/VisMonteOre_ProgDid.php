@@ -640,7 +640,7 @@ echo '
                         alert(ore);
                          if(ore>=0){
                               document.getElementById("monteOreRaggiunto").innerHTML=ore;
-                              //alert(document.getElementById("monteOreRaggiunto").innerHTML);
+                              alert(document.getElementById("monteOreRaggiunto").innerHTML);
                               insegnamentiAssociati(matricolaDocente);
                          }
              	}
@@ -656,7 +656,6 @@ echo '
             document.getElementById("tableInsegnamentiAssociati").innerHTML="";
             httpRequest = new XMLHttpRequest();
             httpRequest.onreadystatechange = function(){
-                alert(httpRequest.readyState+" "+httpRequest.status);
              	if(httpRequest.readyState == 4 && httpRequest.status == 200){
                          var table=httpRequest.responseText;
                          alert(table);
@@ -832,6 +831,7 @@ echo '
                             if(httpRequest.readyState == 4 && httpRequest.status == 200){
                                 //restituisce gia la stringa formattata
                                 var doughnut = httpRequest.responseText;
+
 
                                 disegna(doughnut);
                                 ;

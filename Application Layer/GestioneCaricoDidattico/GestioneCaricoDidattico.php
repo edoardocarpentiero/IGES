@@ -52,8 +52,14 @@ class GestioneCaricoDidattico{
         $query="SELECT i.Denominazione, a.Ore_Teoria, a.Ore_Lab from Associa a join Insegnamento i on (i.matricola_insegnamento = a.matricola_insegnamento) join Docente d on (d.matricola = a.matricola_professore) join Programmazione_Didattica p on (a.ID_ProgDid = p.ID)  where d.Matricola = ".$matricolaDocente." AND Versione =(Select max(Versione) from Programmazione_Didattica)";
         $risultatoQuery=$this->database->eseguiQuery($query);
         $data="";
+        $i=1;
+        $n=mysqli_num_rows($risultatoQuery);
         while($risultato=$risultatoQuery->fetch_row()){
-            $data .= (intval($risultato[1])+intval($risultato[2])).",".$risultato[0].",";
+            $data .= (intval($risultato[1])+intval($risultato[2])).",".$risultato[0];
+            if($i<$n) {
+                $data .= ",";
+                $i++;
+            }
         }
 
         return  $data;
@@ -146,7 +152,7 @@ class GestioneCaricoDidattico{
             $query = "SELECT i.Matricola_Insegnamento,Denominazione,Tipologia_Lezione,i.Corso,SSD,CFU_Laboratorio,CFU_Frontali,Classe,Semestre,ID_ProgDid,Ore_Teoria,Ore_Lab,Anno_corso,Anno_Accademico,status,i.Tot_Ore FROM Insegnamento i left join Associa a on (i.Matricola_Insegnamento=a.Matricola_Insegnamento) join Programmazione_Didattica p on (ID=ID_ProgDid) WHERE Matricola_Professore='" . $matricolaDocente . "' AND Stato='Da Approvare' AND Anno_Accademico='" . $this->annoAccademicoCorrente . "' AND Versione =(Select max(Versione) from Programmazione_Didattica)";
         else
             $query = "SELECT i.Matricola_Insegnamento,Denominazione,Tipologia_Lezione,i.Corso,SSD,CFU_Laboratorio,CFU_Frontali,Classe,Semestre,ID_ProgDid,Ore_Teoria,Ore_Lab,Anno_corso,Anno_Accademico,status,i.Tot_Ore FROM Insegnamento i left join Associa a on (i.Matricola_Insegnamento=a.Matricola_Insegnamento) join Programmazione_Didattica p on (ID=ID_ProgDid) WHERE Matricola_Professore='" . $matricolaDocente . "' AND (Stato='Da Approvare' OR Stato='Approvato' OR Stato='Draft') AND Anno_Accademico='" . $this->annoAccademicoCorrente . "' AND Versione =(Select max(Versione) from Programmazione_Didattica)";
-        //echo $query;
+
         $risultatoQuery = $this->database->eseguiQuery($query);
         $arrayRisultato = array();
         while ($risultato = $risultatoQuery->fetch_row()) {
@@ -391,6 +397,7 @@ class GestioneCaricoDidattico{
     function insegnamentiAssociati($insegnamentiAssociati,$matricolaDocente){
         $n=count($insegnamentiAssociati);
 
+        $risultato ="";
         for($i=0;$i<$n;$i++){
             $insegnamento=$insegnamentiAssociati[$i]->getInsegnamento();
             $associazione=$insegnamentiAssociati[$i]->getAssociazione();
@@ -415,7 +422,6 @@ class GestioneCaricoDidattico{
             $oreTot=$insegnamento->getDurataCorso();
 
             $datiAssociazione=$matricolaDocente."&".$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".str_replace(" ","_",$denominazione)."&".$oreTeoria."&".$oreLab."&".$cfu."&".$anno."&".$annoAccademico."&".$semestre;
-            $risultato ="";
             $risultato.="<tr id=".$i."><td title='Clicca per info' style='font-weight: 600;'>".$denominazione."</td>";
             $risultato.="<td>$cfu</td>";
             $risultato.="<td>$tipologiaAttivita</td>";
@@ -518,18 +524,21 @@ if(isset($_POST["funzione"])){
 
         case "oreRicoperte":
             $res=$gestioneCaricoDid->getMonteOre($_POST['matricolaDocente']);
-            echo $res;
-            /*if(strcmp($res,'')==0)
+
+            if(strcmp($res,'')==0)
                 echo 0;
             else{
-                $carico=explode(",", $res);
-                $somma=0;
-                for($i=0;$i<count($carico);$i++){
-                    if(($carico[$i] % 2) == 0)
-                        $somma+=intval($carico[$i]);
-                }
-                echo $somma;
-            }*/
+                $caricoDidattico=explode(',', $res);
+                $n=$caricoDidattico[0];
+                print_r(intval($caricoDidattico[0]));
+                /*$somma=0;
+
+                for($i=0;$i<$n;$i++){
+                    if((intval($caricoDidattico[$i]) % 2) == 0)
+                        $somma+=intval($caricoDidattico[$i]);
+                }*/
+
+            }
             break;
 
         case "proponiInsegnamento":
@@ -557,8 +566,7 @@ if(isset($_POST["funzione"])){
 
         case "insegnamentiAssociati":
             $insegnamentiAssociati=$gestioneCaricoDid->getInsegnamentiAssociatiAlDocente($_POST['matricolaDocente']);
-            echo $insegnamentiAssociati;
-            echo $gestioneCaricoDid->insegnamentiAssociati($insegnamentiAssociati,$_POST['matricolaDocente']);
+            print_r($gestioneCaricoDid->insegnamentiAssociati($insegnamentiAssociati,$_POST['matricolaDocente']));
             break;
 
         case "liberaInsegnamento":
