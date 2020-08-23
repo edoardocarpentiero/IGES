@@ -351,7 +351,8 @@ echo '
 			                    <!-- DECIDERE IL FORMATO DI ANNO ACCADEMICO -->
 			                    <td style="text-align: right;">
 									<label>Anno Accademico</label>
-								</td>	
+								</td>
+
 								<td>
 								<select class="form-control" id="annoAcc" name="annoAcc" style="width: 130px;" onchange="cercaProgrammazione('<?php echo $_SESSION['username'];?>')">
 								</select>
@@ -503,6 +504,7 @@ echo '
         }
         
         function cercaProgrammazione(utente){
+
         	var httpRequest = new XMLHttpRequest();
             //corso di laurea selezionato
             var elem = document.getElementById("corso").value;

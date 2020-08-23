@@ -343,6 +343,7 @@ echo '
 											  </tr>
 											</thead>
 											<tbody>';
+                                            $regolamentoOpzionale="";
 											foreach($regolamento as $value){
 
 												if($value["Obbligatorio_Opzionale"]==0){
