@@ -416,6 +416,7 @@ echo '
 				var req=new XMLHttpRequest();
 						req.onreadystatechange=function(){
 							if(req.status==200 && req.readyState==4){
+							    alert(req.responseText);
 								curricula=JSON.parse(req.responseText);
                                 if(curricula.length>0){
                                     for(i=0;i<curricula.length;i++){
