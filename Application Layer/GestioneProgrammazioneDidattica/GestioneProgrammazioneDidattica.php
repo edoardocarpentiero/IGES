@@ -135,6 +135,7 @@ where p.Semestre="'.$semestre.'" and p.Stato="Draft" and p.Corso = "'.$corso.'" 
 	public function getInsegnamenti($annoCorso,$corso, $curriculum, $annoAccademico){
 		$query="SELECT i.Denominazione, i.SSD, i.Tipologia_Lezione, i.CFU_Frontali, i.CFU_Laboratorio, i.Tot_Ore, i.Modulo, i.Tipologia_Attivita, f.Obbligatorio_Opzionale, i.Matricola_Insegnamento FROM Regolamento as r join Formato as f on (r.ID=f.ID_Regolamento) join Insegnamento as i on (i.Matricola_Insegnamento=f.Matricola_Insegnamento) WHERE Anno_accademico='".$annoAccademico."' AND i.Corso='".$corso."' AND r.Nome_Curriculum='".$curriculum."' AND Stato='Pubblicato' AND r.Anno_Corso=$annoCorso";
 		$risultatoQuery=$this->database->eseguiQuery($query);
+        $arrayRisultato=array();
 		while($risultato=$risultatoQuery->fetch_row()){
 			$arrayRisultato[]=new Insegnamento($risultato[0], $risultato[1], $risultato[7], $risultato[6], $risultato[3], $risultato[4], $risultato[2], $corso, $risultato[5], $risultato[9]);
 		}

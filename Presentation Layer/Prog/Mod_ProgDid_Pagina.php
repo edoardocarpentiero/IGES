@@ -6,7 +6,7 @@ if (!isset($_SESSION))
 <!--
     Crea_ProgDid_pagina
 
-	Questa classe implementa l'interfaccia grafica per il completamento della creazione 
+	Questa classe implementa l'interfaccia grafica per il completamento della creazione
     di una nuova programmazione didattica
 
  	Author: Stefano Cirillo, Alessandro Kevin Barletta, Edoardo Carpentiero, Gianmarco Mucciariello
@@ -18,7 +18,7 @@ if (!isset($_SESSION))
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pr.D. - UNISA Informatica </title>    
+    <title>Pr.D. - UNISA Informatica </title>
     <!--Input con sfondo trasparente (user e pass) -->
     <style type="text/css"> #inputLogin{background: transparent; border-style: none;
 	     /* Stili comuni agli elementi del form */
@@ -27,7 +27,7 @@ if (!isset($_SESSION))
 	    font-family: Verdana, sans-serif; /* Tipo di carattere per il testo */
 	    margin: 10px 0; /* Margini */
 	}</style>
-    
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -50,7 +50,7 @@ if (!isset($_SESSION))
     <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    
+
     <!-- DataTables -->
     <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
     <!-- Theme style -->
@@ -74,11 +74,11 @@ if (!isset($_SESSION))
 <!-- BARRA DI NAVIGAZIONE SUPERIORE -->
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
-          
+
 
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
-          </a> 
+          </a>
           <div class="navbar-custom-menu">
 <?php
 
@@ -159,13 +159,13 @@ echo '
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>';}
- ?>        
+ ?>
 
 <!-- MENU LATERALE SX -->
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-          
+
           <li class="header"><!--MAIN NAVIGATION -->
 
 <?php
@@ -345,7 +345,7 @@ echo '
        	<section class="content">
  <!-- BOX CENTRALE -->
 		<div class="">
-		
+
 		<!--  TABELLA COMPLETA -->
               <div class="box">
                 <div class="box-header">
@@ -354,14 +354,14 @@ echo '
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                   </div>
                 </div><!-- /.box-header -->
-                <input type="hidden" id="corsoSelezionato" value="<?php echo $_GET["laurea"];?>">
+                <input type="hidden" id="corsoSelezionato" value="<?php echo $_POST["corso"];?>">
                 <div class="box-body">
 <!-- CORPO TABELLA -->
-				
-                <form name="confermaProgD" method="post" 
+
+                <form name="confermaProgD" method="post"
 				   action="../../Application%20Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php" enctype="multipart/form-data" onsubmit="return confirm('Sicuro di voler confermare?');">
 
-				<input type="hidden" name="funzione" value="confermaProgD">  
+				<input type="hidden" name="funzione" value="confermaProgD">
                   <table id="example1" class="table table-bordered table-hover">
                     <thead>
                       <tr>
@@ -379,9 +379,9 @@ echo '
                       </tr>
                     </thead>
                     <tbody>
-                     
+
                     <?php
-                        
+
                     	$curriculum=explode(".",$_POST["curriculum"]);
                         require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
                         require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
@@ -389,13 +389,13 @@ echo '
                         $gestProg=new GestioneProgrammazioneDidattica();
 						$databaseS=new Database();
 						$databaseS->connettiDB();
-                        
+
 						$insegnamenti=$gestProg->getInsegnamenti($_POST["anno"],$_POST["corso"],$curriculum[1], $_POST["annoAccademico"]);
 						$tipo=$_POST["corso"];
-                    
-                        
+
+
                     	foreach($insegnamenti as $ins){
-                        	
+
                             $id=$ins->getID();
 							$cfuFrontale=intval($ins->getCfuFrontale());
 							$cfuLaboratorio=intval($ins->getCfuLaboratorio());
@@ -409,13 +409,13 @@ echo '
 							$_SESSION["informazioniInsegnamento"]=$ins;
                             $query="select classe from Associa a join Programmazione_Didattica p on (a.ID_ProgDid = p.ID) where p.Anno_Corso = '".$_POST["anno"]."' and p.Corso = '".$_POST["corso"]."' and p.Semestre = '".$_POST["semestre"]."' and p.Anno_accademico = '".$_POST["annoAccademico"]."' group by(classe)";
                             $ris=$databaseS->eseguiQuery($query);
-                            
+
                             echo '<tr onclick="riempiTabelle(\''.$denominazione.'\', \''.$ssd.'\', \''.$cfu.'\', \''.$tipologiaLezione.'\', \''.$durataCorso.'\',\''.$cfuFrontale.'\',\''.$cfuLaboratorio.'\',\''.$id.'\')">';
 							if($modulo!=0)
                                  echo '<td rowspan="'.$ris->num_rows.'"><a href="#associa">'.$denominazione.' - '.$modulo.' MODULO</a></td>';
                             else
                                  echo '<td rowspan="'.$ris->num_rows.'"><a href="#associa">'.$denominazione.'</a></td>';
-                            		
+
                             $numeroClassi=$ris->num_rows;
                             for($i=1;$i<=$numeroClassi;$i++){
                                     $query="select d.nome, d.cognome , d.Ruolo, d.SSD, a.Ore_Teoria, a.Ore_Lab from Docente d join Associa a on(d.Matricola = a.Matricola_Professore) join Insegnamento i on (a.Matricola_Insegnamento = i.Matricola_Insegnamento) join Programmazione_Didattica p on (a.ID_ProgDid = p.ID) 
@@ -426,8 +426,8 @@ echo '
                                     $ssdDoc=array();
                                     $oreTeoria=array();
                                     $oreLab=array();
-                                    
-                                    
+
+
                                         while($res=$ris->fetch_row()){
                                                 $doc[]="$res[0].$res[1]";
                                                 $ruolo[]=$res[2];
@@ -446,7 +446,7 @@ echo '
                                         echo '</td>';
                                         echo '<td id="oreLab'.$id.'">';
                                         for($k=0;$k<count($oreLab);$k++)
-                                            echo "<div>$oreLab[$k]</div>";	
+                                            echo "<div>$oreLab[$k]</div>";
                                         echo '</td>';
                                         echo '<td>'.$durataCorso.'</td>';
                                         echo '<td>'.$tipologiaLezione.'</td>';
@@ -467,7 +467,7 @@ echo '
 
                                         echo '</td>';
                                         echo '<tr onclick="riempiTabelle(\''.$denominazione.'\', \''.$ssd.'\', \''.$cfu.'\', \''.$tipologiaLezione.'\', \''.$durataCorso.'\',\''.$cfuFrontale.'\',\''.$cfuLaboratorio.'\',\''.$id.'\')">';
-                                    
+
                             }//end classi
                             echo "</tr>";
                     	}//end foreach insegnamenti
@@ -493,9 +493,10 @@ echo '
 			        <div class="box-footer" style="text-align: center;">
 		<!-- I TASTI SI DEVONO ATTIVARE SOLO QUANDO SONO STATE FATTE LE ASSEGNAZIONI -->';
         				//elimino?
-			        	
+
 			        	echo '<input type="submit" name="submitAnnulla" value="Annulla"  class="btn btn-default btn-lg" value="Annulla">';
-						if($_SESSION['rigaPrD'] != 0)
+
+			        	if($_SESSION['rigaPrD'] != 0)
 						{
 							if(($_SESSION['esamiPresenti'] - $_SESSION['esamiInseriti']) != 0){
 								echo "<input type='submit' name='submitConferma' value='Conferma' class='btn btn-default btn-lg'>";
@@ -505,7 +506,7 @@ echo '
 						}
 						else
 							echo '<input type="button" class="btn btn-default btn-lg" value="Conferma" disabled= "disabled">';
-                            
+
 						echo '
                         </form>
 			      	</div>
@@ -514,8 +515,8 @@ echo '
               </div><!-- /.box -->
 <!-- FINE TABELLA -->';
 
-			
-           
+
+
           echo '  <!-- Left col -->
 			 <div class="box box-default" id="assegnazione" style="display:none;">
                 <div class="box-header with-border">
@@ -528,7 +529,7 @@ echo '
                 <div class="box-body">
 				<h2 style="text-align: center"> Esame selezionato <span id="nome"></span></h2>';
 				$i=1;
-					
+
 						echo '
     						<h3 style="text-align: center"> Anno '.$_POST["anno"].' - '.$_POST["semestre"].'° semestre</h3>
     						<p>
@@ -547,11 +548,11 @@ echo '
 	    					<div class="box-body">
                             
                             ';
-                        
+
                         /*
                         <input type='hidden' name='insegnamento' value='' id='insB".$i."'>
 						<input type='hidden' name='annoAccademico' id='annoAccademico' value='".$_GET['annoAccademico']."'>
-						
+
 						<input type='hidden' name='semestre' id='semestre' value='".$_GET['semestre']."'>
 						<input type='hidden' name='annoDiCorso' value='".$_GET['annoDiCorso']."'>
 						<input type='hidden' name='curriculum' value='".$curriculum[0]."'>
@@ -565,9 +566,9 @@ echo '
                         <input type='hidden' id='cfuLab' value='0'>
                         <input type='hidden' id='oreTotaliProf10' value=''>
                         <input type='hidden' id='ruoloProf10' value=''>";
-                        
+
                         error_reporting(E_ALL);
-                        
+
                         echo '		
                         		<p id="errore'.$i.'" name="errore'.$i.'" style="color: red;"></p>
                                 
@@ -594,8 +595,8 @@ echo '
 												echo '<td name="classe" id="classe'.$i.'">'.$i.'</td>';
 												echo '<td name="settore" id="settore'.$i.'">Settore</td>';
 												echo '<td name="CFU" id="cfu'.$i.'">CFU</td>';
-												
-                                                
+
+
                                                 echo '<td>
                                                 	<input type="button" onclick="calcoloOre('.$i.',\'teoria\',\'oreTeoria'.$i.'0\',this.value,\''.$idTotOre.'\')" value="-">
                                                 	<input name="oreTeoria'.$i.'0" type="number" readonly id="oreTeoria'.$i.'0" type="text" value="0" size="3">
@@ -607,8 +608,8 @@ echo '
                                                 	<input name="oreLab'.$i.'0" type="number" readonly id="oreLab'.$i.'0" type="text" value="0" size="3">
                                                     <input type="button" onclick="calcoloOre('.$i.',\'lab\',\'oreLab'.$i.'0\',this.value,\''.$idTotOre.'\')" value="+">
                                                 </td>';
-												
-                                                
+
+
                                                 echo '<td name="totOre" id="'.$idTotOre.'"></td>';
 												echo '<td name="tipologia" id="tipologia'.$i.'">Tipologia</td>';
 												echo '<td> <select name="docente'.$i.'0" class="form-control" id="prof'.$i.'0" onchange="setCampiProf(this.value,'.$i.'0)">';
@@ -629,9 +630,9 @@ echo '
     						<section class="col-lg-12">&nbsp</section>
           				<section class="col-lg-12">&nbsp</section>
           				<section class="col-lg-12">&nbsp</section>';
-					
-					
-				?>                
+
+
+				?>
 <!-- CORPO BOX -->
 					 <section class="col-lg-12">&nbsp;</section>
 				     <section class="col-lg-12">&nbsp;</section>
@@ -640,26 +641,26 @@ echo '
 <!-- IL TASTO SALVA TI RIPORTA A CREA_PROGDID.PHP, ATTIVA I PULSANTI DI QUELLA PAGINA E AGGIUNGE L'INSEGNAMENTO AL DB E ALLA TABELLA -->
 			        		<input type="button" class="btn btn-default btn-lg" value="Annulla" name="annulla" onclick="annulla()">
 			        	</div>
-                        
+
 			        </section>
-                    
-                    
+
+
 				 </form>
                 </div><!-- /.box-body -->
 			</div>
-			
+
  		</div><!-- /.row (main row) -->
-       	
+
         </section>
       </div><!-- /.content-wrapper -->
-      
+
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 1.0.0
         </div>
         <strong>Copyright &copy; 2015-2016 <a href="">Universit&agrave degli studi di Salerno - Dipartimento di Informatica</a>.</strong> All rights reserved.
       </footer>
-    </div> 
+    </div>
 
     <!-- jQuery 2.1.4 -->
     <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -689,7 +690,7 @@ echo '
           "autoWidth": true
         });
       });
-      
+
       $('#example1').on( 'error.dt', function ( e, settings, techNote, message ) {
     console.log( 'An error has been reported by DataTables: ', message );
     } ) ;
@@ -703,9 +704,9 @@ echo '
             }
             else
             	teoria=lab=8;
-    		
-        
-		function aggiungiProf(i){ 
+
+
+		function aggiungiProf(i){
         	var tab=document.getElementById("associazione"+i);
             var n=document.getElementById("associazione"+i).childNodes.length;
             var req=new XMLHttpRequest();
@@ -724,10 +725,10 @@ echo '
             req.open("POST", "http://localhost/IGES/Application%20Layer/GestioneProgrammazioneDidattica/GestioneProgrammazioneDidattica.php", true);
             req.send(dati);
 		}
-        
+
 		function riempiTabelle(denominazione, settore, cfu, tipologia, durata,cfuFrontali,cfuLab,id){
             var i=1;
-            
+
             document.getElementById("denominazione"+i).innerHTML=denominazione;
             document.getElementById("settore"+i).innerHTML=settore;
             document.getElementById("cfu"+i).innerHTML=cfu;
@@ -739,7 +740,7 @@ echo '
             document.getElementById("errore"+i).innerHTML="";
             document.getElementById("cfuFrontali").value=cfuFrontali;
             document.getElementById("cfuLab").value=cfuLab;
-            
+
            	var tab=document.getElementById("associazione"+i);
             var n=document.getElementById("nominativoDocente"+id).childNodes.length;
             if(tab.childNodes.length>1)
@@ -756,18 +757,18 @@ echo '
             	test(i);*/
             document.getElementById("assegnazione").style.display="block";
 		}
-        
+
         function removeChild(idTabella,n){
                 for(j=0;j<n-1;j++)
                     idTabella.removeChild(idTabella.lastChild);
         }
-        
+
         function eliminaProf(i){
         	var tab=document.getElementById("associazione"+i);
             if(tab.childNodes.length>1)
             	tab.removeChild(tab.lastChild)
         }
-        
+
         function addProfChild(nTab,nProf){
         	var professoreAssegnato="";
             var i=nProf;
@@ -794,13 +795,13 @@ echo '
                 professoreAssegnato+='<td name="ruolo" id="ruolo'+nTab+''+i+'"></td>';
                 professoreAssegnato+='<td name="ssd" id="ssd'+nTab+''+i+'"></td>';
                 professoreAssegnato+='</tr>';
-                
-           
+
+
           	return professoreAssegnato;
         }
-        
-        
-        
+
+
+
         function setCampiProf(dato,numero){
         	if(dato!="Nessun Professore"){
               inf=dato.split(".");
@@ -812,16 +813,16 @@ echo '
               document.getElementById("ruolo"+numero).innerHTML="";
             }
         }
-        
+
         function confrontaSSD(ssd){
         	if(document.getElementById("settore1").innerHTML!=ssd)
             	alert("Attenzione!\nIl docente assegnato non appartiene al SSD indicato dall'insegnamento!");
         }
-		
-        
+
+
         function calcoloOre(nTab,tipologia,idOre,segno,idTotOre){
 			//alert(nTab+" Tipologia"+tipologia+" ID:"+idOre+" "+segno+" ID TOT ORE"+idTotOre);
-            
+
             if(parseInt(document.getElementById(idOre).value)==0 && segno=="-")
             	document.getElementById(idOre).value=0;
             else{
@@ -848,8 +849,8 @@ echo '
             }
             test(nTab)
         }
-        
-        
+
+
      	function test(nTab){
         	val=controllaOre(nTab);
                 if(val!=""){
@@ -862,7 +863,7 @@ echo '
                 else
                 	document.getElementById("errore"+nTab).innerHTML="";
         }
-     
+
      	function controllaOre(nTab){
         	var tab=document.getElementById("associazione"+nTab);
         	var nChild=tab.childNodes.length;
@@ -883,9 +884,9 @@ echo '
             	errore+="Laboratorio."+contLab+"."+oreCorsoLab+"<br>.";
             alert(errore);
             return errore;
-            
+
         }
-        
+
         function calcoloOreCFU(){
         	var cfuF=document.getElementById("cfuFrontali").value;
             var cfuL=document.getElementById("cfuLab").value;
@@ -902,13 +903,13 @@ echo '
                 	oreCorsoLab+=8;
             }
         }
-        
-        
-        
+
+
+
         function annulla(){
         	location.href="http://localhost/IGES/Presentation%20Layer/Prog/Crea_ProgDid.php";
         }
-        
+
         function controllaDocente(){
         	errori="";
             for(var i=1;i<=document.getElementById("classi").value;i++){
@@ -922,14 +923,14 @@ echo '
             }
             return errori;
         }
-        
+
         function controllaErroreOre(){
         	errori="";
         	for(i=1;i<=document.getElementById("classi").value;i++)
             	errori+=document.getElementById("errore"+i).innerHTML;
             return errori;
         }
-        
+
         function verificaErrori(){
         	var errore="";
             var docente=controllaDocente();
@@ -938,13 +939,13 @@ echo '
             	errore="Nessun docente associato!";
         	if(ore!="")
             	errore+="Verificare numero di ore associate!";
-           	
+
             if(errore!="")
             	alert(errore);
             else
             	document.creaProgD.submit();
         }
-        
-    </script>    
+
+    </script>
   </body>
 </html>

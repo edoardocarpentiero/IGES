@@ -45,7 +45,6 @@ class GestioneRegolamento{
 	
 	public function getCurriculum($corso, $annoAccademico, $stato="Pubblicato"){
 		$query="SELECT DISTINCT Nome_Curriculum FROM Regolamento WHERE Anno_accademico='".$annoAccademico."' AND Corso='".$corso."' AND Stato='".$stato."'";
-		syslog(LOG_INFO,$query);
 		$risultatoQuery=$this->database->eseguiQuery($query);
 		$arrayRisultato=array();
 		if($risultatoQuery->num_rows!=0){
