@@ -289,7 +289,7 @@ echo '
 								<label>Laurea</label>
 							</section>
 							<section class="col-lg-3">
-								<input type="radio" name="corso" value="Magistrale" id="magist">
+								<input type="radio" name="corso" value="Laurea Magistrale" id="magist">
 								<label>Laurea Magistrale</label>
 							</section>
 	                    </div>

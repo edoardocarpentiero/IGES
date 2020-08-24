@@ -276,6 +276,7 @@ echo '
                   <h3 class="box-title">Crea Regolamento - CURRICULUM <?php echo strtoupper($_POST["curr"]);?></h3>
                   <input type="hidden" id="curriculum" value="<?php echo strtoupper($_POST["curr"]);?>">
                   <input type="hidden" id="corso" value="<?php echo strtoupper($_POST["corso"]);?>">
+
                   <input type="hidden" value="salvaRegolamento" name="funzione">
                   <?php
                   		$annoIniziale=substr(date("Y"),0,2);
@@ -325,7 +326,7 @@ echo '
        				$anno1=$annoFinale;
                     if($_POST["corso"]=="Laurea")
                     	$n=3;
-                    else if($_POST["corso"]=="Magistrale")
+                    else if($_POST["corso"]=="Laurea Magistrale")
                     	$n=2;
 					echo '<form action="" method="get" name="form1">
 							<input type="hidden" name="curr" value="'.$_POST["curr"].'">

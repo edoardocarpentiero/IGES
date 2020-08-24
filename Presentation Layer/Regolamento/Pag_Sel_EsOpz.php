@@ -308,7 +308,7 @@ echo '
                           <?php
                           require_once(dirname(__DIR__,2).'\Application Layer\GestioneInsegnamenti\GestioneInsegnamento.php');
                               $db=new GestioneInsegnamenti();
-                              $result=$db->visualizzaInsegnamenti("","");
+                              $result=$db->visualizzaInsegnamenti("","",0);
                               $n=count($result);
 							  $curr=strtoupper($_GET["curr"]);
 							  if(isset($_SESSION["idInsegnamenti".$curr]))

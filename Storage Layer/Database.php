@@ -8,18 +8,18 @@
 *Version : 1.0
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
-
+/*
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "root");
 define("DB_DATABASE", "myprd");
+*/
 
-/*
 //databaseTesting
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "root");
-define("DB_DATABASE", "myprd_testing");*/
+define("DB_DATABASE", "myprd_testing");
 
 class Database{
 	private $connessione, $risultato;
