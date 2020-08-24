@@ -255,6 +255,7 @@ where p.Semestre="'.$semestre.'" and p.Stato="Draft" and p.Corso = "'.$corso.'" 
     //$semestre indica il semestre di cui si vuole sapere la programmazione didattica
     //restituisce la variabile $d che contiene le informazioni riguardanti la programmazione didattica cercata
     public function getProgDidVis($corso, $anno_accademico, $anno_corso, $utente,$semestre=0){
+
     	$riga = "<tr>";
         $d="";
         if($utente == 'Presidente' && $semestre!=0)
