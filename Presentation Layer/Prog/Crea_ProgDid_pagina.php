@@ -406,7 +406,7 @@ echo '
                                             $numRows = mysqli_num_rows($risultatoxQuery);
                                             if($numRows>0)
                                             	$esiste = 1;
-                                           
+                $msg="";
                  if($esiste == 1)                           	
             	{   
 					$msg="Questa Programmazione Didattica esiste, sarai reindirizzato alla pagina di Modifica!";
@@ -417,7 +417,7 @@ echo '
         	} //FINE ALERT
             ?>
             <script  type="text/javascript" language="javascript">
-    		  var errorMsg = '<? echo addslashes($msg); ?>';
+                var errorMsg = '<?php echo $msg; ?>';
       			if (errorMsg != '') {
          			alert(errorMsg);
                     window.location.href='Mod_ProgDid.php';
