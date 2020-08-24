@@ -585,7 +585,7 @@ echo '
 					//RIPETERE TANTE VOLTE QUANTE SONO LE CLASSI SELEZIONATI NELLA PAGINA Crea_ProgDid.php
 					//SONO STATE IPOTIZZATE 3 CLASSI
 					$numClassi = intval($_GET["classi"]);
-                    $semestre=$_POST['semestre'];
+                    $semestre=$_GET['semestre'];
                     
 					for($i=1;$i<=$numClassi;$i++){
                     
