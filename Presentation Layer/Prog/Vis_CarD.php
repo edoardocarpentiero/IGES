@@ -90,7 +90,7 @@ echo '
             <ul class="nav navbar-nav">
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" name="utenteLog">
                  <img src="'.$_SESSION['fotoProfilo'].'" class="user-image" alt="User Image">
                   <span class="hidden-xs">'.$_SESSION['username'].'</span>
                 </a>
@@ -108,7 +108,7 @@ echo '
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <form name="logout" method="post" action="http://localhost/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
+                      <form name="logout" method="post" action="/IGES/Application%20Layer/GestioneAutenticazione/Autenticazione.php">
 					  <input type="hidden" name="funzione" value="logout">
 					  <input type="hidden" name="nomepagina" value="/IGES/Presentation%20Layer/index.php">
 					  <input type="submit" name="Logout" value="Logout"  style="background-color: #FF8800 !important;
