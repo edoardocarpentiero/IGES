@@ -344,8 +344,8 @@ echo '
 								<td>
 								<select class="form-control" name="corso" id="corso" style="width: 160px;" onchange="getElementi()">
 			                       	<option value=""></option>
-                                    <option value="laurea">Laurea</option>
-			                       	<option value="magistrale">Laurea Magistrale</option>
+                                    <option value="Laurea">Laurea</option>
+			                       	<option value="Laurea Magistrale">Laurea Magistrale</option>
 			                    </select>
 								</td>
 			                    <!-- DECIDERE IL FORMATO DI ANNO ACCADEMICO -->
