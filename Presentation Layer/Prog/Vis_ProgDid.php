@@ -2,6 +2,9 @@
 
 if (!isset($_SESSION))
     session_start();
+
+ini_set('display_errors', 0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html>
@@ -450,9 +453,9 @@ echo '
 			for (var i = sec.length - 1; i >= 0; i--)
 				sec.remove(i);
 
-			if(a.value == "laurea")
-            	numAnni=3;
-            else if(a.value == "magistrale")
+            if(a.value == "Laurea")
+                numAnni=3;
+            else if(a.value == "Laurea Magistrale")
             	numAnni=2;
             else 
             	numAnni=0;
