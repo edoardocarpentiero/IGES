@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 require_once(dirname(__DIR__, 2) . '\IGES\Application Layer\GestioneCaricoDidattico\InsegnamentoProgDidattica.php');
 require_once(dirname(__DIR__, 2) . '\IGES\Application Layer\GestioneProgrammazioneDidattica\Associa.php');
 require_once(dirname(__DIR__, 2) . '\IGES\Application Layer\GestioneProgrammazioneDidattica\ProgrammazioneDidattica.php');
-
+require_once(dirname(__DIR__, 2) . '\IGES\Application Layer\GestioneInsegnamenti\Insegnamento.php');
 
 class InsegnamentoProgDidatticaTest extends TestCase
 {
@@ -21,15 +21,10 @@ class InsegnamentoProgDidatticaTest extends TestCase
 
     public function testGetInsegnamento()
     {
-
+        $this->assertEquals("");
     }
 
-    public function testSetAssociazione()
-    {
-
-    }
-
-    public function testGetProgrammazioneDidattica()
+    public function testSetInsegnamento()
     {
 
     }
@@ -39,7 +34,12 @@ class InsegnamentoProgDidatticaTest extends TestCase
 
     }
 
-    public function testSetInsegnamento()
+    public function testSetAssociazione()
+    {
+
+    }
+
+    public function testGetProgrammazioneDidattica()
     {
 
     }
