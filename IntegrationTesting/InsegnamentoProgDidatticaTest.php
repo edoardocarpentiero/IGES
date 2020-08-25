@@ -18,7 +18,6 @@ class InsegnamentoProgDidatticaTest extends TestCase
         syslog(LOG_INFO,"UnitTesting START");
     }
 
-
     public function testGetInsegnamento()
     {
         $this->assertEquals("");
