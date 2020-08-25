@@ -17,6 +17,7 @@ class DocentePrDTest extends TestCase
         syslog(LOG_INFO,"UnitTesting START");
     }
 
+
     public function testGetNumeroInsegnamentiSospesi()
     {
         $this->assertEquals(6,$this->doc->getNumeroInsegnamentiSospesi());
