@@ -6,6 +6,7 @@ class InsegnamentoProgDidattica
 		 
 		 function __construct($insegnamento,$associazione,$programmazioneDidattica)
 		 {
+		     //if($insegnamento instanceof Insegnamento)
 			 $this->insegnamento = $insegnamento;
 			 $this->associazione = $associazione;
              $this->programmazioneDidattica = $programmazioneDidattica;
