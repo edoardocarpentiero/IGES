@@ -1,3 +1,15 @@
 #update myprd_testing.Associa set Matricola_Professore=201515200, status="IN ATTESA" where Matricola_Insegnamento=9 AND classe=1 AND ID_ProgDid=7 AND Matricola_Professore=201515172 AND Ore_Teoria=40 AND Ore_Lab=0
 update myprd_testing.Associa set Matricola_Professore=201515200, status="IN ATTESA" where Matricola_Insegnamento=9 AND classe=2 AND ID_ProgDid=7 AND Matricola_Professore=201515166 AND Ore_Teoria=48 AND Ore_Lab=0;
 update myprd_testing.Associa set Matricola_Professore=201515172, status="RIFIUTATO" where Matricola_Insegnamento=9 AND classe=1 AND ID_ProgDid=7 AND Matricola_Professore=201515200 AND Ore_Teoria=40 AND Ore_Lab=0;
+
+//TESTING DI SISTEMA -REGRESSIONE-
+use myprd_old;
+delete from associa where ID_ProgDid=1;
+SELECT * FROM myprd_old.associa;
+
+use myprd_old;
+SET SQL_SAFE_UPDATES = 0;
+Update associa
+set Matricola_Professore=201515166
+where Matricola_Professore=201515165;
+SELECT * FROM myprd_old.associa;
