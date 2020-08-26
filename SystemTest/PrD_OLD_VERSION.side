@@ -1,0 +1,934 @@
+{
+  "id": "b7619537-bdcf-4e86-bbbb-1c41d092393f",
+  "version": "2.0",
+  "name": "PrD_OLD_VERSION",
+  "url": "http://localhost/PrdOLD/Presentation%20Layer/index.php",
+  "tests": [{
+    "id": "957a9197-b33d-49c2-b54f-df9ceeeffed0",
+    "name": "RF_5.1 Crea Programmazione Didattica",
+    "commands": [{
+      "id": "7cc8aff7-ad70-4687-8546-173d99fb1f7c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/PrdOLD/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7ba5040-e415-4488-95a8-9ac3cb056206",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1611x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27f046f0-f76a-4ee1-a78c-1932e5e27421",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "797d1888-a364-4bf7-9d39-04b6e13f90b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d2a0952-c23d-44d6-8fdd-bb0dfce9acd7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Crea Prog. Did.",
+      "targets": [
+        ["linkText=Crea Prog. Did.", "linkText"],
+        ["css=.menu-open > li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Crea Prog. Did.')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Crea_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Crea Prog. Did.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8118a7ad-fcb0-4b9c-933e-8527c1384e4c",
+      "comment": "",
+      "command": "click",
+      "target": "id=laurea",
+      "targets": [
+        ["id=laurea", "id"],
+        ["name=laurea", "name"],
+        ["css=#laurea", "css:finder"],
+        ["xpath=//input[@id='laurea']", "xpath:attributes"],
+        ["xpath=//section/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "722c9ce2-f858-46d9-abae-ae310006629d",
+      "comment": "",
+      "command": "click",
+      "target": "id=selectAnnoDiCorso",
+      "targets": [
+        ["id=selectAnnoDiCorso", "id"],
+        ["name=annoDiCorso", "name"],
+        ["css=#selectAnnoDiCorso", "css:finder"],
+        ["xpath=//select[@id='selectAnnoDiCorso']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83aa5664-e2a6-4344-9575-f0e8ba5ac0d6",
+      "comment": "",
+      "command": "select",
+      "target": "id=selectAnnoDiCorso",
+      "targets": [],
+      "value": "label=1"
+    }, {
+      "id": "25308c53-1ab7-419c-92a9-60c49a6930d5",
+      "comment": "",
+      "command": "click",
+      "target": "id=selectAnnoDiCorso",
+      "targets": [
+        ["id=selectAnnoDiCorso", "id"],
+        ["name=annoDiCorso", "name"],
+        ["css=#selectAnnoDiCorso", "css:finder"],
+        ["xpath=//select[@id='selectAnnoDiCorso']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92ac1f7a-12b3-43c4-a264-c670f622e79a",
+      "comment": "",
+      "command": "click",
+      "target": "id=selectCurriculum",
+      "targets": [
+        ["id=selectCurriculum", "id"],
+        ["name=curriculum", "name"],
+        ["css=#selectCurriculum", "css:finder"],
+        ["xpath=//select[@id='selectCurriculum']", "xpath:attributes"],
+        ["xpath=//section[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de18987a-d7b3-4c5d-ac6f-2caaa87a8753",
+      "comment": "",
+      "command": "select",
+      "target": "id=selectCurriculum",
+      "targets": [],
+      "value": "label=PROVA IGES"
+    }, {
+      "id": "8f02ce1f-28b2-4c69-b784-1d95453f7e2f",
+      "comment": "",
+      "command": "click",
+      "target": "id=selectCurriculum",
+      "targets": [
+        ["id=selectCurriculum", "id"],
+        ["name=curriculum", "name"],
+        ["css=#selectCurriculum", "css:finder"],
+        ["xpath=//select[@id='selectCurriculum']", "xpath:attributes"],
+        ["xpath=//section[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8544b89a-116d-4526-8799-cac5e501cf88",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Crea']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "141243b9-71c0-4584-a10d-a393bcd05c40",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\31 > td:nth-child(3)",
+      "targets": [
+        ["css=#\\31 > td:nth-child(3)", "css:finder"],
+        ["xpath=//tr[@id='1']/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'INF/01')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55b7ad42-defd-4a33-9534-c96edf2507de",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=#\\33 > td:nth-child(6)",
+      "targets": [
+        ["css=#\\33 > td:nth-child(6)", "css:finder"],
+        ["xpath=//tr[@id='3']/td[6]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70e9889f-6b71-4ba5-9ded-eef63ce716cf",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=#\\33 > td:nth-child(6)",
+      "targets": [
+        ["css=#\\33 > td:nth-child(6)", "css:finder"],
+        ["xpath=//tr[@id='3']/td[6]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebb411c1-13fb-4dd5-b908-091d6c67ea3f",
+      "comment": "",
+      "command": "click",
+      "target": "id=prof10",
+      "targets": [
+        ["id=prof10", "id"],
+        ["name=docente10", "name"],
+        ["css=#prof10", "css:finder"],
+        ["xpath=//select[@id='prof10']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[9]/select", "xpath:idRelative"],
+        ["xpath=//td[9]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3e182c8-5cff-4c1d-94d3-9f659dd2e75f",
+      "comment": "",
+      "command": "select",
+      "target": "id=prof10",
+      "targets": [],
+      "value": "label=Roberto De Prisco"
+    }, {
+      "id": "f8195bb6-789b-4366-a0cc-eb11ce0ed04d",
+      "comment": "",
+      "command": "click",
+      "target": "id=prof10",
+      "targets": [
+        ["id=prof10", "id"],
+        ["name=docente10", "name"],
+        ["css=#prof10", "css:finder"],
+        ["xpath=//select[@id='prof10']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[9]/select", "xpath:idRelative"],
+        ["xpath=//td[9]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "196b34ec-855c-47b4-87cd-ef85f7d5971a",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35a91cd7-c32d-4022-a547-6fad8d7d6760",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b96e650b-17c6-4270-8401-6fd675f68433",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3855d147-f134-453c-8079-c09034dc831b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6e03c1c-9090-49b7-8869-fe1858587723",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1957450-0bdf-4908-a09f-73e4d70be214",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14277a42-6f7a-4da7-8f24-7dcff21d4d36",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb39161c-af4f-4f2f-b1f2-83e235b63e33",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(5) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='+']", "xpath:attributes"],
+        ["xpath=//tbody[@id='associazione1']/tr/td[5]/input[3]", "xpath:idRelative"],
+        ["xpath=//td[5]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3718311a-52c8-41d9-9e56-218aac0c284c",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) > input:nth-child(3)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97c9f44c-a787-4119-ab03-0cecc7c6dcdf",
+      "comment": "",
+      "command": "click",
+      "target": "name=salva",
+      "targets": [
+        ["name=salva", "name"],
+        ["css=.col-lg-12:nth-child(9) .btn", "css:finder"],
+        ["xpath=//input[@name='salva']", "xpath:attributes"],
+        ["xpath=//div[@id='assegnazione']/div[2]/form/section[6]/div/input", "xpath:idRelative"],
+        ["xpath=//section[6]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1332dca-45cb-4fcf-8d8d-8eaa90907a80",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a0e4b29-1b21-4a3e-b4bc-a0c2af03a0f6",
+      "comment": "",
+      "command": "click",
+      "target": "name=submitConferma",
+      "targets": [
+        ["name=submitConferma", "name"],
+        ["css=.btn-lg:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='submitConferma']", "xpath:attributes"],
+        ["xpath=//section/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97758601-6827-4271-b46a-101a4e3e16b2",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cb7031b-b5bf-4887-9a1f-7bbb8cfdfd11",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Presidente",
+      "targets": [
+        ["linkText=Presidente", "linkText"],
+        ["name=utenteLog", "name"],
+        ["css=.dropdown-toggle", "css:finder"],
+        ["xpath=//a[@name='utenteLog']", "xpath:attributes"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Presidente')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "29630438-bd70-4d95-880c-73652d61a3e2",
+      "comment": "",
+      "command": "click",
+      "target": "name=Logout",
+      "targets": [
+        ["name=Logout", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='Logout']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "62076759-d11f-4e56-bce4-db3c17ad39f4",
+    "name": "RF_5.3 Visualizza Programmazione Didattica",
+    "commands": [{
+      "id": "379472a8-5775-468f-8522-07a044088c8a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/PrdOLD/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a4096fd-2330-4e5c-a6e1-7ea447a3c7ae",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "239c48e7-df22-4e99-b451-5ff64931a268",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7dd30e41-20d5-458c-8500-60c6a957544e",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84d460c2-e5a1-4033-966d-b58ef3bc6859",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9765c5d0-93c8-47fe-b6f5-a1aba88828db",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Prog. Did.",
+      "targets": [
+        ["linkText=Visualizza Prog. Did.", "linkText"],
+        ["css=.menu-open > li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Prog. Did.')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Prog. Did.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71b549a6-cd4b-42c3-9e56-7bc3772f63d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=corso",
+      "targets": [
+        ["id=corso", "id"],
+        ["name=corso", "name"],
+        ["css=#corso", "css:finder"],
+        ["xpath=//select[@id='corso']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53834e9f-7223-4e88-b341-7afe75f1222f",
+      "comment": "",
+      "command": "select",
+      "target": "id=corso",
+      "targets": [],
+      "value": "label=Laurea"
+    }, {
+      "id": "41036a70-1604-4378-9538-9773ce3eb290",
+      "comment": "",
+      "command": "click",
+      "target": "id=corso",
+      "targets": [
+        ["id=corso", "id"],
+        ["name=corso", "name"],
+        ["css=#corso", "css:finder"],
+        ["xpath=//select[@id='corso']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b954e0a9-4999-4c5a-ad10-2a911f0c1f7b",
+      "comment": "",
+      "command": "click",
+      "target": "id=anno",
+      "targets": [
+        ["id=anno", "id"],
+        ["name=anno", "name"],
+        ["css=#anno", "css:finder"],
+        ["xpath=//select[@id='anno']", "xpath:attributes"],
+        ["xpath=//td[6]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "690c2811-a8dd-4586-8194-a2cbe444e9f3",
+      "comment": "",
+      "command": "select",
+      "target": "id=anno",
+      "targets": [],
+      "value": "label=Anno 1"
+    }, {
+      "id": "d75070e9-c172-48d1-b422-4ef0c805b59b",
+      "comment": "",
+      "command": "click",
+      "target": "id=anno",
+      "targets": [
+        ["id=anno", "id"],
+        ["name=anno", "name"],
+        ["css=#anno", "css:finder"],
+        ["xpath=//select[@id='anno']", "xpath:attributes"],
+        ["xpath=//td[6]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4566d42a-0f89-4c18-a196-b72a4016e89c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-print",
+      "targets": [
+        ["css=.fa-print", "css:finder"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'  PDF')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "55f2571a-9511-4a5e-96e2-0db8b7295f22",
+    "name": "RF_5.5 Visualizzare Monte Ore Docente",
+    "commands": [{
+      "id": "e7e7162b-889d-422b-b9f0-842ab5c1bca3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/PrdOLD/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb96820f-9c43-43e2-933b-737308ac9ba9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "317add0a-60f4-4777-ba96-8e2f97d71510",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0716a676-6424-4763-8050-deacb7a65e83",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "81ff7d72-29da-41c9-908c-7ebc17cbf978",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e1f8ee5-b0fe-41a1-9112-2d5e6520017d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bdc136e-9f34-426e-8532-4dfb1667f824",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "64ec1c3d-5fbe-4846-9d93-3d74e1db8571",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(1) > .sorting_1",
+      "targets": [
+        ["css=.dati:nth-child(1) > .sorting_1", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Abate')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6eab3bbc-c0a4-4f73-b897-4cf0912f062b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(10) > .sorting_1",
+      "targets": [
+        ["css=.dati:nth-child(10) > .sorting_1", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr[10]/td", "xpath:idRelative"],
+        ["xpath=//tr[10]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'De Prisco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de60d7f7-4b32-4688-87b7-8c3b82728ae2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Presidente",
+      "targets": [
+        ["linkText=Presidente", "linkText"],
+        ["name=utenteLog", "name"],
+        ["css=.dropdown-toggle", "css:finder"],
+        ["xpath=//a[@name='utenteLog']", "xpath:attributes"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Presidente')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8cf3f0d-1426-4ea5-8367-ea59e12e9db6",
+      "comment": "",
+      "command": "click",
+      "target": "name=Logout",
+      "targets": [
+        ["name=Logout", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='Logout']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7b085086-4fa6-4c09-a9bf-4ba7d3f51f0c",
+    "name": "RF_5.6 Cambiamento Stato Programmazione Didattica",
+    "commands": [{
+      "id": "2d313ad8-a1da-4928-9b65-c7c06fea7ac7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/PrdOLD/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2997979c-ee01-49d9-9f8d-ec8947aba117",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1eb4b840-b96d-4b04-8a9d-7dc820737ad6",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "effa05b3-b87a-48ea-8394-76fad44b88b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a3dbcbc-d3f1-453d-9a64-0dca3d8e2ccf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cambia Stato",
+      "targets": [
+        ["linkText=Cambia Stato", "linkText"],
+        ["css=.menu-open > li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Cambia Stato')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/CambiaStato_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Cambia Stato')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec654260-c20a-467f-91d3-1c58b557242a",
+      "comment": "",
+      "command": "click",
+      "target": "name=prog0",
+      "targets": [
+        ["name=prog0", "name"],
+        ["css=td > .form-control", "css:finder"],
+        ["xpath=//select[@name='prog0']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[7]/select", "xpath:idRelative"],
+        ["xpath=//td[7]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b41ef828-f049-4907-9ceb-9e2df2f7e28c",
+      "comment": "",
+      "command": "select",
+      "target": "name=prog0",
+      "targets": [],
+      "value": "label=Da Approvare"
+    }, {
+      "id": "a1365020-defc-489a-b60e-dcd2125a2a7f",
+      "comment": "",
+      "command": "click",
+      "target": "name=prog0",
+      "targets": [
+        ["name=prog0", "name"],
+        ["css=td > .form-control", "css:finder"],
+        ["xpath=//select[@name='prog0']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[7]/select", "xpath:idRelative"],
+        ["xpath=//td[7]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "faf57e46-c7b9-4a0e-bf8e-342ebea71549",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Conferma Modifiche']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de62f9cd-9791-43a7-948c-fb528d208bdf",
+      "comment": "",
+      "command": "click",
+      "target": "name=prog0",
+      "targets": [
+        ["name=prog0", "name"],
+        ["css=td > .form-control", "css:finder"],
+        ["xpath=//select[@name='prog0']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[7]/select", "xpath:idRelative"],
+        ["xpath=//td[7]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19d480c5-2a14-4390-9c36-9abd1dfe77a9",
+      "comment": "",
+      "command": "select",
+      "target": "name=prog0",
+      "targets": [],
+      "value": "label=Approvato"
+    }, {
+      "id": "951e36c6-50fb-448a-8a58-9ac12ad620bf",
+      "comment": "",
+      "command": "click",
+      "target": "name=prog0",
+      "targets": [
+        ["name=prog0", "name"],
+        ["css=td > .form-control", "css:finder"],
+        ["xpath=//select[@name='prog0']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[7]/select", "xpath:idRelative"],
+        ["xpath=//td[7]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55d7de2a-6e96-453b-b3e7-ff72b6ab1e98",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Conferma Modifiche']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2750af0b-3f87-43f4-9e4d-bd639a584585",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hidden-xs:nth-child(2)",
+      "targets": [
+        ["css=.hidden-xs:nth-child(2)", "css:finder"],
+        ["xpath=//li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Presidente')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e450a82-0982-4d01-98b5-d7a513f73be2",
+      "comment": "",
+      "command": "click",
+      "target": "name=Logout",
+      "targets": [
+        ["name=Logout", "name"],
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='Logout']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "14323a84-cc2b-4c4b-8b7c-4a7992c86fb1",
+    "name": "RF_5.8 Visualizza Carico Didattico Personale",
+    "commands": [{
+      "id": "e8f2f677-bd14-40f9-a64c-b47076ef20c2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/PrdOLD/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa7c2dd4-058c-4352-9a1f-41ed170c2f0f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0757cbac-c9d7-49c8-a17e-3a2f16d8e417",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2375c266-048e-4ea1-99ec-380205556e59",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e129533b-83b4-45b8-b528-e04d92a56415",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce9fee24-de78-4220-9ca8-209efe46ae73",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d361d348-879c-499a-a942-7d7ad615bafc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hidden-xs:nth-child(2)",
+      "targets": [
+        ["css=.hidden-xs:nth-child(2)", "css:finder"],
+        ["xpath=//li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'DePrisco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e02e975b-8118-44c7-af2e-5666341847c4",
+    "name": "RF_5.2 Modificare Programmazione Didattica",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "3b728090-ad2c-4546-aeb5-67c20fb8320a",
+    "name": "RF_5 Gestione Programmazione Didattica",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["957a9197-b33d-49c2-b54f-df9ceeeffed0", "7b085086-4fa6-4c09-a9bf-4ba7d3f51f0c", "e02e975b-8118-44c7-af2e-5666341847c4", "14323a84-cc2b-4c4b-8b7c-4a7992c86fb1", "62076759-d11f-4e56-bce4-db3c17ad39f4", "55f2571a-9511-4a5e-96e2-0db8b7295f22"]
+  }],
+  "urls": ["http://localhost/PrdOLD/Presentation%20Layer/index.php", "http://localhost/IGES/Presentation%20Layer/index.php"],
+  "plugins": []
+}
