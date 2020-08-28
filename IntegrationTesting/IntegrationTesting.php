@@ -45,9 +45,11 @@ class IntegrationTesting extends TestCase
         $this->assertNotEmpty($insegnamentiDisp,"Lista insegnamenti disponibili vuota");
     }
     public function testTC_7_3_1(){
+        $_SESSION['presidente']=false;
         $proposta=$this->ges->proponiInsegnamento(new Associa(9,2,7,201515166,48,0,"PROPOSTO"));
         $this->assertTrue($proposta,"Insegnamento PROPOSTO");
     }
+
     public function testTC_7_3_2(){
         $proposta=$this->ges->proponiInsegnamento(new Associa(9,2,7,201515100,48,0,"PROPOSTO"));
         $this->assertFalse($proposta,"Matricola docente non presente");
@@ -127,6 +129,7 @@ class IntegrationTesting extends TestCase
 
     //Insegnamento proposto dal Presidente
     public function testTC_7_4_1(){
+        $_SESSION['presidente']=true;
         $value=$this->ges->cambiaStatoAssociazione(new Associa(8,2,7,201515172,40,0,"ACCETTATO"));
         $this->assertEquals(0,$value,"Stato aggiornato in ACCETTATO");
     }

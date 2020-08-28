@@ -169,10 +169,11 @@ class GestioneCaricoDidattico{
             return false;
         }
         else{
-
-            $query="UPDATE Associa SET status='".$associa->getStatus()."', Matricola_Professore=".$associa->getDocente()." WHERE Matricola_Insegnamento='".$associa->getInsegnamento()."' AND Classe=".$associa->getClasse()." AND ID_ProgDid=".$associa->getProgD()." AND Matricola_Professore=".$this->matricolaDocenteFittizio." AND Ore_Teoria=".$associa->getOreTeoria()." AND Ore_Lab=".$associa->getOreLab();
-            $this->database->eseguiQuery($query);
-            return true;
+            if(!$_SESSION['presidente']){
+                $query="UPDATE Associa SET status='".$associa->getStatus()."', Matricola_Professore=".$associa->getDocente()." WHERE Matricola_Insegnamento='".$associa->getInsegnamento()."' AND Classe=".$associa->getClasse()." AND ID_ProgDid=".$associa->getProgD()." AND Matricola_Professore=".$this->matricolaDocenteFittizio." AND Ore_Teoria=".$associa->getOreTeoria()." AND Ore_Lab=".$associa->getOreLab();
+                $this->database->eseguiQuery($query);
+                return true;
+            }
         }
     }
 
