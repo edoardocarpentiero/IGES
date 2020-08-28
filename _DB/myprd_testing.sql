@@ -299,7 +299,7 @@ CREATE TABLE `Regolamento` (
 
 LOCK TABLES `Regolamento` WRITE;
 /*!40000 ALTER TABLE `Regolamento` DISABLE KEYS */;
-INSERT INTO `Regolamento` VALUES ('Laurea','2019-2020','PROVA IGES',0,1,138,'Pubblicato'),('Laurea','2019-2020','PROVA IGES',6,2,139,'Pubblicato'),('Laurea','2019-2020','PROVA IGES',6,3,140,'Pubblicato');
+INSERT INTO `Regolamento` VALUES ('Laurea','2020-2021','PROVA IGES',0,1,138,'Pubblicato'),('Laurea','2020-2021','PROVA IGES',6,2,139,'Pubblicato'),('Laurea','2020-2021','PROVA IGES',6,3,140,'Pubblicato');
 /*!40000 ALTER TABLE `Regolamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
