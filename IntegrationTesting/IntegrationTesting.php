@@ -261,24 +261,6 @@ class IntegrationTesting extends TestCase
         $this->assertEquals(-1,$value,"Email inoltrata");
     }
 
-/*
- * 1 ore extra
- * -1 non raggiunto
- * 2 carico ore superato
- */
-    /*public function testTC_7_5_1(){
-        $docentiPrD=$this->ges->getDocentiPrD();
-        $docente=null;
-        //201515165 ferrucci
-        foreach ($docentiPrD as $doc){
-            if(strcmp($doc->getMatricola(),"201515165"))
-        }
-        $matricolaDocente=$doc->getMatricola();
-        $docente->getNumeroInsegnamentiSospesi();
-        $statusCarico=$docente->getStatusCarico();
-        $this->assertTrue();
-    }*/
-
     public function testTC_7_6_1()
     {
         $value=$this->ges->getInfoDocentiInsegnamento("30a",2,7);
