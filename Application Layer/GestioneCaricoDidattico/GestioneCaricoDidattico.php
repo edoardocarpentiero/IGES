@@ -19,7 +19,8 @@
 require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidattica\GestioneProgrammazioneDidattica.php');
 require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 include("InsegnamentoProgDidattica.php");
-include("DocentePrD.php");
+require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\Docente.php');
+//include("DocentePrD.php");
 
 class GestioneCaricoDidattico{
     private $database;
@@ -102,7 +103,7 @@ class GestioneCaricoDidattico{
         $arrayDocentiPrD=array();
 
         while($risultato=$risultatoQuery->fetch_row()){
-            $docentePrd=new DocentePrD($risultato[0],$risultato[1],$risultato[2],$risultato[3],$risultato[4],$risultato[5]);
+            $docentePrd=new Docente($risultato[0],$risultato[1],$risultato[2],$risultato[3],$risultato[4],$risultato[5]);
             $arrayInsegnamentiAssociati=$this->getInsegnamentiAssociatiAlDocente($risultato[0]);
             $n=count($arrayInsegnamentiAssociati);
             $insegnamentiInSospeso=0;
@@ -182,6 +183,7 @@ class GestioneCaricoDidattico{
     Restituisce le informazioni relative ai docente associati a quell'insegnamento e le relative ore assegnate
      */
     public function getInfoDocentiInsegnamento($matricolaInsegnamento,$classe,$IDprogDid){//AND Matricola_Professore<>'".$matricolaDocente."'
+
         if(!$this->verificaVisualizzaInsegnamentiDisponibili(new Associa($matricolaInsegnamento,$classe,$IDprogDid,"","","","")))
             return false;
         else {
@@ -278,14 +280,14 @@ class GestioneCaricoDidattico{
     }
 
     private function verificaFormatoMatricolaDocente($matricolaDocente){
-        if(preg_match('/^[0-9]{1,11}$/', $matricolaDocente))
+        if(preg_match('/^[0-9]{1,11}$/', $matricolaDocente)==1)
             return 0;
         else
             return -1;
     }
 
     private function verificaFormatoClasse($classe){
-        if(preg_match('/^[0-9]{1,11}$/', $classe)){
+        if(preg_match('/^[0-9]{1,11}$/', $classe)==1){
             if($classe>=1 && $classe<=3)
                 return 0;
         } else
@@ -293,7 +295,7 @@ class GestioneCaricoDidattico{
     }
 
     private function verificaFormatoMatricolaInsegnamento($matricolaInsegnamento){
-        if(preg_match('/^[0-9]{1,11}$/', $matricolaInsegnamento))
+        if(preg_match('/^[0-9]{1,11}$/', $matricolaInsegnamento)==1)
             return 0;
         else
             return -1;
@@ -301,7 +303,7 @@ class GestioneCaricoDidattico{
     }
 
     private function verificaFormatoOre($ore){
-        if(preg_match('/^[0-9]{1,2}$/', $ore))
+        if(preg_match('/^[0-9]{1,2}$/', $ore)==1)
             return 0;
         else
             return -1;
@@ -365,13 +367,15 @@ class GestioneCaricoDidattico{
     }
 
     private function verificaVisualizzaInsegnamentiDisponibili($associa){
-        if($this->verificaFormatoClasse($associa->getClasse())==0){
+        //if($this->verificaFormatoClasse($associa->getClasse())==0){
+        //echo $associa->getClasse();
+        //echo $this->verificaFormatoClasse($associa->getClasse())==0 && $this->verificaFormatoMatricolaInsegnamento($associa->getInsegnamento())==0 && $this->isExistInsegnamentoProgD($associa);
             if($this->verificaFormatoClasse($associa->getClasse())==0 && $this->verificaFormatoMatricolaInsegnamento($associa->getInsegnamento())==0 && $this->isExistInsegnamentoProgD($associa))
                 return true;
             else
                 return false;
-        }else
-            return false;
+        //}else
+         //   return false;
 
     }
 

@@ -410,7 +410,7 @@ echo '
                                       $datiAssociazione=$matricolaInsegnamento."&".$classe."&".$progDidattica->getID()."&".$oreTeoria."&".$oreLab;
 
 
-                                      $docentiAssociati=$ges->getInfoDocentiInsegnamento($_SESSION['matricola'],$matricolaInsegnamento,$classe,$progDidattica->getID());
+                                      $docentiAssociati=$ges->getInfoDocentiInsegnamento($matricolaInsegnamento,$classe,$progDidattica->getID());
                                       $datiDocente="";
                                       if(count($docentiAssociati)>0){
                                         for($j=0;$j<count($docentiAssociati);$j++)
