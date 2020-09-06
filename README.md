@@ -10,7 +10,7 @@ Su tale sistema è stata effettuata attività di manutenzione, estendendo il sis
 - Per consentire la corretta esecuzione dei test di unità, integrazione e di sistema del nuovo sistema, impostare il DB <b>myprd_testing</b> in <i>StorageLayer/Database</i><br>
 - Per consentire la corretta esecuzione del test di sistema sul sistema pre-CR, impostare il DB <b>myprd_old</b> in <i>StorageLayer/Database</i><br>
 - Le query da inserire dopo l'esecuzione del test di sistema sono presenti nel file <b>query_testing.sql</b>
-- I test case di sistema sono inclusi nel file PrD.side da importare su Selenium<br>
+- I test case di sistema sono inclusi nel file <b>PrD.side</b> da importare su Selenium<br>
 
 
 ## Sviluppatori
