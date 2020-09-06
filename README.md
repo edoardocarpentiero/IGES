@@ -4,6 +4,10 @@ L’obiettivo del software Pr. D. è quello di mettere a disposizione un sistem
 
 Su tale sistema è stata effettuata attività di manutenzione, estendendo il sistema con nuovi requisiti riguardanti la gestione del carico didattico dei docenti.
 
+##Documentazione
+- Nella cartella <b>_DOCUMENTI DI MANUTENZIONE</b> sono presenti i documenti prodotti 
+-- Pr.D._MD_Vers.1.3 
+
 ## NOTE: 
 - I database utilizzati sono presenti nella cartella <b>_DB</b><br>
 - Per consentire il corretto funzionamento del sistema, impostare il DB <b>my_prd</b> in <i>StorageLayer/Database</i><br>
