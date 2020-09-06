@@ -20,7 +20,6 @@ require_once(dirname(__DIR__,2).'\Application Layer\GestioneProgrammazioneDidatt
 require_once(dirname(__DIR__,2).'\Storage Layer\Database.php');
 include("InsegnamentoProgDidattica.php");
 require_once(dirname(__DIR__,2).'\Application Layer\GestioneDocenti\Docente.php');
-//include("DocentePrD.php");
 
 class GestioneCaricoDidattico{
     private $database;
