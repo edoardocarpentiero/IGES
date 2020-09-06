@@ -5,11 +5,11 @@ L’obiettivo del software Pr. D. è quello di mettere a disposizione un sistem
 Su tale sistema è stata effettuata attività di manutenzione, estendendo il sistema con nuovi requisiti riguardanti la gestione del carico didattico dei docenti.
 
 ### NOTE: 
-I database utilizzati sono presenti nella cartella <b>_DB</b><br>
-Per consentire il corretto funzionamento del sistema, impostare il DB <b>my_prd</b> in <i>StorageLayer/Database</i><br>
-Per consentire la corretta esecuzione dei test di unità, integrazione e di sistema del nuovo sistema, impostare il DB <b>myprd_testing</b> in <i>StorageLayer/Database</i><br>
-Per consentire la corretta esecuzione del test di sistema sul sistema pre-CR, impostare il DB <b>myprd_old</b> in <i>StorageLayer/Database</i><br>
-I test case di sistema sono inclusi nel file PrD.side da importare su Selenium<br>
+- I database utilizzati sono presenti nella cartella <b>_DB</b><br>
+- Per consentire il corretto funzionamento del sistema, impostare il DB <b>my_prd</b> in <i>StorageLayer/Database</i><br>
+- Per consentire la corretta esecuzione dei test di unità, integrazione e di sistema del nuovo sistema, impostare il DB <b>myprd_testing</b> in <i>StorageLayer/Database</i><br>
+- Per consentire la corretta esecuzione del test di sistema sul sistema pre-CR, impostare il DB <b>myprd_old</b> in <i>StorageLayer/Database</i><br>
+- I test case di sistema sono inclusi nel file PrD.side da importare su Selenium<br>
 
 
 ## Sviluppatori
