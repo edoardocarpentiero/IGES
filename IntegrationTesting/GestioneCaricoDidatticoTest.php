@@ -19,31 +19,38 @@ class GestioneCaricoDidatticoTest extends TestCase
     public function testTC_7_1_1(){
         $this->assertEquals(-1,$this->ges->getInsegnamentiAssociatiAlDocente("-"),"Matricola Specificata");
     }
+
     public function testTC_7_1_2()
     {
         $this->assertEquals(-1,$this->ges->getInsegnamentiAssociatiAlDocente("201515166201515166"),"STRINGA Numerica non Maggiore di 11");
     }
+
     public function testTC_7_1_3(){
         $this->assertEquals(-1,$this->ges->getInsegnamentiAssociatiAlDocente("1515d166"),"STRINGA NON ALFANUMERICA");
     }
+
     public function testTC_7_1_4(){
         $this->assertEquals(-1,$this->ges->getInsegnamentiAssociatiAlDocente("201515100"),"Docente Esitente");
     }
+
     public function testTC_7_1_5()
     {
         $insegnamenti=$this->ges->getInsegnamentiAssociatiAlDocente("201515166");
         $this->assertNotEmpty($insegnamenti,"Insegnamenti non associati");
     }
+
     public function testTC_7_1_6()
     {
         $insegnamenti=$this->ges->getInsegnamentiAssociatiAlDocente("201515168");
         $this->assertEmpty($insegnamenti,"Insegnamenti associati");
     }
+
     public function testTC_7_2_1()
     {
         $insegnamentiDisp=$this->ges->getInsegnamentiDisponibili();
         $this->assertNotEmpty($insegnamentiDisp,"Lista insegnamenti disponibili vuota");
     }
+
     public function testTC_7_3_1(){
         $_SESSION['presidente']=false;
         $proposta=$this->ges->proponiInsegnamento(new Associa(9,2,7,201515166,48,0,"PROPOSTO"));

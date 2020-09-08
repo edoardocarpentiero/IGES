@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `my_prd` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `my_prd`;
+CREATE DATABASE  IF NOT EXISTS `myprd` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `myprd`;
 -- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: myprd
+-- Host: localhost    Database: myprd
 -- ------------------------------------------------------
 -- Server version	8.0.18
 
@@ -72,7 +72,6 @@ CREATE TABLE `associa` (
 
 LOCK TABLES `associa` WRITE;
 /*!40000 ALTER TABLE `associa` DISABLE KEYS */;
-INSERT INTO `associa` VALUES ('9',1,7,'201515176',40,0,'IN ATTESA'),('9',1,7,'201515166',32,0,'PROPOSTO'),('9',2,7,'201515166',48,0,'PROPOSTO'),('9',2,7,'201515187',32,0,'IN ATTESA'),('30',1,7,'201515166',48,0,'RIFIUTATO'),('30',2,7,'201515165',48,0,'ASSEGNATO'),('8',1,7,'201515165',72,0,'ACCETTATO'),('8',2,7,'201515172',72,0,'IN ATTESA'),('31',1,7,'201515167',48,0,'IN ATTESA'),('31',2,7,'201515166',48,0,'ACCETTATO'),('37',1,8,'201515177',40,20,'IN ATTESA'),('37',1,8,'201515170',16,10,'IN ATTESA'),('37',2,8,'201515166',32,10,'ASSEGNATO'),('37',2,8,'201515166',16,10,'ASSEGNATO');
 /*!40000 ALTER TABLE `associa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,7 +269,6 @@ CREATE TABLE `programmazione_didattica` (
 
 LOCK TABLES `programmazione_didattica` WRITE;
 /*!40000 ALTER TABLE `programmazione_didattica` DISABLE KEYS */;
-INSERT INTO `programmazione_didattica` VALUES (8,2,'Laurea',2,0,0,'2020-2021',1,'Da Approvare',139),(7,2,'Laurea',1,0,0,'2020-2021',1,'Da Approvare',139);
 /*!40000 ALTER TABLE `programmazione_didattica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,4 +360,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-30 12:35:45
+-- Dump completed on 2020-09-08 13:12:54

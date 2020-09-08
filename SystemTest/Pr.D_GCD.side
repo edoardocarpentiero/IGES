@@ -1,0 +1,2071 @@
+{
+  "id": "cf26bb41-ab4b-4d42-94b8-461b5ab378cf",
+  "version": "2.0",
+  "name": "Pr.D.",
+  "url": "http://localhost/IGES/Presentation%20Layer/index.php",
+  "tests": [{
+    "id": "0972649f-b687-4447-b1ca-9bc28dd0379b",
+    "name": "RF 7.1 Visualizza insegnamenti proposti",
+    "commands": [{
+      "id": "013a590a-a931-40fe-bd68-cb3959cf4644",
+      "comment": "",
+      "command": "open",
+      "target": "/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b83d58b9-c8ee-41ec-bf98-03c3f5cd7f39",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "899x697",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "270b1e65-95d5-4338-8647-463db6a98634",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5433f36-3c51-406a-8ae9-e2ac4fa17bc1",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "573aabee-f57f-4eb8-93b3-23883c71b5f0",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b29523b5-899e-4bbb-b39d-a12e2446f91f",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "43837723-9639-45d7-bac8-ef47e7e41a9a",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61457f7b-c1eb-4419-ba2d-7589fe8c5365",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c17cf8e5-7f06-40cc-a198-3b99aaeff726",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70c9dbb5-3b75-4b1d-8308-31ca860924f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=.dati:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'De Prisco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "154780d1-6a9e-4b81-ae08-3b843fca5324",
+    "name": "RF 7.2 Visualizza insegnamenti disponibili",
+    "commands": [{
+      "id": "8d9c8c9c-9b8c-4945-a3f8-ee4ccbf07e80",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1deafb5e-fa71-4000-80a8-92c9383dc647",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "96797da7-94d5-426c-9a15-e2658c3bf521",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4d1fd1c-975f-4605-9df0-28a101d99bde",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "342c9676-33c9-4ce5-966f-319258bcfd03",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbd0a8ee-4c9b-401b-b5ef-1b8c74b574a3",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "7181beb2-5b0b-4b1d-a72f-8539c359fb4b",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2d1627b-fbdf-4bbb-951b-305ca0e70106",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3339d70-c0c9-4184-a7a1-44c20460fadb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d555e138-5fc1-42fd-a795-62ad6a606e87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(4) > td:nth-child(2)",
+      "targets": [
+        ["css=.dati:nth-child(4) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr[4]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Fittizio')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8ddb61f0-250e-4bd9-a7c8-96dbfa19e253",
+    "name": "RF 7.4.3 Valuta insegnamento proposto ASSEGNA",
+    "commands": [{
+      "id": "f51886d9-d412-46d9-8d0d-b26ac3f73293",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "487551b5-87fd-42fc-9637-f8822d50a871",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ee180c8-c67f-4b47-99fe-329b6b3dc27a",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d322283c-d4de-493f-a0ef-fd1ab1136799",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "5f1fcfab-0dc1-482f-a5ee-9cda1cf0be5f",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "39a688aa-92a7-4af8-b836-eaa175e16411",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f34c178d-7403-4ad6-b8e9-c0540ec6ef6f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c56ab8eb-97cb-44ce-a1b4-3d01e2538648",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "741d45c3-4f02-425e-8cf5-2f500e82b8f6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(1) > td:nth-child(4)",
+      "targets": [
+        ["css=.dati:nth-child(1) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Docente Associato PA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b295c9bd-da52-4d7f-8373-6009e0023ae2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//tr[@id='0']/td[11]/span/div/button[2]/span",
+      "targets": [
+        ["xpath=//tr[@id='0']/td[11]/span/div/button[2]/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1059e92-faa4-4e6b-bf01-6a6ef6c5cc06",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2cf7eba-c267-45a5-a30a-e176c6bdb64d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Assegna",
+      "targets": [
+        ["linkText=Assegna", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Assegna')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"accettaProposta('201515166&10&1&1&SISTEMI_OPERATIVI&32&0&10&1&2020-2021&1')\"]", "xpath:attributes"],
+        ["xpath=//tr[@id='0']/td[11]/span/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Assegna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a542bf19-06d9-4715-9ab2-f17cac2ef0eb",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Sei sicuro di voler ACCETTARE la proposta relativa all'insegnamento SISTEMI_OPERATIVI ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e9b7f92d-a4b1-4777-9cb2-430c72c30ac7",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "13a7469c-4cbc-406e-99ad-ebf89141e612",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Insegnamento SISTEMI_OPERATIVI assegnato con successo!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "976c1e8e-7db2-496b-bd86-1cec48ff3811",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-lg .close > span",
+      "targets": [
+        ["css=.modal-lg .close > span", "css:finder"],
+        ["xpath=//span[@onclick='refresh()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-insegnamentiAssociati']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'×')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5fe6d3f8-2169-4c32-b349-11b153d7d4ca",
+    "name": "RF 7.5 Visualizza status carico didattico dei docenti",
+    "commands": [{
+      "id": "d40246cd-07f8-49c4-a55d-ad9f8b7d9141",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b01ab46-6552-4dcd-b9a5-af857ff3858f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0c134ef-b92e-4706-8b33-68f042928306",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb1a9a49-6e7d-491c-837b-f053386f3e8e",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "3820daac-25f3-4579-96d4-1a4b256a3a72",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "3c16c253-d7e6-4802-99f9-61ae673c8738",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a56833a2-18a2-4b59-a327-e6c6b1529dd3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8de9e3bd-4f2c-41f7-bc9b-1e5f200d175c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "073a1079-64a2-4af3-b107-fd7dc4368813",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hidden-xs:nth-child(2)",
+      "targets": [
+        ["css=.hidden-xs:nth-child(2)", "css:finder"],
+        ["xpath=//li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Presidente')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "32d08bab-b545-42fb-a3b9-fe7070fc00c9",
+    "name": "RF 7.4.4 Valuta insegnamento proposto RIFIUTA",
+    "commands": [{
+      "id": "e4279ae3-cd31-417a-a4cc-ede375d9fdf0",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8a56acd-ceb1-4f37-972a-74e7fa316053",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "273d3212-9ca9-42f0-bce6-35481bd06cca",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2812a49e-de0d-4885-93be-c1f0b1f580f3",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "d2d07f80-5079-4392-950d-e68342dabac5",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "7052b3b8-e16a-4f27-a714-aaf784b34474",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc08feab-e52d-423b-8db0-4f419223f00f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ba2b180-6585-417a-9b39-a3ae44b12648",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37f24575-3f55-42ae-9805-3c9aa3ea81b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(1) > td:nth-child(4)",
+      "targets": [
+        ["css=.dati:nth-child(1) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Docente Associato PA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed6ff175-5d7a-4f66-af50-02990cfa678e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Toggle Dropdown')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aafceac8-ca43-4fe8-b154-8255b9a27683",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rifiuta",
+      "targets": [
+        ["linkText=Rifiuta", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rifiuta')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"rifiutaProposta('201515166&10&1&1&SISTEMI_OPERATIVI&48&0&10&1&2020-2021&1')\"]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rifiuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "090ebf4a-3e58-4288-b689-2adde9e1040a",
+      "comment": "",
+      "command": "click",
+      "target": "id=modal-emailRifiuto",
+      "targets": [
+        ["id=modal-emailRifiuto", "id"],
+        ["css=#modal-emailRifiuto", "css:finder"],
+        ["xpath=//div[@id='modal-emailRifiuto']", "xpath:attributes"],
+        ["xpath=//body/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f987534-3aeb-4449-b9e2-a4e3cd2870ce",
+      "comment": "",
+      "command": "type",
+      "target": "id=oggetto",
+      "targets": [
+        ["id=oggetto", "id"],
+        ["name=oggetto", "name"],
+        ["css=#oggetto", "css:finder"],
+        ["xpath=//input[@id='oggetto']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-emailRifiuto']/div/div/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08187578-4437-49a3-90ea-b91ceb71ffd2",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "adced1f4-51fb-421f-a010-a06c14b518ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@onclick='inviaEmail()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-emailRifiuto']/div/div/div[2]/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Invia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c188714-812d-42f6-9158-63928f853494",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Sei sicuro di voler RIFIUTARE la proposta relativa all'insegnamento SISTEMI_OPERATIVI ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2150de5d-2ca7-4a21-af6c-bb1d50153cf7",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca50723a-43be-41a1-a240-0eb5208660db",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Compilare correttamente i campi:\nIl campo OGGETTO non deve essere vuoto e deve contenere minimo 8 caratteri\nIl campo Messaggio non deve essere vuoto e deve contenere minimo 16 caratteri.",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0d66cdfa-7c1f-483f-b43b-9ffeb4dfda62",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Toggle Dropdown')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "292d00c2-9bca-471c-acd2-f1c7e30ffd7f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rifiuta",
+      "targets": [
+        ["linkText=Rifiuta", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rifiuta')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"rifiutaProposta('201515166&10&1&1&SISTEMI_OPERATIVI&48&0&10&1&2020-2021&1')\"]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rifiuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc58343f-8d25-40ad-a92e-6598e3c59cac",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Rifiuta",
+      "targets": [
+        ["linkText=Rifiuta", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rifiuta')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"rifiutaProposta('201515166&10&1&1&SISTEMI_OPERATIVI&48&0&10&1&2020-2021&1')\"]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rifiuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd2dd722-9b34-4533-b358-05877035423d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.dropdown-menu > li:nth-child(2) > a",
+      "targets": [
+        ["css=.dropdown-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rifiuta')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"rifiutaProposta('201515166&10&1&1&SISTEMI_OPERATIVI&48&0&10&1&2020-2021&1')\"]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rifiuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2e97264-f495-4500-955b-d5ba921aa83f",
+      "comment": "",
+      "command": "click",
+      "target": "id=messaggio",
+      "targets": [
+        ["id=messaggio", "id"],
+        ["name=messaggio", "name"],
+        ["css=#messaggio", "css:finder"],
+        ["xpath=//textarea[@id='messaggio']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-emailRifiuto']/div/div/div[2]/div/div[3]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "406f203b-47f6-4fef-a7e8-37a4a90e77b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=messaggio",
+      "targets": [
+        ["id=messaggio", "id"],
+        ["name=messaggio", "name"],
+        ["css=#messaggio", "css:finder"],
+        ["xpath=//textarea[@id='messaggio']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-emailRifiuto']/div/div/div[2]/div/div[3]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ade574c-7a1f-4579-9597-dbd788be80b9",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3033a82-4ba8-41d1-9199-2861ba70f0e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@onclick='inviaEmail()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-emailRifiuto']/div/div/div[2]/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Invia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe77251c-b9b2-41a3-a280-25d112f86eed",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Sei sicuro di voler RIFIUTARE la proposta relativa all'insegnamento SISTEMI_OPERATIVI ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "22a18ced-02d0-4d99-8033-342f3ba5fb51",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb3f80ea-04ee-468e-8388-084e4c51dba1",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Compilare correttamente i campi:\nIl campo OGGETTO non deve essere vuoto e deve contenere minimo 8 caratteri\nIl campo Messaggio non deve essere vuoto e deve contenere minimo 16 caratteri.",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e7196fe-33ec-404e-b24b-8881602b4813",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Toggle Dropdown')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "210666f8-ef65-402a-a433-24f6dd8d6631",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rifiuta",
+      "targets": [
+        ["linkText=Rifiuta", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rifiuta')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"rifiutaProposta('201515166&10&1&1&SISTEMI_OPERATIVI&48&0&10&1&2020-2021&1')\"]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/span/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rifiuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1238e59c-a719-49e8-a6a3-c14251c691b1",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28a655c2-926b-4351-a101-7fadefc353fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@onclick='inviaEmail()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-emailRifiuto']/div/div/div[2]/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Invia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20d2be19-8fb1-4b0f-9269-250253469d68",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Sei sicuro di voler RIFIUTARE la proposta relativa all'insegnamento SISTEMI_OPERATIVI ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c60908b-67ea-47e9-b160-b767cbfe6c71",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e65fa21-ceec-4bc7-9ec4-c1ff1616df1f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-lg .close > span",
+      "targets": [
+        ["css=.modal-lg .close > span", "css:finder"],
+        ["xpath=//span[@onclick='refresh()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-insegnamentiAssociati']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'×')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2f47bdf-b8cc-4208-9248-3ad81508d0c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(1) > td:nth-child(4)",
+      "targets": [
+        ["css=.dati:nth-child(1) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Docente Associato PA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d994489-1640-475a-ad22-36c5345c47e7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.dati:nth-child(1) > td:nth-child(4)",
+      "targets": [
+        ["css=.dati:nth-child(1) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Docente Associato PA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13b9efd4-9a20-4353-83db-44d0ba634651",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.dati:nth-child(1) > td:nth-child(4)",
+      "targets": [
+        ["css=.dati:nth-child(1) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Docente Associato PA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "816f13fd-48cb-4ec2-a11a-234503f3f0a4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-lg .close > span",
+      "targets": [
+        ["css=.modal-lg .close > span", "css:finder"],
+        ["xpath=//span[@onclick='refresh()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-insegnamentiAssociati']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'×')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "70bf61ec-041c-4444-9d3a-f80fd0e0abec",
+    "name": "RF 7.4.5 Valuta insegnamento proposto LIBERO",
+    "commands": [{
+      "id": "7904256f-0115-41e1-81e8-458bfc7ac1ce",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "870032ff-1f8a-4c51-b8a4-556d2dea15b3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "966f5225-d52f-43b4-a25c-d99757ebb81c",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9586b3dd-32be-44fb-983b-c64cc8629ec6",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Presidente"
+    }, {
+      "id": "eff583d2-56ef-435e-aaf7-1d9912488dbb",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "f28c417f-6833-4dc1-b7ac-62fc75ef2aea",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "071022f2-1a1f-4e46-a34d-2ba156f984db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "da251d21-e17e-40d2-b636-672811387701",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Visualizza Monte Ore",
+      "targets": [
+        ["linkText=Visualizza Monte Ore", "linkText"],
+        ["css=.menu-open > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Visualizza Monte Ore')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/VisMonteOre_ProgDid.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Visualizza Monte Ore')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c285787-ab96-41f1-9d7b-4651af27f99f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dati:nth-child(1) > td:nth-child(5)",
+      "targets": [
+        ["css=.dati:nth-child(1) > td:nth-child(5)", "css:finder"],
+        ["xpath=//table[@id='example1']/tbody/tr/td[5]", "xpath:idRelative"],
+        ["xpath=//td[5]", "xpath:position"],
+        ["xpath=//td[contains(.,'INF/01')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a2efd83-5118-44c9-88b8-be90aff104a3",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[11]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'RIFIUTATO')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6ff5a14-1d27-4d1c-8e97-cdb52cc47fb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[11]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'RIFIUTATO')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e83ee97-1740-4327-bec1-0cf22c70435f",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1b8156a-04ff-41d7-b67c-0d9f78a45c2a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//tr[@id='1']/td[11]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[11]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'RIFIUTATO')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c71e47ad-abf8-48f4-8e47-cd31cbaa0a08",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Vuoi rendere disponibile l'insegnamento PROGRAMMAZIONE_I ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27f0d0a5-6960-4fb5-a040-224fc70f82c1",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4955960-9837-44d0-ab6e-2d89f9964a02",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Insegnamento PROGRAMMAZIONE_I è di nuovo disponibile!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f96574e-fa8c-4bff-923b-ff7e5384c4f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-lg .close > span",
+      "targets": [
+        ["css=.modal-lg .close > span", "css:finder"],
+        ["xpath=//span[@onclick='refresh()']", "xpath:attributes"],
+        ["xpath=//div[@id='modal-insegnamentiAssociati']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'×')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d0cb9f64-5293-44aa-8d7f-5b4d59e0e2c8",
+    "name": "RF 7.1 Visualizza insegnamenti proposti - DOCENTE",
+    "commands": [{
+      "id": "8053c53a-0f14-4671-b468-9fdfe8a9490a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b82c242-feca-4446-821c-c68c8122898f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2214f0cd-9564-48f1-9c7a-63723f1b1f62",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=form", "css:finder"],
+        ["xpath=//form[@name='login']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'\nHai dimenticato la Password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa767231-c7ad-4973-b4f3-a567f9561f33",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a010184-05d2-4376-81ba-22e9283f6c5c",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "DePrisco"
+    }, {
+      "id": "8a623a36-7fe5-4e12-bd97-3c5492a2ecb7",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8a51645-1081-4ceb-955e-90ad27e46d21",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "c843705a-9e58-414b-b9e5-98dd3c3f3cde",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "739b47ca-e176-406f-84a9-4b72f752fb21",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb84eb7a-33ff-4499-ad73-f8b9d623b93d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "24316e4f-37c0-4967-bc20-08a1f57e0396",
+    "name": "RF 7.2 Visualizza insegnamenti disponibili - DOCENTE",
+    "commands": [{
+      "id": "994703e6-a19a-42d2-a626-919346d61942",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44b89419-971e-4171-a7dd-eebc7cb063dd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6f056d0-191a-44ce-a12c-15ea27e6c2eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91162c50-24f1-4b8b-b093-d8aecd416581",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "DePrisco"
+    }, {
+      "id": "61742ff1-c87c-444c-89fc-9050deaad6ac",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5d0f305-0c84-405d-aee1-fad4029189e0",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "b243d347-098a-4fa0-936a-6825dec5f030",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "212d9f2b-83c4-4e62-8ca8-ce2f6738c1b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ea00cca-17d6-4dd2-bc67-349c129915c1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14b189ed-db77-4ee2-9464-2dc21f8324f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//center/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Proponi insegnamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d2669898-8bb7-4ee4-92cf-371bdf22997e",
+    "name": "RF 7.3 Proponi insegnamento disponibile - DOCENTE",
+    "commands": [{
+      "id": "4da05241-f56d-4a91-baa1-fa0db589e8be",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6397cce-c58d-431e-a833-77229571bdbc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d9c860d-121e-4b2a-a3f1-e86f64e13d8c",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c8965b5-0b70-4379-ad96-2bc8b9f91b47",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82b94d26-e01a-4f21-af6b-0c5a922a64d5",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=form", "css:finder"],
+        ["xpath=//form[@name='login']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'\nHai dimenticato la Password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "485eac6e-03a8-45e1-bfe9-5b61b02680e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "27d2b2ef-fdb9-4756-9642-b3f8ddd0361a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8c0b488-9894-4459-9485-ca2c62ab828f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc3c97c0-23b4-4855-afc2-bfddc7f3c638",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//center/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Proponi insegnamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd6ef715-3c72-4db0-9dc9-56d5a7734dbc",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfffc4de-b850-4bcd-826e-3c16f6d53fe5",
+      "comment": "",
+      "command": "click",
+      "target": "id=proponi",
+      "targets": [
+        ["id=proponi", "id"],
+        ["css=.dati:nth-child(1) #proponi", "css:finder"],
+        ["xpath=//button[@id='proponi']", "xpath:attributes"],
+        ["xpath=//div[@id='insegnamentiDisp']/div/div/div[2]/div/table/tbody[2]/tr/td[11]/button", "xpath:idRelative"],
+        ["xpath=//td[11]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf4701f5-6a9e-454d-9171-b50d59711a1a",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Vuoi proporre al Presidente l'insegnamento SISTEMI OPERATIVI ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9bc1388-0d9e-40e9-86d2-6e3742355daf",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "346e5b97-1ddc-4d4b-aa4b-327f6f730d29",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Proposta insegnamento SISTEMI OPERATIVI effettuata con successo!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "87c1c586-3bfe-499e-b18a-68223327b327",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//center/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Proponi insegnamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b5679ac-c905-416e-b574-1186c528d5bf",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//center/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Proponi insegnamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ea4424f-cc87-4b2e-a937-19147ed01dea",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//center/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Proponi insegnamento')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "242eb3d1-0aa0-4ba4-8862-8f2b37ecf2c8",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6af9edd0-a3fb-4c46-86ae-c111ad0e7232",
+      "comment": "",
+      "command": "click",
+      "target": "id=proponi",
+      "targets": [
+        ["id=proponi", "id"],
+        ["css=#proponi", "css:finder"],
+        ["xpath=//button[@id='proponi']", "xpath:attributes"],
+        ["xpath=//div[@id='insegnamentiDisp']/div/div/div[2]/div/table/tbody[2]/tr/td[11]/button", "xpath:idRelative"],
+        ["xpath=//tbody[2]/tr/td[11]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9bfb25d4-b56b-4a7c-961b-93593eb74763",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Vuoi proporre al Presidente l'insegnamento SISTEMI OPERATIVI ?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55e18f22-d326-4e51-b230-85ce47c1e73d",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02cc301b-dae9-4bd4-872b-13e996485878",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Proposta insegnamento SISTEMI OPERATIVI effettuata con successo!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "63933d7a-e1dd-41d8-b85a-8de3c9ff3f87",
+    "name": "RF 7.6 Visualizza informazioni insegnamento proposto o disponibile - DOCENTE",
+    "commands": [{
+      "id": "9852be0d-88b1-4381-9f1b-d591406e4b9f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7f07732-554b-4f22-8bc4-838a818f0d16",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7f5bfd6-767a-4837-b396-2126f11204cd",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00230475-2365-40c4-803a-d5df6fb8b959",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "DePrisco"
+    }, {
+      "id": "cdb9f9ed-a7b9-4703-8586-ca08d30afa7e",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e768ecf6-7b45-49e8-9ded-2bc64dbe881e",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["xpath=(//input[@id='inputLogin'])[2]", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "8d6bcdf0-256f-42f9-b44e-aa293e699d0b",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c1f9665-9112-43de-b213-a7a2397742a1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf4a0be3-e3a3-4aa8-a610-9c067658705c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48e905c7-6c5f-4001-9f57-afd73c4875a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.odd > .sorting_1",
+      "targets": [
+        ["css=.odd > .sorting_1", "css:finder"],
+        ["xpath=//td[@onclick='infoInsegnamentoAssociato(\"ARCHITETTURA DEGLI ELABORATORI&0&10&2020-2021&1&80\", \"201515176.La Torre.Salvatore.40.0&201515166.De Prisco.Roberto.40.0&\")']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'ARCHITETTURA DEGLI ELABORATORI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6533dc88-7a7b-4cee-a641-11096b1d4d7f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.odd > .sorting_1",
+      "targets": [
+        ["css=.odd > .sorting_1", "css:finder"],
+        ["xpath=//td[@onclick='infoInsegnamentoAssociato(\"ARCHITETTURA DEGLI ELABORATORI&0&10&2020-2021&1&80\", \"201515176.La Torre.Salvatore.40.0&201515166.De Prisco.Roberto.40.0&\")']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'ARCHITETTURA DEGLI ELABORATORI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c80900d-62c5-498a-9f8e-27e2d9d04bc2",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.odd > .sorting_1",
+      "targets": [
+        ["css=.odd > .sorting_1", "css:finder"],
+        ["xpath=//td[@onclick='infoInsegnamentoAssociato(\"ARCHITETTURA DEGLI ELABORATORI&0&10&2020-2021&1&80\", \"201515176.La Torre.Salvatore.40.0&201515166.De Prisco.Roberto.40.0&\")']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'ARCHITETTURA DEGLI ELABORATORI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "74ef9198-56b0-4e28-b1b8-62c583a537ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modal-infoInsegnamento span",
+      "targets": [
+        ["css=#modal-infoInsegnamento span", "css:finder"],
+        ["xpath=//div[@id='modal-infoInsegnamento']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b5a2f46-90bf-4a23-8433-a7828012514b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even > .sorting_1",
+      "targets": [
+        ["css=.even > .sorting_1", "css:finder"],
+        ["xpath=//td[@onclick='infoInsegnamentoAssociato(\"SISTEMI OPERATIVI&0&10&2020-2021&10&80\", \"201515166.De Prisco.Roberto.32.0&201515200.Fittizio.Docente.48.0&\")']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr[2]/td", "xpath:idRelative"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'SISTEMI OPERATIVI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "08a2ee73-69fc-4ada-a3a8-0b51d9f4fffa",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modal-infoInsegnamento span",
+      "targets": [
+        ["css=#modal-infoInsegnamento span", "css:finder"],
+        ["xpath=//div[@id='modal-infoInsegnamento']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9adb914c-7029-4eaa-a4cb-5202efe3703f",
+    "name": "RF 7.4.1 Valuta insegnamento proposto ACCETTA - DOCENTE",
+    "commands": [{
+      "id": "07ca4b57-911f-48d8-8287-f6589f693b52",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2171daab-d458-4497-beaf-ad760efbc98c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0d30979c-06d3-4ff0-bb04-92dc8077e2ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar",
+      "targets": [
+        ["css=.navbar", "css:finder"],
+        ["xpath=//nav", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38f7277e-4fc4-4951-a2f4-d59951e56845",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputLogin",
+      "targets": [
+        ["id=inputLogin", "id"],
+        ["name=username", "name"],
+        ["xpath=//input[@id='inputLogin']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "DePrisco"
+    }, {
+      "id": "9c335271-7656-4331-b645-993e2c268fa6",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=form", "css:finder"],
+        ["xpath=//form[@name='login']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"],
+        ["xpath=//form[contains(.,'\nHai dimenticato la Password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0feec29e-9cd5-4735-9f9f-14d664d43bf8",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b0d264c-cdee-4ffb-8f1b-8b69875247ae",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Programmazione Didattica",
+      "targets": [
+        ["linkText=Programmazione Didattica", "linkText"],
+        ["css=.treeview:nth-child(6) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "67afdc77-f4a3-4dfd-9ea9-0f853993f2c6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a642d32-0418-4317-8074-89416d813762",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Account",
+      "targets": [
+        ["linkText=Account", "linkText"],
+        ["css=.treeview:nth-child(7) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//li[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Account')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac067db2-011b-4282-9bfb-6323fecd3328",
+      "comment": "",
+      "command": "click",
+      "target": "css=#selezionaScelta3 .dropdown-toggle",
+      "targets": [
+        ["css=#selezionaScelta3 .dropdown-toggle", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//span[@id='selezionaScelta3']/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Toggle Dropdown')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "da1f04cb-4122-4a8c-b536-4433b6c4f298",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe279ee2-acef-4e04-8e6b-549aded2285c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Accetta",
+      "targets": [
+        ["linkText=Accetta", "linkText"],
+        ["css=.open li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Accetta')]", "xpath:link"],
+        ["xpath=//a[@onclick='aggiornaStatus(1,3,\"1&1&1&40&0\")']", "xpath:attributes"],
+        ["xpath=//span[@id='selezionaScelta3']/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//span/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Accetta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a178960d-a2f1-46de-877b-5823001504fe",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "993986c5-047a-4c55-aeb7-c95c53455a70",
+    "name": "RF 7.4.2 Valuta insegnamento proposto RIFIUTA - DOCENTE",
+    "commands": [{
+      "id": "4f238a9e-1ff0-4ae7-80fb-d238b56a10c1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/IGES/Presentation%20Layer/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "736c773d-7a57-400a-aeec-5f6e6b54e02e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bf8c804-2a64-45f9-b902-e41e39df790c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar",
+      "targets": [
+        ["css=.navbar", "css:finder"],
+        ["xpath=//nav", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e5f6914-9a07-40e3-bdd3-153f4ad46098",
+      "comment": "",
+      "command": "click",
+      "target": "id=bottoneLogin",
+      "targets": [
+        ["id=bottoneLogin", "id"],
+        ["name=Accedi", "name"],
+        ["css=#bottoneLogin", "css:finder"],
+        ["xpath=//input[@id='bottoneLogin']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3d29c9a-5cfd-4f1b-b973-f071c243ecab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.treeview:nth-child(6) span",
+      "targets": [
+        ["css=.treeview:nth-child(6) span", "css:finder"],
+        ["xpath=//li[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Programmazione Didattica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a5a3ee3-ba4b-4b57-aabb-f1bb59c34c71",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Carico Didattico",
+      "targets": [
+        ["linkText=Carico Didattico", "linkText"],
+        ["css=.treeview-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carico Didattico')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Prog/Vis_CarD.php')]", "xpath:href"],
+        ["xpath=//li[6]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Carico Didattico')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f74df0dc-b54c-4270-b384-e3b57faa6ee8",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.dati:nth-child(3) > .sorting_1",
+      "targets": [
+        ["css=.dati:nth-child(3) > .sorting_1", "css:finder"],
+        ["xpath=//td[@onclick='infoInsegnamentoAssociato(\"SISTEMI OPERATIVI&0&10&2020-2021&10&80\", \"201515166.De Prisco.Roberto.32.0&201515166.De Prisco.Roberto.48.0&\")']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr[3]/td", "xpath:idRelative"],
+        ["xpath=//tr[3]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'SISTEMI OPERATIVI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2e0c485-ccf1-4121-930a-cb23c808055c",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.dati:nth-child(3) > .sorting_1",
+      "targets": [
+        ["css=.dati:nth-child(3) > .sorting_1", "css:finder"],
+        ["xpath=//td[@onclick='infoInsegnamentoAssociato(\"SISTEMI OPERATIVI&0&10&2020-2021&10&80\", \"201515166.De Prisco.Roberto.32.0&201515166.De Prisco.Roberto.48.0&\")']", "xpath:attributes"],
+        ["xpath=//table[@id='example1']/tbody/tr[3]/td", "xpath:idRelative"],
+        ["xpath=//tr[3]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'SISTEMI OPERATIVI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cf30c1e-5119-46be-9edb-fef4ab839254",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//span[@id='selezionaScelta2']/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Toggle Dropdown')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6196067-09cf-4e1a-912e-b87a562da5f2",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81988fe8-7238-4935-bee8-3b7b2bb5e64b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rifiuta",
+      "targets": [
+        ["linkText=Rifiuta", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rifiuta')]", "xpath:link"],
+        ["xpath=//a[@onclick='aggiornaStatus(2,2,\"6&1&1&0&20\")']", "xpath:attributes"],
+        ["xpath=//span[@id='selezionaScelta2']/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rifiuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8f23ffb-0d11-46f0-bb56-7153ac233e96",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3c765b43-bdbe-4acf-862b-431f1ebb780d",
+    "name": "RF 7 Gestione Carico Didattico preseidente",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0972649f-b687-4447-b1ca-9bc28dd0379b", "154780d1-6a9e-4b81-ae08-3b843fca5324", "8ddb61f0-250e-4bd9-a7c8-96dbfa19e253", "5fe6d3f8-2169-4c32-b349-11b153d7d4ca"]
+  }, {
+    "id": "3a86c3f6-b68f-4c10-9d59-761d27ab0dcc",
+    "name": "RF 7 Gestione Carico Didattico docente",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d0cb9f64-5293-44aa-8d7f-5b4d59e0e2c8", "24316e4f-37c0-4967-bc20-08a1f57e0396", "d2669898-8bb7-4ee4-92cf-371bdf22997e", "9adb914c-7029-4eaa-a4cb-5202efe3703f", "993986c5-047a-4c55-aeb7-c95c53455a70", "63933d7a-e1dd-41d8-b85a-8de3c9ff3f87"]
+  }],
+  "urls": ["http://localhost/", "http://localhost/IGES/Presentation%20Layer/index.php"],
+  "plugins": []
+}

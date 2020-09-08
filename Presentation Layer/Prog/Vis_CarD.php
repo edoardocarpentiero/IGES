@@ -708,7 +708,7 @@ echo '
                                         echo "<td>$semestre</td>";
                                         echo "<td>$SSD</td>";
                                         ?>
-                                        <td><button type='button' onclick='proponi("<?php echo $datiAssociazione;?>","<?php echo $denominazione;?>")' class='btn btn-info' title='Clicca per selezionare le ore'>Proponi</button></td></tr>
+                                        <td><button type='button' id="proponi" onclick='proponi("<?php echo $datiAssociazione;?>","<?php echo $denominazione;?>")' class='btn btn-info' title='Clicca per proporre insegnamento'>Proponi</button></td></tr>
                                 <?php
                                 }}?> 
                 

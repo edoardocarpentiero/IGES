@@ -744,34 +744,46 @@ echo '
         	datiAss=document.getElementById("datiAssociazione").value.split("&");
         	risp=confirm("Sei sicuro di voler RIFIUTARE la proposta relativa all'insegnamento "+datiAss[4]+" ?");
             if(risp){
-                dati=new FormData();
-                dati.append("matricolaDoc",datiAss[0]);
-                dati.append("matricolaIns",datiAss[1]);
-                dati.append("classe",datiAss[2]);
-                dati.append("progId",datiAss[3]);
-                
-                dati.append("oreT",datiAss[5]);
-                dati.append("oreL",datiAss[6]);
-                
-                dati.append("emailDestinatario",document.getElementById("emailDestinatario").value);
-                dati.append("oggettoEmail",document.getElementById("oggetto").value);
-                dati.append("messaggioEmail",document.getElementById("messaggio").value);
-                dati.append("funzione","rifiutaProposta");
-                httpRequest = new XMLHttpRequest();
-                httpRequest.onreadystatechange = function(){
-                    if(httpRequest.readyState == 4 && httpRequest.status == 200){
-                            ris=httpRequest.responseText;
-                            if(ris==0){
-                                alert("Email inviata con successo!");
-                                oreRicoperte(datiAss[0]);
-                            }
-                            else
-                                alert("Errore invio email!");
-                    }
-               };
-               httpRequest.open("POST", "http://localhost/IGES/Application%20Layer/GestioneCaricoDidattico/GestioneCaricoDidattico.php", true);
-               httpRequest.send(dati); 
+                if(verificaCampi(document.getElementById("oggetto").value,document.getElementById("messaggio").value)){
+                    dati=new FormData();
+                    dati.append("matricolaDoc",datiAss[0]);
+                    dati.append("matricolaIns",datiAss[1]);
+                    dati.append("classe",datiAss[2]);
+                    dati.append("progId",datiAss[3]);
+
+                    dati.append("oreT",datiAss[5]);
+                    dati.append("oreL",datiAss[6]);
+
+                    dati.append("emailDestinatario",document.getElementById("emailDestinatario").value);
+                    dati.append("oggettoEmail",document.getElementById("oggetto").value);
+                    dati.append("messaggioEmail",document.getElementById("messaggio").value);
+                    dati.append("funzione","rifiutaProposta");
+                    httpRequest = new XMLHttpRequest();
+                    httpRequest.onreadystatechange = function(){
+                        if(httpRequest.readyState == 4 && httpRequest.status == 200){
+                                ris=httpRequest.responseText;
+                                if(ris==0){
+                                    alert("Email inviata con successo!");
+                                    oreRicoperte(datiAss[0]);
+                                }
+                                else
+                                    alert("Errore invio email!");
+                        }
+                   };
+                   httpRequest.open("POST", "http://localhost/IGES/Application%20Layer/GestioneCaricoDidattico/GestioneCaricoDidattico.php", true);
+                   httpRequest.send(dati);
+            } else{
+                    alert("Compilare correttamente i campi:\nIl campo OGGETTO non deve essere vuoto e deve contenere minimo 8 caratteri\nIl campo Messaggio non deve essere vuoto e deve contenere minimo 16 caratteri.")}
             }
+
+        }
+
+        function verificaCampi(oggetto,messaggio){
+            if(oggetto.localeCompare("")==0 || oggetto.length<8)
+                return false;
+            if(messaggio.localeCompare("")==0 || messaggio.length<16)
+                return false
+            return true;
         }
         
         function refresh(){
@@ -779,39 +791,7 @@ echo '
         		location.reload();
         }
         
-        function aggiornaStatus(status,datiAssociazione){
-                        	var res=datiAssociazione.split("&");
-                        	var dati=new FormData();
-                            var msg;
-                            
-                            if(status==1){
-                            	msg="Sei sicuro di voler ACCETTARE l'insegnamento proposto dal Presidente?";
-                                dati.append("stato","ACCETTATO");
-                            }
-                            else if(status==2){
-                           		msg="Sei sicuro di voler RIFIUTARE l'insegnamento proposto dal Presidente?";
-                                dati.append("stato","RIFIUTATO");
-                            }
-                            esitoOp = confirm(msg);
-                            if(esitoOp){    
-                            	dati.append("matricolaIns",res[1]);
-                                dati.append("classe",res[2]);
-                                dati.append("progID",res[3]);
-                                dati.append("oreT",res[4]);
-                                dati.append("oreL",res[5]);
-                                dati.append("funzione","cambiaStatus");
-                                httpRequest = new XMLHttpRequest();
-                                httpRequest.onreadystatechange = function(){
-                                if(httpRequest.readyState == 4 && httpRequest.status == 200){
-                                             var esito = httpRequest.responseText;
-                                             if(esito==0)
-                                             	oreRicoperte(res[0]);
-                                      }
-                                };
-                                httpRequest.open("POST", "http://localhost/IGES/Application%20Layer/GestioneCaricoDidattico/GestioneCaricoDidattico.php", true);
-                                httpRequest.send(dati);
-                            }
-                        }
+
 
         
         var colori=["#FFBF00","#F400A1","#08E8DE","#00FF00","#FF4D00","#1560BD","#FF0000","#960018","#007BA7","#00A86B"];

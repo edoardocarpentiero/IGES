@@ -259,7 +259,7 @@ CREATE TABLE `programmazione_didattica` (
   `Stato` varchar(20) NOT NULL,
   `ID_Regolamento` int(10) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +268,6 @@ CREATE TABLE `programmazione_didattica` (
 
 LOCK TABLES `programmazione_didattica` WRITE;
 /*!40000 ALTER TABLE `programmazione_didattica` DISABLE KEYS */;
-INSERT INTO `programmazione_didattica` VALUES (11,1,'Laurea',1,0,0,'2020-2021',1,'Draft',138);
 /*!40000 ALTER TABLE `programmazione_didattica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -360,4 +359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-24 19:05:54
+-- Dump completed on 2020-09-08 13:01:21

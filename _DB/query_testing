@@ -7,6 +7,22 @@ use myprd_old;
 delete from associa where ID_ProgDid=1;
 SELECT * FROM myprd_old.associa;
 
+
+<--TEST DI SISTEMA COMPLETO (eseguire le query prima di effettuare il test di sistema-->
+#ARCHITETRURA RESET
+UPDATE myprd.Associa SET status='IN ATTESA' WHERE Matricola_Insegnamento='1' AND Classe='1' AND ID_ProgDid='1' AND Matricola_Professore='201515166'  AND Ore_Teoria="40" AND Ore_Lab='0';
+#PROG RESET
+UPDATE myprd.Associa SET status='IN ATTESA' WHERE Matricola_Insegnamento='6' AND Classe='1' AND ID_ProgDid='1' AND Matricola_Professore='201515166'  AND Ore_Teoria="0" AND Ore_Lab='20';
+#PROG RESET LIBERO
+UPDATE myprd.Associa SET status='IN ATTESA', Matricola_Professore='201515166' WHERE Matricola_Insegnamento='6' AND Classe='1' AND ID_ProgDid='1' AND Matricola_Professore='201515200'  AND Ore_Teoria="0" AND Ore_Lab='20';
+
+#PROPONI SO1
+UPDATE myprd.Associa SET status='IN ATTESA', Matricola_Professore="201515200" WHERE Matricola_Insegnamento='10' AND Classe='1' AND ID_ProgDid='1' AND Matricola_Professore='201515166'  AND Ore_Teoria="32" AND Ore_Lab='0';
+#PROPONI SO2
+UPDATE myprd.Associa SET status='IN ATTESA', Matricola_Professore="201515200" WHERE Matricola_Insegnamento='10' AND Classe='1' AND ID_ProgDid='1' AND Matricola_Professore='201515166'  AND Ore_Teoria="48" AND Ore_Lab='0';
+
+
+
 use myprd_old;
 SET SQL_SAFE_UPDATES = 0;
 Update associa
