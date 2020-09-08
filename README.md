@@ -8,7 +8,8 @@ Credenziali di accesso presenti nella cartella <b>_INFO</b> del progetto
 Su tale sistema è stata effettuata attività di manutenzione, estendendo il sistema con nuovi requisiti riguardanti la gestione del carico didattico dei docenti.
 
 ## Documentazione
-Nella cartella <b> _DOCUMENTI DI MANUTENZIONE</b> sono presenti i documenti prodotti tra cui <b>Pr.D._MD_Vers.1.3</b> che contiene la descrizione della change request, l'impact analysis effettuata e i modelli di sistema aggiunti
+-Nella cartella <b> _DOCUMENTI DI MANUTENZIONE</b> sono presenti i documenti prodotti durante la manutenzione del software. Tra cui <b>Pr.D._MD_Vers.1.3</b> che contiene la descrizione della change request, l'impact analysis effettuata e i modelli di sistema aggiunti.<br>
+- I documenti di prodotto redatti durante lo sviluppo della piattaforma, sono presenti nella repository <b>PrDOLD</b> nella cartella <b>_DOCUMENTI DI PRODOTTO</b>
 
 ## NOTE: 
 - I database utilizzati sono presenti nella cartella <b>_DB</b><br>
