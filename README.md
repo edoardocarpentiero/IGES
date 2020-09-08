@@ -3,6 +3,7 @@ Questa repository contiene il codice sorgente del software PR.D. Il sistema è u
 L’obiettivo del software Pr. D. è quello di mettere a disposizione un sistema che faciliti le normali operazioni svolte dal Presidente del Consiglio Didattico del dipartimento di Informatica relative alla gestione della programmazione didattica.
 
 SitoWeb: http://prd.altervista.org/Presentation%20Layer/index.php
+Credenziali di accesso presenti nella cartella _INFO del progetto
 
 Su tale sistema è stata effettuata attività di manutenzione, estendendo il sistema con nuovi requisiti riguardanti la gestione del carico didattico dei docenti.
 
