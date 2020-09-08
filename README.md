@@ -15,7 +15,6 @@ Nella cartella <b> _DOCUMENTI DI MANUTENZIONE</b> sono presenti i documenti prod
 
 - Per utilizzare il sistema con dati già presenti, impostare il DB <b>myprd_release</b> in <i>StorageLayer/Database</i><br>
 - Per consentire la corretta esecuzione dei test di unità e integrazione del nuovo sistema, impostare il DB <b>myprd_unitTesting</b> in <i>StorageLayer/Database</i><br>
-- Per consentire la corretta esecuzione del test di sistema sul sistema pre-CR, impostare il DB <b>myprd_old</b> in <i>StorageLayer/Database</i><br>
 - Per consentire la corretta esecuzione del test di sistema sul sistema post-CR, impostare il DB <b>myprd_systemTesting</b> in <i>StorageLayer/Database</i><br>
 - Le query da inserire dopo l'esecuzione del test di sistema post-CR sono presenti nel file <b>query_testing.sql</b>
 - I test case di sistema sulla gestione del carico didattico sono inclusi nel file <b>PrD_GCD</b> da importare su Selenium<br>
