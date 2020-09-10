@@ -267,47 +267,54 @@ class GestioneCaricoDidatticoTest extends TestCase
         $value=$this->ges->inviaEmail(201515165,201515172,"fferrucci@unisa.it","rzizza@unisa.it","Annullamento proposta Insegnamento","Ins. rifiutato");
         $this->assertEquals(-1,$value,"Email inoltrata");
     }
-
     public function testTC_7_6_1()
     {
         $value=$this->ges->getInfoDocentiInsegnamento("30a",2,7);
         $this->assertFalse($value,"Matricola insegnamento alfanumerica");
     }
+
     public function testTC_7_6_2()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(13,2,7);
         $this->assertFalse($value,"Matricola insegnamento presente");
     }
+
     public function testTC_7_6_3()
     {
         $value=$this->ges->getInfoDocentiInsegnamento("-",2,7);
         $this->assertFalse($value,"Matricola insegnamento specificata");
     }
+
     public function testTC_7_6_4()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(30303030303030,2,7);
         $this->assertFalse($value,"Matricola insegnamento maggiore di 11 caratteri");
     }
+
     public function testTC_7_6_5()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(30,3,7);
         $this->assertFalse($value,"Classe non associata all'insegnamento");
     }
+
     public function testTC_7_6_7()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(30,0,7);
         $this->assertFalse($value,"Classe minore di 1");
     }
+
     public function testTC_7_6_8()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(30,4,7);
         $this->assertFalse($value,"Classe maggiore di 3");
     }
+
     public function testTC_7_6_9()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(30,"a2",7);
         $this->assertFalse($value,"Classe con valore alfanumerico");
     }
+
     public function testTC_7_6_10()
     {
         $value=$this->ges->getInfoDocentiInsegnamento(30,2,7);
