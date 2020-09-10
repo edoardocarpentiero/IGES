@@ -9,7 +9,7 @@ Su tale sistema è stata effettuata attività di manutenzione, estendendo il sis
 
 ## Documentazione
 - Nella cartella <b> _DOCUMENTI DI MANUTENZIONE</b> sono presenti i documenti prodotti durante la manutenzione del software. Tra cui <b>Pr.D._MD_Vers.1.3</b> che contiene la descrizione della change request, l'impact analysis effettuata e i modelli di sistema aggiunti.<br>
-- I documenti di prodotto redatti durante lo sviluppo della piattaforma, sono presenti nella repository <b>PrDOLD</b> nella cartella <b>_DOCUMENTI DI PRODOTTO</b>:https://github.com/edoardocarpentiero/PrdOLD/tree/prdOLD/_DOCUMENTI%20DI%20PRODOTTO
+- I documenti di prodotto redatti durante lo sviluppo della piattaforma, sono presenti nella repository <b>PrDOLD</b> nella cartella <b>_DOCUMENTI DI PRODOTTO</b>: https://github.com/edoardocarpentiero/PrdOLD/tree/prdOLD/_DOCUMENTI%20DI%20PRODOTTO
 
 ## NOTE: 
 - I database utilizzati sono presenti nella cartella <b>_DB</b><br>
