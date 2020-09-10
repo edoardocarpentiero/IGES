@@ -8,20 +8,20 @@
 *Version : 1.0
 *2015 - Copyright by Pr.D Project - University of Salerno
 */
-/*
+
 //Database RELEASE
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "root");
 define("DB_DATABASE", "my_prd");
-*/
 
+/*
 //databaseTesting TESTING INTEGRAZIONE GestioneCaricoDidattico
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "root");
 define("DB_DATABASE", "myprd_testing");
-/*
+
 //databaseTesting TESTING SISTEMA GestioneCaricoDidattico
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
