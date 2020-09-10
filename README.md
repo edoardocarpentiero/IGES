@@ -18,8 +18,8 @@ Su tale sistema è stata effettuata attività di manutenzione, estendendo il sis
 - Per consentire la corretta esecuzione dei test di unità e integrazione del nuovo sistema, impostare il DB <b>myprd_unitTesting</b> in <i>StorageLayer/Database</i><br>
 - Per consentire la corretta esecuzione del test di sistema sul sistema post-CR, impostare il DB <b>myprd_systemTesting</b> in <i>StorageLayer/Database</i><br>
 - Le query da inserire dopo l'esecuzione del test di sistema post-CR sono presenti nel file <b>query_testing.sql</b>
-- I test case di sistema sulla gestione del carico didattico sono inclusi nel file <b>PrD_GCD</b> da importare su Selenium<br>
-- I test case di sistema sulla gestione della programmazione didattica sono inclusi nel file <b>PrD_GestioneProgDid</b> da importare su Selenium<br>
+- I test case di sistema sulla gestione del carico didattico sono inclusi nel file <b>PrD_GCD</b> da importare su Selenium IDE<br>
+- I test case di sistema sulla gestione della programmazione didattica sono inclusi nel file <b>PrD_GestioneProgDid</b> da importare su Selenium IDE<br>
 
 
 ## Sviluppatori
