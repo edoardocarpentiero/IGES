@@ -2,13 +2,15 @@
 update myprd_testing.Associa set Matricola_Professore=201515200, status="IN ATTESA" where Matricola_Insegnamento=9 AND classe=2 AND ID_ProgDid=7 AND Matricola_Professore=201515166 AND Ore_Teoria=48 AND Ore_Lab=0;
 update myprd_testing.Associa set Matricola_Professore=201515172, status="RIFIUTATO" where Matricola_Insegnamento=9 AND classe=1 AND ID_ProgDid=7 AND Matricola_Professore=201515200 AND Ore_Teoria=40 AND Ore_Lab=0;
 
-//TESTING DI SISTEMA -REGRESSIONE-
+//TESTING DI SISTEMA PRD_OLD
 use myprd_old;
 delete from associa where ID_ProgDid=1;
 SELECT * FROM myprd_old.associa;
-
+//TESTING DI SISTEMA NUOVO SISTEMA
+delete from myprd.programmazione_didattica where ID=1;
 
 <--TEST DI SISTEMA COMPLETO (eseguire le query prima di effettuare il test di sistema-->
+
 #ARCHITETRURA RESET
 UPDATE myprd.Associa SET status='IN ATTESA' WHERE Matricola_Insegnamento='1' AND Classe='1' AND ID_ProgDid='1' AND Matricola_Professore='201515166'  AND Ore_Teoria="40" AND Ore_Lab='0';
 #PROG RESET
